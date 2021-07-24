@@ -9,3 +9,4 @@ React + Next.js + microCMS + Netlify
 :tada: initial commit
 :bug: bug fix
 :gear: config
+:+1: feature
