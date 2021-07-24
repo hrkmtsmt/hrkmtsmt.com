@@ -2,7 +2,7 @@ import React from "react";
 import Fade from "react-reveal/Fade";
 export const Section = (props) => {
     return (
-        <Fade bottom bottom delay={400}>
+        <Fade bottom delay={400}>
             <section className={"l-grid l-inner"}>
                 <div className={"l-grid-full"}>
                     <div className={"c-section"}>
