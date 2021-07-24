@@ -1,5 +1,11 @@
 # Hello! This is my project.
 
+## Overview
+
+React + Next.js + microCMS + Netlify
+
 ## Commit message prefix
 
-🎉 :tada: initial commit
+:tada: initial commit
+:bug: bug fix
+:gear: config
