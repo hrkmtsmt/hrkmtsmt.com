@@ -30,6 +30,7 @@
     --color-black: #202020;
     --color-white: #fff;
     --color-gray: #eeeeee;
+    --color-light-pink: #ffa1bc;
     --color-pink: #ff2266;
     --max-width: 1080px;
     --shadow-color-hover: drop-shadow(0 0 20px rgba(47, 118, 230, 0.1));
@@ -52,6 +53,8 @@
         --font-color: #dddddd;
         --color-black: #111111;
         --color-gray: #404040;
+        --color-light-pink: #4e1021;
+        --color-pink: #ff5b8c;
         --glass-base: rgba(32, 32, 32, 0.6);
         --shadow-color-hover: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
     }
@@ -744,7 +747,42 @@ select {
         transition: ease-in-out 0.2s;
     }
 }
+.c-like-button {
+    width: 40px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &-heart {
+        font-size: 20px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border-radius: 20px;
+        width: 40px;
+        height: 40px;
+        line-height: 40px;
+        background: var(--secondary-color);
+        color: var(--primary-color);
+        transition: ease-in-out 0.2s;
 
+        &.is-like {
+            background: var(--color-light-pink);
+            color: var(--color-pink);
+            transition: ease-in-out 0.1s;
+        }
+
+        :active {
+            transform: scale(0.6, 0.6);
+            transition: ease-in-out 0.1s;
+        }
+        i {
+            line-height: 40px;
+            display: block;
+        }
+    }
+    &-counter {
+    }
+}
 /* - Graph */
 .c-graph {
     position: relative;

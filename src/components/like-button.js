@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
 export const LikeButton = () => {
     const [count, setCount] = useState(0);
@@ -9,7 +9,6 @@ export const LikeButton = () => {
         } else {
             setCount(count - 1);
         }
-
         setLike((prevLike) => !prevLike);
     };
     const likeSatate = () => {
@@ -19,13 +18,22 @@ export const LikeButton = () => {
             return "ci-heart_fill";
         }
     };
+    useEffect(() => {
+        const button = document.getElementById("like-button-heart");
+        button.addEventListener("click", () => {
+            button.classList.toggle("is-like");
+        });
+    }, []);
     return (
-        <div>
-            <button className={"c-button"} onClick={setCountLike}>
-                {count}
+        <div className={"c-like-button"}>
+            <button
+                id={"like-button-heart"}
+                className={"c-like-button-heart"}
+                onClick={setCountLike}
+            >
+                <i className={likeSatate()}></i>
             </button>
-            <i className={likeSatate()}></i>
-            <span></span>
+            <span className={"c-like-button"}>{count}</span>
         </div>
     );
 };
