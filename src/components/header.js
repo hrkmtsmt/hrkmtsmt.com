@@ -1,6 +1,5 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import Fade from "react-reveal/fade";
 import { LinkButton } from "../components/link-button";
 export const Header = () => {
     useEffect(() => {
