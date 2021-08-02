@@ -10,3 +10,5 @@ React + Next.js + microCMS + Netlify
 :bug: bug fix
 :gear: config
 :+1: feature
+:package: package
+:art: ui/ux
