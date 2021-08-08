@@ -10,7 +10,7 @@ React + Next.js + microCMS + Netlify
 <br>
 🐛 `:bug:` bug fix
 <br>
-⚙ `:gear:` config
+⚙️ `:gear:` config
 <br>
 👍 `:+1:` feature
 <br>
