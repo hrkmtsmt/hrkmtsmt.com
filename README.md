@@ -6,9 +6,16 @@ React + Next.js + microCMS + Netlify
 
 ## Commit message prefix
 
-:tada: initial commit
-:bug: bug fix
-:gear: config
-:+1: feature
-:package: package
-:art: ui/ux
+🎉 `:tada:` initial commit
+<br>
+🐛 `:bug:` bug fix
+<br>
+⚙ `:gear:` config
+<br>
+👍 `:+1:` feature
+<br>
+📦 `:package:` package
+<br>
+🎨 `:art:` ui/ux
+<br>
+🔨 `:hammer:` refactor code

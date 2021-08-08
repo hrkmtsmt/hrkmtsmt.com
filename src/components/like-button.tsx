@@ -11,7 +11,7 @@ export const LikeButton = () => {
     }
   };
   useEffect(() => {
-    const button = document.getElementById("like-button");
+    const button = document.getElementById("like-button")!;
     button.addEventListener("click", () => {
       button.classList.toggle("is-like");
     });

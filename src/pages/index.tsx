@@ -1,5 +1,5 @@
 import React from "react";
-import { SEO } from "../components/seo";
+import { Helmet } from "../components/helmet";
 import { FirstView } from "../components/top/first-view";
 import { Section } from "../components/section";
 import { Layout } from "../components/layout";
@@ -7,45 +7,29 @@ import { PostCard } from "../components/post-card";
 import { MediaCard } from "../components/media-card";
 import { LinkButton } from "../components/link-button";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-export default function Home({ blogs, works, intro }) {
+type Props = {
+  intro: any;
+  blogs: any;
+  works: any;
+};
+export default function Home({ blogs, works, intro }: Props) {
   const title = "hrkmtsmt";
   const description = "こんにちは!これは説明文です!";
   return (
     <Layout>
-      <SEO title={title} description={description} />
-      <Section title={"Introduction"} copy={"自己紹介"}>
-        <Swiper
-          className={"l-grid-full"}
-          pagination={{ clickable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
-          breakpoints={{
-            0: {
-              spaceBetween: 20,
-              slidesPerView: 1.33333,
-            },
-            576: {
-              spaceBetween: 30,
-              slidesPerView: 2,
-            },
-            768: {
-              spaceBetween: 40,
-              slidesPerView: 3,
-            },
-          }}
-        >
-          {intro.map((intro) => (
-            <SwiperSlide key={intro.title} className={""}>
-              <div className={"c-box"}>
-                {intro.title}
-                {intro.description}
-              </div>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+      <Helmet title={title} desc={description} image={undefined} />
+      <Section title={"Introduction"} caption={undefined} desc={undefined}>
+        {intro.map((intro: any) => (
+          <div key={intro.title} className={"l-grid-medium"}>
+            <div className={"c-feature-box"}>
+              <div className={"c-feature-box-emoji"}>{intro.emoji}</div>
+              <h3 className={"c-feature-box-title"}>{intro.title}</h3>
+              <div className={"c-feature-box-desc"}>{intro.desc}</div>
+            </div>
+          </div>
+        ))}
       </Section>
-      <Section title={"Works"} copy={"こんにちは"}>
+      <Section title={"Works"} caption={undefined} desc={undefined}>
         <Swiper
           className={"l-grid-full"}
           pagination={{ clickable: true }}
@@ -70,16 +54,16 @@ export default function Home({ blogs, works, intro }) {
             },
           }}
         >
-          {works.slice(-10).map((work) => (
+          {works.slice(-10).map((work: any) => (
             <SwiperSlide key={work.id} className={""}>
               <MediaCard title={work.title} slug={`/work/${work.id}`} />
             </SwiperSlide>
           ))}
         </Swiper>
       </Section>
-      <Section title={"Blog"} copy={"こんにちは"}>
+      <Section title={"Blog"} caption={undefined} desc={undefined}>
         <div className={"l-grid-full l-grid"}>
-          {blogs.slice(-4).map((blog) => (
+          {blogs.slice(-4).map((blog: any) => (
             <div key={blog.id} className={"l-grid-small"}>
               <PostCard
                 title={blog.title}
@@ -96,11 +80,11 @@ export default function Home({ blogs, works, intro }) {
     </Layout>
   );
 }
+const endpoint: any = process.env.ENDPOINT;
+const key: {} = {
+  headers: { "X-API-KEY": process.env.API_KEY },
+};
 export const getStaticProps = async () => {
-  const key = {
-    headers: { "X-API-KEY": process.env.API_KEY },
-  };
-  const endpoint = process.env.ENDPOINT;
   const res = [
     await fetch(`${endpoint}work`, key),
     await fetch(`${endpoint}blog`, key),

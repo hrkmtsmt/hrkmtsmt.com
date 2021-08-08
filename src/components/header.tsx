@@ -5,15 +5,15 @@ export const Header = () => {
   useEffect(() => {
     addEventListener("scroll", function () {
       const scroll = window.pageYOffset;
-      const headerBackgound = this.document.getElementById("header");
+      const headerBackgound = this.document.getElementById("header")!;
       if (scroll > 400) {
         headerBackgound.classList.add("is-scroll");
       } else {
         headerBackgound.classList.remove("is-scroll");
       }
     });
-    const mobileNav = document.getElementById("mobile-nav");
-    const hamburgerButton = document.getElementById("hamburger-button");
+    const mobileNav = document.getElementById("mobile-nav")!;
+    const hamburgerButton = document.getElementById("hamburger-button")!;
     const navItems = document.querySelectorAll(".c-mobile-nav-item");
     hamburgerButton.addEventListener("click", () => {
       mobileNav.classList.toggle("is-active");

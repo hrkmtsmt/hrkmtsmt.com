@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 type Props = {
   cta: string;
-  link: URL;
+  link: string;
 };
 export const LinkButton = (props: Props) => {
   return (

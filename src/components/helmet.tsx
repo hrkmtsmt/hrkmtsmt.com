@@ -2,12 +2,11 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 type Props = {
-  title: string;
-  description: string;
-  category: string;
-  image: string;
+  title: string | undefined;
+  desc: string | undefined;
+  image: string | undefined;
 };
-export const SEO = (props: Props) => {
+export const Helmet = (props: Props) => {
   const router = useRouter();
   const path = router.asPath;
   const ogType = () => {
@@ -22,7 +21,7 @@ export const SEO = (props: Props) => {
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <title key={props.title}>{props.title}</title>
       <meta property="og:title" content={props.title} />
-      <meta property="og:description" content={props.description} />
+      <meta property="og:description" content={props.desc} />
       <meta property="og:image" content={props.image} />
       <meta property="og:url" content={path} />
       <meta property="og:type" content={ogType()} />

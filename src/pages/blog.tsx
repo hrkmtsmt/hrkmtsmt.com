@@ -3,13 +3,15 @@ import { Section } from "../components/section";
 import { Layout } from "../components/layout";
 import { PostCard } from "../components/post-card";
 import { LinkButton } from "../components/link-button";
-
-export default function Home({ blogs }) {
+type Props = {
+  blogs: any;
+};
+export default function Home({ blogs }: Props) {
   return (
     <Layout>
-      <Section title={"Blog"} copy={""}>
+      <Section title={"Blog"} caption={""} desc={undefined}>
         <div className={"l-grid-full l-grid"}>
-          {blogs.map((blog) => (
+          {blogs.map((blog: any) => (
             <div key={blog.id} className={"l-grid-small"}>
               <PostCard
                 title={blog.title}
@@ -26,12 +28,12 @@ export default function Home({ blogs }) {
     </Layout>
   );
 }
-
+const endpoint: any = process.env.ENDPOINT;
+const key: {} = {
+  headers: { "X-API-KEY": process.env.API_KEY },
+};
 export const getStaticProps = async () => {
-  const key = {
-    headers: { "X-API-KEY": process.env.API_KEY },
-  };
-  const res = await fetch("https://hrkmtsmt.microcms.io/api/v1/blog", key);
+  const res = await fetch(`${endpoint}blog`, key);
   const data = await res.json();
   return {
     props: {
