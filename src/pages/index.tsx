@@ -1,11 +1,11 @@
 import React from "react";
-import { Helmet } from "../components/Helmet";
-import { FirstView } from "../components/top/FirstView";
-import { Section } from "../components/Section";
-import { Layout } from "../components/Layout";
-import { PostCard } from "../components/PostCard";
-import { MediaCard } from "../components/MediaCard";
-import { LinkButton } from "../components/LinkButton";
+import { Helmet } from "../components/helmet";
+import { FirstView } from "../components/top/first-view";
+import { Section } from "../components/section";
+import { Layout } from "../components/layout";
+import { PostCard } from "../components/post-card";
+import { MediaCard } from "../components/media-card";
+import { LinkButton } from "../components/link-button";
 import { Swiper, SwiperSlide } from "swiper/react";
 type Props = {
   intro: any;

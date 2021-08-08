@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { LinkButton } from "./LinkButton";
+import { LinkButton } from "./link-button";
 export const Header = () => {
   useEffect(() => {
     addEventListener("scroll", function () {
