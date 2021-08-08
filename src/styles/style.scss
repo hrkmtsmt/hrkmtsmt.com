@@ -306,20 +306,6 @@ select {
 }
 .l-hidden {
   overflow: hidden;
-  margin: 0 -40px;
-  padding: 0 40px;
-}
-@media screen and (max-width: 768px) {
-  .l-hidden {
-    margin: 0 -30px;
-    padding: 0 30px;
-  }
-}
-@media screen and (max-width: 576px) {
-  .l-hidden {
-    margin: 0 -20px;
-    padding: 0 20px;
-  }
 }
 /* - Footer */
 .l-footer {

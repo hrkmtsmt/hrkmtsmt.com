@@ -16,21 +16,21 @@ export default function Home({ blogs, works, intro }: Props) {
   const title = "hrkmtsmt";
   const description = "こんにちは!これは説明文です!";
   return (
-    <Layout>
-      <FirstView />
-      <Helmet title={title} desc={description} image={undefined} />
-      <Section title={"Introduction"} caption={undefined} desc={undefined}>
-        {intro.map((intro: any) => (
-          <div key={intro.title} className={"l-grid-medium"}>
-            <div className={"c-feature-box"}>
-              <div className={"c-feature-box-emoji"}>{intro.emoji}</div>
-              <h3 className={"c-feature-box-title"}>{intro.title}</h3>
-              <div className={"c-feature-box-desc"}>{intro.desc}</div>
+    <div className={"l-hidden"}>
+      <Layout>
+        <FirstView />
+        <Helmet title={title} desc={description} image={undefined} />
+        <Section title={"Introduction"} caption={undefined} desc={undefined}>
+          {intro.map((intro: any) => (
+            <div key={intro.title} className={"l-grid-medium"}>
+              <div className={"c-feature-box"}>
+                <div className={"c-feature-box-emoji"}>{intro.emoji}</div>
+                <h3 className={"c-feature-box-title"}>{intro.title}</h3>
+                <div className={"c-feature-box-desc"}>{intro.desc}</div>
+              </div>
             </div>
-          </div>
-        ))}
-      </Section>
-      <div className={"l-hidden"}>
+          ))}
+        </Section>
         <Section title={"Works"} caption={undefined} desc={undefined}>
           <Swiper
             className={"l-grid-full"}
@@ -63,24 +63,24 @@ export default function Home({ blogs, works, intro }: Props) {
             ))}
           </Swiper>
         </Section>
-      </div>
-      <Section title={"Blog"} caption={undefined} desc={undefined}>
-        <div className={"l-grid-full l-grid"}>
-          {blogs.slice(-4).map((blog: any) => (
-            <div key={blog.id} className={"l-grid-small"}>
-              <PostCard
-                title={blog.title}
-                category={blog.category.category}
-                slug={`/blog/${blog.id}`}
-              />
-            </div>
-          ))}
-        </div>
-        <div className={"l-grid-full l-flex-center"}>
-          <LinkButton link={"/blog"} cta={"a"} />
-        </div>
-      </Section>
-    </Layout>
+        <Section title={"Blog"} caption={undefined} desc={undefined}>
+          <div className={"l-grid-full l-grid"}>
+            {blogs.slice(-4).map((blog: any) => (
+              <div key={blog.id} className={"l-grid-small"}>
+                <PostCard
+                  title={blog.title}
+                  category={blog.category.category}
+                  slug={`/blog/${blog.id}`}
+                />
+              </div>
+            ))}
+          </div>
+          <div className={"l-grid-full l-flex-center"}>
+            <LinkButton link={"/blog"} cta={"a"} />
+          </div>
+        </Section>
+      </Layout>
+    </div>
   );
 }
 const endpoint: any = process.env.ENDPOINT;
