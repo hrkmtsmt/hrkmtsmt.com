@@ -2,7 +2,8 @@ import React from "react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import { Helmet } from "./helmet";
+import { Helmet } from "./Helmet";
+import { StickyNav } from "./StickyNav";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 type Props = {
@@ -41,7 +42,7 @@ export const Post = (props: Props) => {
           </div>
         </article>
         <aside className={"l-grid-sidebar"}>
-          <div className={"p-index"}>dsafs</div>
+          <StickyNav />
         </aside>
       </div>
     </React.Fragment>

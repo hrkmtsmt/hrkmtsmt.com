@@ -3,7 +3,14 @@ import "../styles/coolicons.css";
 import "../styles/style.scss";
 import "swiper/swiper.scss";
 import { AppProps } from "next/app";
+import React from "react";
+import { Loader } from "../components/Loader";
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
-  return <Component {...pageProps} />;
+  return (
+    <React.Fragment>
+      <Loader />
+      <Component {...pageProps} />
+    </React.Fragment>
+  );
 };
 export default App;

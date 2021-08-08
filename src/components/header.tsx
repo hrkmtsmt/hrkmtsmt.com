@@ -1,29 +1,39 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { LinkButton } from "../components/link-button";
+import { LinkButton } from "./LinkButton";
 export const Header = () => {
   useEffect(() => {
     addEventListener("scroll", function () {
       const scroll = window.pageYOffset;
-      const headerBackgound = this.document.getElementById("header")!;
+      const header = this.document.getElementById("header")!;
       if (scroll > 400) {
-        headerBackgound.classList.add("is-scroll");
+        header.classList.add("is-scroll")!;
       } else {
-        headerBackgound.classList.remove("is-scroll");
+        header.classList.remove("is-scroll")!;
       }
     });
     const mobileNav = document.getElementById("mobile-nav")!;
     const hamburgerButton = document.getElementById("hamburger-button")!;
-    const navItems = document.querySelectorAll(".c-mobile-nav-item");
+    const mobileNavItem = document.querySelectorAll(".c-mobile-nav-item")!;
     hamburgerButton.addEventListener("click", () => {
       mobileNav.classList.toggle("is-active");
-      navItems.forEach((item, index) => {
+      mobileNavItem.forEach((item, index) => {
         const order = index + 1;
         const delay = order * 200;
         setTimeout(() => {
           item.classList.toggle("is-order");
         }, delay);
       });
+      const mobileNavIsActive = mobileNav.classList.contains("is-active")!;
+      const hamburgerOpen = document.getElementById("hamburger-open")!;
+      const hamburgerClose = document.getElementById("hamburger-close")!;
+      if (mobileNavIsActive === false) {
+        hamburgerOpen.classList.add("is-visible");
+        hamburgerClose.classList.remove("is-visible");
+      } else {
+        hamburgerOpen.classList.remove("is-visible");
+        hamburgerClose.classList.add("is-visible");
+      }
     });
   }, []);
   return (
@@ -47,7 +57,14 @@ export const Header = () => {
           </div>
           <div className={"c-header-nav-mobile"}>
             <button id={"hamburger-button"} className={"c-hamburger-button"}>
-              <i className={"ci-menu_alt_01"}></i>
+              <i
+                id={"hamburger-open"}
+                className={"c-hamburger-button-icon is-visible ci-menu_alt_01"}
+              ></i>
+              <i
+                id={"hamburger-close"}
+                className={"c-hamburger-button-icon ci-close_big"}
+              ></i>
             </button>
             <ul id={"mobile-nav"} className={"c-mobile-nav"}>
               <li className={"c-mobile-nav-item"}>

@@ -1,11 +1,11 @@
 import React from "react";
-import { Helmet } from "../components/helmet";
-import { FirstView } from "../components/top/first-view";
-import { Section } from "../components/section";
-import { Layout } from "../components/layout";
-import { PostCard } from "../components/post-card";
-import { MediaCard } from "../components/media-card";
-import { LinkButton } from "../components/link-button";
+import { Helmet } from "../components/Helmet";
+import { FirstView } from "../components/top/FirstView";
+import { Section } from "../components/Section";
+import { Layout } from "../components/Layout";
+import { PostCard } from "../components/PostCard";
+import { MediaCard } from "../components/MediaCard";
+import { LinkButton } from "../components/LinkButton";
 import { Swiper, SwiperSlide } from "swiper/react";
 type Props = {
   intro: any;
@@ -17,6 +17,7 @@ export default function Home({ blogs, works, intro }: Props) {
   const description = "こんにちは!これは説明文です!";
   return (
     <Layout>
+      <FirstView />
       <Helmet title={title} desc={description} image={undefined} />
       <Section title={"Introduction"} caption={undefined} desc={undefined}>
         {intro.map((intro: any) => (
@@ -29,38 +30,40 @@ export default function Home({ blogs, works, intro }: Props) {
           </div>
         ))}
       </Section>
-      <Section title={"Works"} caption={undefined} desc={undefined}>
-        <Swiper
-          className={"l-grid-full"}
-          pagination={{ clickable: true }}
-          onSwiper={(swiper) => console.log(swiper)}
-          onSlideChange={() => console.log("slide change")}
-          breakpoints={{
-            0: {
-              spaceBetween: 20,
-              slidesPerView: 1.33333,
-            },
-            576: {
-              spaceBetween: 30,
-              slidesPerView: 2,
-            },
-            768: {
-              spaceBetween: 40,
-              slidesPerView: 3,
-            },
-            992: {
-              spaceBetween: 40,
-              slidesPerView: 4,
-            },
-          }}
-        >
-          {works.slice(-10).map((work: any) => (
-            <SwiperSlide key={work.id} className={""}>
-              <MediaCard title={work.title} slug={`/work/${work.id}`} />
-            </SwiperSlide>
-          ))}
-        </Swiper>
-      </Section>
+      <div className={"l-hidden"}>
+        <Section title={"Works"} caption={undefined} desc={undefined}>
+          <Swiper
+            className={"l-grid-full"}
+            pagination={{ clickable: true }}
+            onSwiper={(swiper) => console.log(swiper)}
+            onSlideChange={() => console.log("slide change")}
+            breakpoints={{
+              0: {
+                spaceBetween: 20,
+                slidesPerView: 1.33333,
+              },
+              576: {
+                spaceBetween: 30,
+                slidesPerView: 2,
+              },
+              768: {
+                spaceBetween: 40,
+                slidesPerView: 3,
+              },
+              992: {
+                spaceBetween: 40,
+                slidesPerView: 4,
+              },
+            }}
+          >
+            {works.slice(-10).map((work: any) => (
+              <SwiperSlide key={work.id} className={""}>
+                <MediaCard title={work.title} slug={`/work/${work.id}`} />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </Section>
+      </div>
       <Section title={"Blog"} caption={undefined} desc={undefined}>
         <div className={"l-grid-full l-grid"}>
           {blogs.slice(-4).map((blog: any) => (

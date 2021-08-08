@@ -1,12 +1,12 @@
 import React from "react";
-import { Section } from "../components/section";
-import { Layout } from "../components/layout";
-import { PostCard } from "../components/post-card";
-import { LinkButton } from "../components/link-button";
+import { Section } from "../components/Section";
+import { Layout } from "../components/Layout";
+import { PostCard } from "../components/PostCard";
+import { LinkButton } from "../components/LinkButton";
 type Props = {
   blogs: any;
 };
-export default function Home({ blogs }: Props) {
+export default function Blog({ blogs }: Props) {
   return (
     <Layout>
       <Section title={"Blog"} caption={""} desc={undefined}>
