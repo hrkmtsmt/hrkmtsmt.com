@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import React, { useEffect } from "react";
 export const Loader = () => {
   useEffect(() => {
     const loader = document.getElementById("loader")!;
