@@ -16,17 +16,19 @@
   font-display: block;
 }
 :root {
-  --background-color: #f7faff;
+  --max-width: 1280px;
+  --sans-serif: "QualionRound", "QualionRound-Regular", "Helvetica Neue", Arial,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --monospace: "Courier", "游ゴシック体", YuGothic, "游ゴシック Medium",
+    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+}
+:root {
   --base-color: #ffffff;
+  --background-color: #f7faff;
   --primary-color: #2f76e6;
   --primary-color-light: #d1e2ff;
   --secondary-color: #ce127f;
   --secondary-color-light: #ffccea;
-  --gradation-color: linear-gradient(
-    160deg,
-    rgba(226, 237, 247, 1) 0%,
-    rgba(244, 247, 250, 1) 100%
-  );
   --font-color: #202020;
   --font-color-sub: #808080;
   --glass-base: rgba(255, 255, 255, 0.6);
@@ -35,34 +37,23 @@
   --color-gray: #eeeeee;
   --color-light-pink: #ffa1bc;
   --color-pink: #ff2266;
-  --max-width: 1080px;
-  --shadow-color-hover: drop-shadow(0 0 20px rgba(47, 118, 230, 0.1));
-  --sans-serif: "QualionRound", "QualionRound-Regular", "Helvetica Neue", Arial,
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  --monospace: "Courier", "游ゴシック体", YuGothic, "游ゴシック Medium",
-    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  --shadow-color-hover: drop-shadow(0 0 20px rgba(47, 118, 230, 0.2));
 }
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background-color: #202020;
-    --base-color: #111111;
-    --primary-color: #3477eb;
-    --primary-color-light: #273957;
-    --gradation-color: linear-gradient(
-      160deg,
-      rgba(226, 237, 247, 1) 0%,
-      rgba(244, 247, 250, 1) 100%
-    );
-    --font-color: #dddddd;
-    --font-color-sub: #aaaaaa;
-    --color-black: #111111;
-    --color-gray: #404040;
-    --color-light-pink: #4e1021;
-    --color-pink: #ff5b8c;
-    --glass-base: rgba(32, 32, 32, 0.6);
-    --shadow-color-hover: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
-  }
+.is-theme-dark {
+  --base-color: #111111;
+  --background-color: #202020;
+  --primary-color: #3477eb;
+  --primary-color-light: #273957;
+  --font-color: #dddddd;
+  --font-color-sub: #aaaaaa;
+  --color-black: #111111;
+  --color-gray: #404040;
+  --color-light-pink: #4e1021;
+  --color-pink: #ff5b8c;
+  --glass-base: rgba(32, 32, 32, 0.6);
+  --shadow-color-hover: drop-shadow(0 0 20px rgba(0, 0, 0, 0.3));
 }
+
 @mixin selection {
   ::-moz-selection {
     @content;
@@ -77,6 +68,7 @@
 }
 html {
   scroll-behavior: smooth;
+  overflow-y: scroll;
   font-size: 16px;
   line-height: 30px;
 }
@@ -84,10 +76,10 @@ html {
   width: 10px;
 }
 .section::-webkit-scrollbar-track {
-  background: var(--base-color);
+  background: var(--background-color);
 }
 ::-webkit-scrollbar-thumb {
-  background: var(--base-color);
+  background: var(--primary-color);
   border-radius: 10px;
 }
 body {
@@ -250,7 +242,6 @@ select {
   width: 100%;
   height: 80px;
   padding: 0 40px;
-  position: fixed;
   z-index: 999;
   transition: ease-in-out 0.2s;
 
@@ -274,10 +265,6 @@ select {
   .l-header {
     padding: 0 20px;
   }
-}
-.is-scroll {
-  background: var(--background-color);
-  transition: ease-in-out 0.2s;
 }
 /* - Main */
 .l-main {
@@ -363,28 +350,11 @@ select {
     text-decoration: none;
   }
 }
-.c-header-nav-desktop {
-  display: flex;
-  align-items: center;
-
-  > * {
-    margin: 0 20px 0 0;
-
-    &:last-child {
-      margin: 0;
-    }
-  }
-}
-.c-header-nav-mobile {
-  display: none;
-}
 @media screen and (max-width: 768px) {
-  .c-header-nav-desktop {
-    display: none;
-  }
-  .c-header-nav-mobile {
-    display: flex;
-    align-items: center;
+  .c-header {
+    &-nav {
+      display: none;
+    }
   }
 }
 .c-nav {
@@ -398,6 +368,8 @@ select {
     flex-wrap: wrap;
   }
   &-item {
+    display: flex;
+    align-items: center;
     margin-right: 20px;
 
     &:last-child {
@@ -416,17 +388,27 @@ select {
 .c-hamburger {
   &-button {
     font-size: 24px;
-    height: 30px;
-    color: var(--primary-color);
+    width: 40px;
+    height: 40px;
+    color: var(--base-color);
+    background: var(--primary-color);
+    border-radius: 20px;
     z-index: 999;
-    position: relative;
+    right: calc((100% - var(--max-width)) / 2);
+    position: fixed;
     display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(-60px);
+    transition: ease-in-out 0.2s;
 
+    &.is-scroll {
+      transform: translateY(0);
+      transition: ease-in-out 0.2s;
+    }
     &-icon {
       opacity: 0;
       position: absolute;
-      top: 0;
-      right: 0;
       transition: ease-in-out 0.2s;
       transform: rotateY(180deg);
 
@@ -438,13 +420,32 @@ select {
     }
   }
 }
-.c-mobile-nav {
+@media screen and (max-width: 1370px) {
+  .c-hamburger {
+    &-button {
+      right: 40px;
+    }
+  }
+}
+@media screen and (max-width: 768px) {
+  .c-hamburger {
+    &-button {
+      right: 30px;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .c-hamburger {
+    &-button {
+      right: 20px;
+    }
+  }
+}
+.c-slide-nav {
   position: fixed;
   list-style: none;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 90px 30px 30px;
+  width: 100vw;
+  height: 100vh;
   opacity: 0;
   background: var(--glass-base);
   backdrop-filter: blur(20px);
@@ -453,6 +454,11 @@ select {
   transform: translateX(-100%);
   transition: ease-in-out 0.2s;
 
+  &-inner {
+    max-width: var(--max-width);
+    margin: 0 auto;
+    padding: 120px 0 40px;
+  }
   &-item {
     opacity: 0;
     transform: translateX(-100%);
@@ -461,7 +467,7 @@ select {
     line-height: 60px;
   }
   &-link {
-    font-weight: 400;
+    font-weight: 700;
     text-decoration: none;
     color: var(--primary-color);
   }
@@ -470,6 +476,7 @@ select {
     transform: translateX(0);
     transition: ease-in-out 0.2s;
     overflow: hidden;
+    z-index: 99;
 
     .is-order {
       opacity: 1;
@@ -478,9 +485,14 @@ select {
     }
   }
 }
+@media screen and (max-width: 768px) {
+  .c-slide-nav {
+    padding: 90px 0 30px;
+  }
+}
 @media screen and (max-width: 576px) {
-  .c-mobile-nav {
-    padding: 80px 20px 20px;
+  .c-slide-nav {
+    padding: 80px 0 20px;
   }
 }
 .c-section {
@@ -704,7 +716,6 @@ select {
   }
   &:hover {
     filter: var(--shadow-color-hover);
-    transform: scale(1.02);
     transition: ease-in-out 0.4s;
     overflow: visible;
 
@@ -1000,9 +1011,14 @@ select {
   line-height: 30px;
 }
 .p-first-view {
-  height: 100vh;
+  height: calc(100vh - 80px);
   display: flex;
   align-items: center;
+}
+@media screen and (max-width: 768px) {
+  .p-first-view {
+    height: calc(100vh - 60px);
+  }
 }
 .aaa {
   font-size: 36px;
