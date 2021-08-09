@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 export const LoadingIndicator = () => {
   useEffect(() => {
     const loader = document.getElementById("loader")!;
-    addEventListener("DOMContentLoaded", () => {
+    addEventListener("load", () => {
       loader.classList.add("is-loaded");
     });
   }, []);
