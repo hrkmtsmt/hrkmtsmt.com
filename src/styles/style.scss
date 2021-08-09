@@ -942,6 +942,7 @@ select {
 .c-toggle {
   display: flex;
   justify-content: flex-start;
+  color: var(--primary-color);
   background: var(--primary-color);
   width: 80px;
   height: 40px;
@@ -961,14 +962,36 @@ select {
     height: 30px;
     background: var(--base-color);
     transition: ease-in-out 0.2s;
+    animation: a-sun-moon 1.6s linear infinite alternate;
+  }
+  &-icon {
+    transform: rotateY(0);
+    transition: ease-in-out 0.2s;
   }
   &.is-scroll {
     transform: translateX(-60px);
     transition: ease-in-out 0.2s;
   }
 }
-.is-theme-dark .c-toggle-circle {
-  margin: 0 0 0 40px;
+.is-theme-dark {
+  .c-toggle {
+    &-circle {
+      margin: 0 0 0 40px;
+      transition: ease-in-out 0.2s;
+    }
+    &-icon {
+      transform: rotateY(180deg);
+      transition: ease-in-out 0.2s;
+    }
+  }
+}
+@keyframes a-sun-moon {
+  0% {
+    transform: rotate(10deg);
+  }
+  100% {
+    transform: rotate(-10deg);
+  }
 }
 @media screen and (max-width: 1370px) {
   .c-toggle {
@@ -1045,7 +1068,13 @@ select {
   }
 }
 .aaa {
-  font-size: 36px;
+  font-size: 40px;
+  line-height: 50px;
+  font-weight: 700;
+  color: var(--primary-color);
+}
+.bbb {
+  font-size: 24px;
   line-height: 40px;
   font-weight: 700;
   color: var(--primary-color);

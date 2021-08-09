@@ -1,6 +1,6 @@
 import React from "react";
 import { Helmet } from "../components/helmet";
-import { FirstView } from "../components/top/first-view";
+import { FirstView } from "../components/first-view";
 import { Section } from "../components/section";
 import { Layout } from "../components/layout";
 import { PostCard } from "../components/post-card";

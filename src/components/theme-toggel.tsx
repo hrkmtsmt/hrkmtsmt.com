@@ -33,7 +33,7 @@ export const ThemeToggle = () => {
       onClick={clickThemeToggle}
     >
       <div className={"c-toggle-circle"}>
-        <i className={`ci-${sunMoon()}`}></i>
+        <i className={`c-toggle-icon ci-${sunMoon()}`}></i>
       </div>
     </button>
   );
