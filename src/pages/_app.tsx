@@ -4,11 +4,11 @@ import "../styles/coolicons.css";
 import "../styles/style.scss";
 import "swiper/swiper.scss";
 import { AppProps } from "next/app";
-import { Layout } from "../components/layout";
+import { Loader } from "../components/loader";
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <React.Fragment>
-      <Layout />
+      <Loader />
       <Component {...pageProps} />
     </React.Fragment>
   );
