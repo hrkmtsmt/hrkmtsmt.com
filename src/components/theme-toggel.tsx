@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { setTheme } from "../components/theme";
+import { setTheme } from "./theme";
 export const ThemeToggle = () => {
   const [switchTheme, setSwitchTheme] = useState("dark");
   const clickThemeToggle = () => {
