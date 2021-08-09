@@ -1,5 +1,5 @@
 import React from "react";
-import { Loader } from "./loader";
+import { LoadingIndicator } from "./loading-indicator";
 import { Header } from "./header";
 import { Footer } from "./footer";
 type Props = {
@@ -8,7 +8,7 @@ type Props = {
 export const Layout = (props: Props) => {
   return (
     <React.StrictMode>
-      <Loader />
+      <LoadingIndicator />
       <Header />
       <main className={"l-main"}>{props.children}</main>
       <Footer />

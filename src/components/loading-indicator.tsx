@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-export const Loader = () => {
+export const LoadingIndicator = () => {
   useEffect(() => {
     const loader = document.getElementById("loader")!;
     addEventListener("load", () => {
