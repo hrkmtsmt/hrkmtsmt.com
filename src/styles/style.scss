@@ -27,6 +27,7 @@
   --background-color: #f7faff;
   --primary-color: #2f76e6;
   --primary-color-light: #d1e2ff;
+  --primary-color-dark: #02368a;
   --secondary-color: #ce127f;
   --secondary-color-light: #ffccea;
   --font-color: #202020;
@@ -44,6 +45,7 @@
   --background-color: #202020;
   --primary-color: #3477eb;
   --primary-color-light: #273957;
+  --primary-color-dark: #5a98fc;
   --font-color: #dddddd;
   --font-color-sub: #aaaaaa;
   --color-black: #111111;
@@ -341,17 +343,67 @@ select {
   display: flex;
   align-items: center;
 
-  > * {
-    margin: 0 20px 0 0 !important;
+  &-list {
+    display: flex;
+  }
+  &-item {
+    margin: 0 20px 0 0;
+    line-height: 40px;
+    position: relative;
 
     &:last-child {
       margin: 0;
     }
   }
+  &-link {
+    display: block;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 36px;
+    line-height: 40px;
+    position: relative;
+    transition: ease-in-out 0.2s;
+
+    &::before {
+      content: "";
+      display: block;
+      position: absolute;
+      width: 10px;
+      height: 10px;
+      border-radius: 10px;
+      background: var(--primary-color);
+      bottom: -40px;
+      left: 50%;
+      opacity: 0;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      transition: ease-in-out 0.2s;
+    }
+    &:hover {
+      color: var(--primary-color-dark);
+      transition: ease-in-out 0.2s;
+
+      &::before {
+        background: var(--primary-color-dark);
+        opacity: 1;
+        bottom: -20px;
+        transition: ease-in-out 0.2s;
+      }
+    }
+  }
+
+  > * {
+    margin: 0 20px 0 0 !important;
+
+    &:last-child {
+      margin: 0 !important;
+    }
+  }
 }
 @media screen and (max-width: 768px) {
   .c-header-nav {
-    &-menu {
+    &-list {
       display: none !important;
     }
   }
@@ -561,6 +613,7 @@ select {
   text-decoration: none;
 
   &-link {
+    font-weight: 700;
     text-decoration: none;
     color: var(--primary-color);
     display: block;
@@ -1068,14 +1121,14 @@ select {
   }
 }
 .aaa {
-  font-size: 40px;
-  line-height: 50px;
+  font-size: 36px;
+  line-height: 40px;
   font-weight: 700;
   color: var(--primary-color);
 }
 .bbb {
   font-size: 24px;
-  line-height: 40px;
+  line-height: 30px;
   font-weight: 700;
   color: var(--primary-color);
 }

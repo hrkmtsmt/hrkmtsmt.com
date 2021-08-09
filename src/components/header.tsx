@@ -48,13 +48,22 @@ export const Header = () => {
               <a className={"c-logo"}>hrkmtsmt</a>
             </Link>
           </h1>
-          <ul className={"c-header-nav-menu c-nav-horizonal"}>
-            <li className={"c-nav-item"}>
-              <Link href={"sdf"}>
-                <a className={"c-nav-link"}>aaa</a>
+          <ul className={"c-header-nav-list"}>
+            <li className={"c-header-nav-item"}>
+              <Link href={"/works"}>
+                <a className={"c-header-nav-link"}>Works</a>
               </Link>
             </li>
-            <li className={"c-nav-item"}></li>
+            <li className={"c-header-nav-item"}>
+              <Link href={"/blog"}>
+                <a className={"c-header-nav-link"}>Blog</a>
+              </Link>
+            </li>
+            <li className={"c-header-nav-item"}>
+              <Link href={"/contact"}>
+                <a className={"c-header-nav-link"}>Contact</a>
+              </Link>
+            </li>
           </ul>
         </nav>
         <ThemeToggle />
