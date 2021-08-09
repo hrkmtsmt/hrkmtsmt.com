@@ -1,4 +1,5 @@
 import React from "react";
+import { Loader } from "../components/loader";
 import { Header } from "./header";
 import { Footer } from "./footer";
 type Props = {
@@ -7,6 +8,7 @@ type Props = {
 export const Layout = (props: Props) => {
   return (
     <React.StrictMode>
+      <Loader />
       <Header />
       <main className={"l-main"}>{props.children}</main>
       <Footer />
