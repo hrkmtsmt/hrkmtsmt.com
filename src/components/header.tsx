@@ -1,18 +1,22 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { LinkButton } from "./link-button";
+import { ThemeToggle } from "../pages/theme-toggel";
 export const Header = () => {
   useEffect(() => {
     const slideNav = document.getElementById("slide-nav")!;
     const hamburgerButton = document.getElementById("hamburger-button")!;
+    const themeToggle = document.getElementById("theme-toggle")!;
     const slideNavItem = document.querySelectorAll(".c-slide-nav-item")!;
     const mediaQuery = matchMedia("(max-width: 768px)").matches;
     addEventListener("scroll", function () {
       const scroll = window.pageYOffset;
       if (mediaQuery || scroll > 160) {
         hamburgerButton.classList.add("is-scroll")!;
+        themeToggle.classList.add("is-scroll")!;
       } else {
         hamburgerButton.classList.remove("is-scroll")!;
+        themeToggle.classList.remove("is-scroll")!;
       }
     });
     hamburgerButton.addEventListener("click", () => {
@@ -39,23 +43,22 @@ export const Header = () => {
   return (
     <header id={"header"} className={"l-header"}>
       <div className={"l-header-inner"}>
-        <h1 id={"header-logo"} className={"c-logo"}>
-          <Link href={"/"}>
-            <a className={"c-logo"}>hrkmtsmt</a>
-          </Link>
-        </h1>
         <nav className={"c-header-nav"}>
-          <ul className={"c-nav-horizonal"}>
+          <h1 id={"header-logo"} className={"c-logo"}>
+            <Link href={"/"}>
+              <a className={"c-logo"}>hrkmtsmt</a>
+            </Link>
+          </h1>
+          <ul className={"c-header-nav-menu c-nav-horizonal"}>
             <li className={"c-nav-item"}>
               <Link href={"sdf"}>
                 <a className={"c-nav-link"}>aaa</a>
               </Link>
             </li>
-            <li className={"c-nav-item"}>
-              <LinkButton link={"/"} cta={"a"} />
-            </li>
+            <li className={"c-nav-item"}></li>
           </ul>
         </nav>
+        <ThemeToggle />
         <nav id={"slide-nav"} className={"c-slide-nav"}>
           <ul className={"c-slide-nav-inner"}>
             <li className={"c-slide-nav-item"}>
@@ -68,11 +71,7 @@ export const Header = () => {
                 <a className={"c-slide-nav-link"}>aaa</a>
               </Link>
             </li>
-            <li className={"c-slide-nav-item"}>
-              <Link href={"sdf"}>
-                <a className={"c-slide-nav-link"}>aaa</a>
-              </Link>
-            </li>
+            <li className={"c-slide-nav-item"}></li>
           </ul>
         </nav>
         <button id={"hamburger-button"} className={"c-hamburger-button"}>
