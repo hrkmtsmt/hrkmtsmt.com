@@ -1,14 +1,14 @@
 import React, { useEffect } from "react";
-import "../styles/reset.css";
-import "../styles/coolicons.css";
-import "../styles/style.scss";
-import "swiper/swiper.scss";
 import { AppProps } from "next/app";
-import { LoadingIndicator } from "../components/loading-indicator";
-import { keepTheme } from "../components/theme";
+import { LoadingIndicator } from "../../src/components/loading-indicator";
+import { discriminationTheme } from "../../src/utils/theme";
+import "swiper/swiper.scss";
+import "../../src/styles/reset.css";
+import "../../src/styles/coolicons.css";
+import "../../src/styles/style.scss";
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
-    keepTheme();
+    discriminationTheme();
   }, []);
   return (
     <React.Fragment>

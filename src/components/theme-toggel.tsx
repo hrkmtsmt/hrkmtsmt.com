@@ -1,39 +1,25 @@
 import React, { useState, useEffect } from "react";
-import { setTheme } from "./theme";
+import { applyTheme } from "../../src/utils/theme";
 export const ThemeToggle = () => {
-  const [switchTheme, setSwitchTheme] = useState("dark");
-  const clickThemeToggle = () => {
-    if (localStorage.getItem("theme") === "is-theme-dark") {
-      setTheme("is-theme-light");
-      setSwitchTheme("light");
+  const [dark, setDark] = useState("is-dark");
+  const [sunMoon, setSunMoon] = useState("moon");
+  const onClickToggle = () => {
+    const elementHasIsDark = document.documentElement.classList.contains("is-theme-dark");
+    if (elementHasIsDark === false) {
+      applyTheme("is-theme-dark");
+      setDark("is-dark");
+      setSunMoon("moon");
     } else {
-      setTheme("is-theme-dark");
-      setSwitchTheme("dark");
+      applyTheme("");
+      setDark("");
+      setSunMoon("sun");
     }
-  };
-  useEffect(() => {
-    let theme = localStorage.getItem("theme");
-    if (localStorage.getItem("theme") === "is-theme-dark") {
-      setSwitchTheme("dark");
-    } else if (localStorage.getItem("theme") === "is-theme-light") {
-      setSwitchTheme("light");
-    }
-  }, []);
-  const sunMoon = () => {
-    if (switchTheme === "light") {
-      return "sun";
-    } else {
-      return "moon";
-    }
+    console.log("seikou");
   };
   return (
-    <button
-      id={"theme-toggle"}
-      className={"c-toggle"}
-      onClick={clickThemeToggle}
-    >
+    <button onClick={() => onClickToggle()} id={"theme-toggle"} className={`c-toggle ${dark}`}>
       <div className={"c-toggle-circle"}>
-        <i className={`c-toggle-icon ci-${sunMoon()}`}></i>
+        <i className={`c-toggle-icon ci-${sunMoon}`}></i>
       </div>
     </button>
   );

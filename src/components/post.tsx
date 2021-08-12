@@ -2,8 +2,8 @@ import React from "react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
-import { Helmet } from "./helmet";
-import { StickyNav } from "./sticky-nav";
+import { Helmet } from "../../src/components/helmet";
+import { StickyNav } from "../../src/components/sticky-nav";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 type Props = {

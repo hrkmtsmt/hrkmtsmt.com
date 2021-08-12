@@ -17,10 +17,8 @@
 }
 :root {
   --max-width: 1280px;
-  --sans-serif: "QualionRound", "QualionRound-Regular", "Helvetica Neue", Arial,
-    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  --monospace: "Courier", "游ゴシック体", YuGothic, "游ゴシック Medium",
-    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  --sans-serif: "QualionRound", "QualionRound-Regular", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --monospace: "Courier", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
 }
 :root {
   --base-color: #ffffff;
@@ -1025,14 +1023,12 @@ select {
     transform: translateX(-60px);
     transition: ease-in-out 0.2s;
   }
-}
-.is-theme-dark {
-  .c-toggle {
-    &-circle {
+  &.is-dark {
+    .c-toggle-circle {
       margin: 0 0 0 40px;
       transition: ease-in-out 0.2s;
     }
-    &-icon {
+    .c-toggle-icon {
       transform: rotateY(180deg);
       transition: ease-in-out 0.2s;
     }

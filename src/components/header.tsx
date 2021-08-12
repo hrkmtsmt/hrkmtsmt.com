@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { ThemeToggle } from "./theme-toggel";
+import { ThemeToggle } from "../../src/components/theme-toggel";
 export const Header = () => {
   useEffect(() => {
     const slideNav = document.getElementById("slide-nav")!;

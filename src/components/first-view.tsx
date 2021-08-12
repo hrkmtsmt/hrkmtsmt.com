@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkButton } from "./link-button";
+import { LinkButton } from "../../src/components/link-button";
 export const FirstView = () => {
   return (
     <section className={"l-grid l-inner"}>
