@@ -8,5 +8,4 @@ export const discriminationTheme = () => {
   } else {
     applyTheme("");
   }
-  console.log("AAAAA");
 };

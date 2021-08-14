@@ -290,7 +290,7 @@ select {
   width: 100%;
   margin: 0 auto;
 }
-.l-hidden {
+.l-overflow-hidden {
   overflow: hidden;
 }
 /* - Footer */
@@ -442,7 +442,7 @@ select {
   background: var(--primary-color);
   border-radius: 20px;
   z-index: 999;
-  right: calc((100% - var(--max-width)) / 2);
+
   position: fixed;
   display: flex;
   justify-content: center;
@@ -465,21 +465,6 @@ select {
       transition: ease-in-out 0.2s;
       transform: rotateY(0);
     }
-  }
-}
-@media screen and (max-width: 1370px) {
-  .c-hamburger-button {
-    right: 40px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .c-hamburger-button {
-    right: 30px;
-  }
-}
-@media screen and (max-width: 576px) {
-  .c-hamburger-button {
-    right: 20px;
   }
 }
 .c-slide-nav {
@@ -1019,10 +1004,6 @@ select {
     transform: rotateY(0);
     transition: ease-in-out 0.2s;
   }
-  &.is-scroll {
-    transform: translateX(-60px);
-    transition: ease-in-out 0.2s;
-  }
   &.is-dark {
     .c-toggle-circle {
       margin: 0 0 0 40px;
@@ -1266,16 +1247,31 @@ select {
 }
 @media screen and (max-width: 768px) {
 }
-
-/* Unity */
-.swiper-container {
-  overflow: visible !important;
+/* Animation */
+@mixin animation($name, $delay: 0.4s, $duration: 0.6s, $timing-function: ease-in-out, $iteration-count: 1, $direction: normal, $fill-mode: forwards) {
+  animation: {
+    name: $name;
+    delay: $delay;
+    duration: $duration;
+    timing-function: $timing-function;
+    direction: $direction;
+    fill-mode: $fill-mode;
+  }
 }
-.swiper-pagination-bullet {
-  background: var(--primary-color) !important;
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
+.a-target {
+  position: relative;
+  opacity: 0;
 }
-.swiper-pagination-bullet-active {
-  background: var(--primary-color) !important;
+.a-fade-in {
+  @include animation($name: a-fade-in);
+}
+@keyframes a-fade-in {
+  0% {
+    opacity: 0;
+    transform: translateY(80px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0px);
+  }
 }

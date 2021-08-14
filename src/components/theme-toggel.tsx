@@ -14,7 +14,6 @@ export const ThemeToggle = () => {
       setDark("");
       setSunMoon("sun");
     }
-    console.log("seikou");
   };
   return (
     <button onClick={() => onClickToggle()} id={"theme-toggle"} className={`c-toggle ${dark}`}>

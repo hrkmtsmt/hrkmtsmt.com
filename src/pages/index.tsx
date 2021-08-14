@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Helmet } from "../../src/components/helmet";
 import { FirstView } from "../../src/components/first-view";
@@ -16,11 +16,11 @@ export default function Home({ blogs, works, intro }: Props) {
   const title = "hrkmtsmt";
   const description = "こんにちは!これは説明文です!";
   return (
-    <div className={"l-hidden"}>
+    <div className={"l-overflow-hidden"}>
       <Layout>
-        <FirstView />
         <Helmet title={title} desc={description} image={undefined} />
-        <Section title={"Introduction"} caption={undefined} desc={undefined}>
+        <FirstView />
+        <Section id={"introduction"} title={"Introduction"} caption={undefined} desc={undefined} animation={true}>
           {intro.map((intro: any) => (
             <div key={intro.title} className={"l-grid-medium"}>
               <div className={"c-feature-box"}>
@@ -31,7 +31,7 @@ export default function Home({ blogs, works, intro }: Props) {
             </div>
           ))}
         </Section>
-        <Section title={"Works"} caption={undefined} desc={undefined}>
+        <Section id={"works"} title={"Works"} caption={undefined} desc={undefined} animation={true}>
           <Swiper
             className={"l-grid-full"}
             pagination={{ clickable: true }}
@@ -63,15 +63,11 @@ export default function Home({ blogs, works, intro }: Props) {
             ))}
           </Swiper>
         </Section>
-        <Section title={"Blog"} caption={undefined} desc={undefined}>
+        <Section id={"blog"} title={"Blog"} caption={undefined} desc={undefined} animation={true}>
           <div className={"l-grid-full l-grid"}>
             {blogs.slice(-4).map((blog: any) => (
               <div key={blog.id} className={"l-grid-small"}>
-                <PostCard
-                  title={blog.title}
-                  category={blog.category.category}
-                  slug={`/blog/${blog.id}`}
-                />
+                <PostCard title={blog.title} category={blog.category.category} slug={`/blog/${blog.id}`} />
               </div>
             ))}
           </div>
@@ -88,11 +84,7 @@ const key: {} = {
   headers: { "X-API-KEY": process.env.API_KEY },
 };
 export const getStaticProps = async () => {
-  const res = [
-    await fetch(`${endpoint}work`, key),
-    await fetch(`${endpoint}blog`, key),
-    await fetch(`${endpoint}feature/intro`, key),
-  ];
+  const res = [await fetch(`${endpoint}work`, key), await fetch(`${endpoint}blog`, key), await fetch(`${endpoint}feature/intro`, key)];
   const data = [await res[0].json(), await res[1].json(), await res[2].json()];
   return {
     props: {

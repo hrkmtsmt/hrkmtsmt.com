@@ -5,17 +5,14 @@ export const Header = () => {
   useEffect(() => {
     const slideNav = document.getElementById("slide-nav")!;
     const hamburgerButton = document.getElementById("hamburger-button")!;
-    const themeToggle = document.getElementById("theme-toggle")!;
     const slideNavItem = document.querySelectorAll(".c-slide-nav-item")!;
     const mediaQuery = matchMedia("(max-width: 768px)").matches;
     addEventListener("scroll", function () {
       const scroll = window.pageYOffset;
-      if (mediaQuery || scroll > 160) {
+      if (scroll > 160) {
         hamburgerButton.classList.add("is-scroll")!;
-        themeToggle.classList.add("is-scroll")!;
       } else {
         hamburgerButton.classList.remove("is-scroll")!;
-        themeToggle.classList.remove("is-scroll")!;
       }
     });
     hamburgerButton.addEventListener("click", () => {
@@ -83,14 +80,8 @@ export const Header = () => {
           </ul>
         </nav>
         <button id={"hamburger-button"} className={"c-hamburger-button"}>
-          <i
-            id={"hamburger-open"}
-            className={"c-hamburger-button-icon is-visible ci-menu_alt_01"}
-          ></i>
-          <i
-            id={"hamburger-close"}
-            className={"c-hamburger-button-icon ci-close_big"}
-          ></i>
+          <i id={"hamburger-open"} className={"c-hamburger-button-icon is-visible ci-menu_alt_01"}></i>
+          <i id={"hamburger-close"} className={"c-hamburger-button-icon ci-close_big"}></i>
         </button>
       </div>
     </header>

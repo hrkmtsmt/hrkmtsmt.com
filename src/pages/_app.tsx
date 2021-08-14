@@ -6,6 +6,7 @@ import "swiper/swiper.scss";
 import "../../src/styles/reset.css";
 import "../../src/styles/coolicons.css";
 import "../../src/styles/style.scss";
+import "../../src/styles/package.scss";
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
     discriminationTheme();
