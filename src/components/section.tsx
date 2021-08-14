@@ -5,7 +5,6 @@ type Props = {
   title: string | undefined;
   caption: string | undefined;
   desc: string | undefined;
-  animation: boolean;
   children?: React.ReactNode;
 };
 export const Section = (props: Props) => {

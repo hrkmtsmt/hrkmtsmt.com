@@ -20,7 +20,7 @@ export default function Home({ blogs, works, intro }: Props) {
       <Layout>
         <Helmet title={title} desc={description} image={undefined} />
         <FirstView />
-        <Section id={"introduction"} title={"Introduction"} caption={undefined} desc={undefined} animation={true}>
+        <Section id={"introduction"} title={"Introduction"} caption={undefined} desc={undefined}>
           {intro.map((intro: any) => (
             <div key={intro.title} className={"l-grid-medium"}>
               <div className={"c-feature-box"}>
@@ -31,7 +31,7 @@ export default function Home({ blogs, works, intro }: Props) {
             </div>
           ))}
         </Section>
-        <Section id={"works"} title={"Works"} caption={undefined} desc={undefined} animation={true}>
+        <Section id={"works"} title={"Works"} caption={undefined} desc={undefined}>
           <Swiper
             className={"l-grid-full"}
             pagination={{ clickable: true }}
@@ -63,7 +63,7 @@ export default function Home({ blogs, works, intro }: Props) {
             ))}
           </Swiper>
         </Section>
-        <Section id={"blog"} title={"Blog"} caption={undefined} desc={undefined} animation={true}>
+        <Section id={"blog"} title={"Blog"} caption={undefined} desc={undefined}>
           <div className={"l-grid-full l-grid"}>
             {blogs.slice(-4).map((blog: any) => (
               <div key={blog.id} className={"l-grid-small"}>
