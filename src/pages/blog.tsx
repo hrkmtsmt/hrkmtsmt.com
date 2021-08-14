@@ -9,15 +9,11 @@ type Props = {
 export default function Blog({ blogs }: Props) {
   return (
     <Layout>
-      <Section title={"Blog"} caption={""} desc={undefined}>
+      <Section id={"blog"} title={"Blog"} caption={""} desc={undefined}>
         <div className={"l-grid-full l-grid"}>
           {blogs.map((blog: any) => (
             <div key={blog.id} className={"l-grid-small"}>
-              <PostCard
-                title={blog.title}
-                category={blog.category.category}
-                slug={`/blog/${blog.id}`}
-              />
+              <PostCard title={blog.title} category={blog.category.category} slug={`/blog/${blog.id}`} />
             </div>
           ))}
         </div>
