@@ -6,10 +6,12 @@ type Props = {
 };
 export const Layout = (props: Props) => {
   return (
-    <React.StrictMode>
-      <Header />
-      <main className={"l-main"}>{props.children}</main>
-      <Footer />
-    </React.StrictMode>
+    <React.Fragment>
+      <div className={"l-overflow-hidden"}>
+        <Header />
+        <main className={"l-main"}>{props.children}</main>
+        <Footer />
+      </div>
+    </React.Fragment>
   );
 };

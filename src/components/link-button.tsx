@@ -7,7 +7,7 @@ type Props = {
 export const LinkButton = (props: Props) => {
   return (
     <Link href={props.link}>
-      <a className="c-button">{props.cta}</a>
+      <a className="c-link-button">{props.cta}</a>
     </Link>
   );
 };

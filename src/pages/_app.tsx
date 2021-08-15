@@ -13,8 +13,8 @@ const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   }, []);
   return (
     <React.Fragment>
-      <LoadingIndicator />
       <Component {...pageProps} />
+      <LoadingIndicator />
     </React.Fragment>
   );
 };

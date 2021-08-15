@@ -16,10 +16,7 @@ type Props = {
   dir: string | undefined;
 };
 export const Post = (props: Props) => {
-  const date: string = dayjs
-    .utc(props.date)
-    .tz("Asia/Tokyo")
-    .format("YYYY/MM/DD");
+  const date: string = dayjs.utc(props.date).tz("Asia/Tokyo").format("YYYY/MM/DD");
   return (
     <React.Fragment>
       <Helmet title={props.title} desc={props.desc} image={props.image} />
