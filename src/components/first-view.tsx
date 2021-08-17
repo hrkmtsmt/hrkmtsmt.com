@@ -1,8 +1,14 @@
 import React from "react";
 import { LinkButton } from "../../src/components/link-button";
+import { Section } from "./section";
 export const FirstView = () => {
   return (
-    <section className={"l-grid l-inner"}>
+    <Section
+      id={"first-view"}
+      title={undefined}
+      caption={undefined}
+      desc={undefined}
+    >
       <div className={"l-grid-full p-first-view"}>
         <div className={"l-grid"}>
           <div className={"l-grid-large"}>
@@ -13,7 +19,7 @@ export const FirstView = () => {
               WordPress, PHP, Adobe XD, Illustrator, Photoshop, something…
             </div>
           </div>
-          <div className={"l-grid-large aaa"}>😀😃😄😁😆😅😂🤣🥲😊😇</div>
+          <div className={"l-grid-large aaa"}></div>
           <div className={"l-grid-full"}>
             <LinkButton
               link={"https://github.com/hrkmtsmt"}
@@ -22,6 +28,6 @@ export const FirstView = () => {
           </div>
         </div>
       </div>
-    </section>
+    </Section>
   );
 };

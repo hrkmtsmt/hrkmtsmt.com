@@ -17,8 +17,10 @@
 }
 :root {
   --max-width: 1280px;
-  --sans-serif: "QualionRound", "QualionRound-Regular", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  --monospace: "Courier", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  --sans-serif: "QualionRound", "QualionRound-Regular", "Helvetica Neue", Arial,
+    "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
+  --monospace: "Courier", "游ゴシック体", YuGothic, "游ゴシック Medium",
+    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
 }
 :root,
 .is-theme-light {
@@ -168,6 +170,8 @@ select {
   &-sidebar {
     display: flex;
     align-items: flex-start;
+    flex-direction: column;
+    gap: 40px;
   }
   &-small {
     grid-column: span 3;
@@ -238,7 +242,7 @@ select {
 /* - Main */
 .l-main {
   width: 100%;
-  padding: 160px 40px;
+  padding: 0 40px;
   position: relative;
   display: grid;
   grid-gap: 160px;
@@ -246,13 +250,13 @@ select {
 }
 @media screen and (max-width: 768px) {
   .l-main {
-    padding: 80px 30px;
+    padding: 0 30px;
     grid-gap: 80px;
   }
 }
 @media screen and (max-width: 576px) {
   .l-main {
-    padding: 80px 20px;
+    padding: 0 20px;
   }
 }
 .l-inner {
@@ -268,6 +272,7 @@ select {
   width: 100%;
   height: 80px;
   padding: 0 40px;
+  margin: 0 0 160px;
   z-index: 999;
   transition: ease-in-out 0.2s;
 
@@ -284,6 +289,7 @@ select {
 @media screen and (max-width: 768px) {
   .l-header {
     padding: 0 30px;
+    margin: 0 0 80px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -297,6 +303,7 @@ select {
   background: var(--color-black);
   color: var(--color-white);
   padding: 80px 40px;
+  margin: 160px 0 0;
   z-index: -999;
 
   a {
@@ -309,13 +316,11 @@ select {
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
-    align-items: center;
     gap: 40px;
   }
   &-nav {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
 
     > * {
@@ -330,6 +335,7 @@ select {
 @media screen and (max-width: 768px) {
   .l-footer {
     padding: 80px 30px;
+    margin: 80px 0 0;
 
     &-inner {
       gap: 30px;
@@ -564,7 +570,6 @@ select {
   &-emoji {
     line-height: 60px;
     font-size: 48px;
-    text-align: center;
     margin: 0 auto 20px;
   }
   &-title {
@@ -900,11 +905,78 @@ select {
     transition: ease-in-out 0.1s;
   }
 }
+.c-more-button {
+  display: inline-block;
+  overflow: hidden;
+
+  &-container {
+    display: flex;
+    position: relative;
+    height: 40px;
+    border-radius: 40px;
+    overflow: hidden;
+
+    &::before {
+      width: 100%;
+      height: 100%;
+      content: "";
+      position: absolute;
+      left: 0;
+      border-radius: 40px;
+      background: var(--primary-color);
+      z-index: -1;
+      transform: translateX(-100%);
+      -webkit-transform: translateX(-100%);
+      transition: ease-in-out 0.2s;
+    }
+    &:hover {
+      .c-more-button-cta {
+        color: var(--base-color);
+        transition: ease-in-out 0.2s;
+        padding: 0 24px 0 10px;
+      }
+      .c-more-button-arrow {
+        transform: translateX(6px);
+        -webkit-transform: translateX(6px);
+        transition: ease-in-out 0.2s;
+      }
+    }
+    &:hover::before {
+      transform: translateX(0);
+      -webkit-transform: translateX(0);
+      transition: ease-in-out 0.2s;
+    }
+  }
+  &-arrow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 40px;
+    font-size: 24px;
+    color: var(--base-color);
+    background: var(--primary-color);
+    transition: ease-in-out 0.2s;
+  }
+  &-cta {
+    line-height: 40px;
+    font-weight: 700;
+    color: var(--primary-color);
+    padding: 0 20px 0 10px;
+    transition: ease-in-out 0.2s;
+  }
+  &:active {
+    transform: scale(0.98);
+    transition: ease-in-out 0.1s;
+  }
+}
 .c-like-button {
   width: 40px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  overflow: hidden;
 
   &-heart {
     font-size: 20px;
@@ -1143,16 +1215,8 @@ select {
   line-height: 30px;
 }
 .p-first-view {
-  height: calc(100vh - 80px);
   display: flex;
   align-items: center;
-  margin: -160px 0 0;
-}
-@media screen and (max-width: 768px) {
-  .p-first-view {
-    height: calc(100vh - 60px);
-    margin: -80px 0 0;
-  }
 }
 .aaa {
   font-size: 36px;
@@ -1171,10 +1235,10 @@ select {
   flex-direction: column;
 
   > * {
-    margin: 0 auto 20px;
+    margin: 0 0 20px;
 
     &:last-child {
-      margin: 0 auto;
+      margin: 0;
     }
   }
   &-caption {
@@ -1202,23 +1266,17 @@ select {
     font-size: 32px;
     line-height: 40px;
     font-weight: 700;
-    margin: 0 auto;
     overflow-wrap: break-word;
   }
   &-category {
     font-weight: 700;
     color: var(--primary-color);
-    margin: 0 auto;
   }
   &-date {
     display: inline-block;
-    margin: 0 auto;
   }
   &-body {
     width: 100%;
-    background: var(--base-color);
-    border-radius: 10px;
-    padding: 40px;
     color: var(--font-color);
     line-height: 30px;
 
@@ -1269,6 +1327,7 @@ select {
         background: var(--color-gray);
         font-family: var(--monospace);
         border-radius: 4px;
+        margin: 0;
         padding: 2px 4px;
       }
     }
@@ -1297,25 +1356,6 @@ select {
     }
   }
 }
-@media screen and (max-width: 992px) {
-}
-@media screen and (max-width: 768px) {
-  .p-article {
-    &-body {
-      padding: 40px 30px;
-    }
-  }
-}
-@media screen and (max-width: 576px) {
-  .p-article {
-    &-body {
-      width: calc(100% + 40px);
-      padding: 40px 20px;
-      margin: 0 -20px;
-      border-radius: 0;
-    }
-  }
-}
 .p-index {
   width: 100%;
   background: var(--base-color);
@@ -1327,7 +1367,15 @@ select {
 @media screen and (max-width: 768px) {
 }
 /* Animation */
-@mixin animation($name, $delay: 0.4s, $duration: 0.6s, $timing-function: ease-in-out, $iteration-count: 1, $direction: normal, $fill-mode: forwards) {
+@mixin animation(
+  $name,
+  $delay: 0.4s,
+  $duration: 0.6s,
+  $timing-function: ease-in-out,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: forwards
+) {
   animation: {
     name: $name;
     delay: $delay;
