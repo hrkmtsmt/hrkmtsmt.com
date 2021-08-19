@@ -847,7 +847,6 @@ select {
   padding: 0 0 150%;
   background: var(--primary-color-light);
   border-radius: 20px;
-  overflow: hidden;
   transition: ease-in-out 0.2s;
   z-index: 99;
 
@@ -858,13 +857,11 @@ select {
   &:hover {
     filter: var(--shadow-color-hover);
     transition: ease-in-out 0.4s;
-    overflow: visible;
   }
   &-image {
     width: 100%;
-    padding: 0 0 200%;
-    aspect-ratio: 2 / 1;
-    background: var(--primary-color-light);
+    padding: 0 0 150%;
+    aspect-ratio: 2 / 3;
     background: var(--primary-color-light);
     border-radius: 20px;
     transition: ease-in-out 0.4s;
@@ -872,63 +869,6 @@ select {
     img {
       object-fit: cover;
       width: 100%;
-    }
-  }
-  &-body {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    opacity: 0;
-    transition: ease-in-out 0.4s;
-  }
-  &-title {
-    font-size: 16px;
-    line-height: 30px;
-    font-weight: 700;
-    color: var(--font-color);
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
-  }
-  &-button {
-    position: relative;
-    display: inline-block;
-    padding: 0 20px;
-    line-height: 40px;
-    font-weight: 700;
-    border-radius: 20px;
-    text-align: center;
-    text-decoration: none;
-    background: none;
-    color: var(--primary-color);
-    background: var(--primary-color-light);
-    overflow: hidden;
-    z-index: 1;
-    transition: ease-in-out 0.2s;
-
-    &:hover {
-      color: var(--base-color);
-      background: var(--primary-color);
-      transition: ease-in-out 0.2s;
-    }
-    &::before {
-      content: "";
-      position: absolute;
-      width: 100%;
-      height: 40px;
-      background: var(--primary-color);
-      left: 0;
-      transform: translateX(-100%);
-      -webkit-transform: translateX(-100%);
-      transition: ease-in-out 0.2s;
-      border-radius: 20px;
-      z-index: -1;
-    }
-    &:hover::before {
-      transform: translateX(0);
-      -webkit-transform: translateX(0);
-      transition: ease-in-out 0.2s;
     }
   }
   &-link {

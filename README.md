@@ -4,7 +4,24 @@
 
 React + Next.js + microCMS + Netlify
 
-## Commit message prefix
+## Rurle and Naming Convention
+
+### Components
+
+File Name 👉 Upper Camel Case
+
+```JavaScript
+import { ComponentsName } from "src/components/ComponentsName"
+export const ComponentsName () => {
+  return (
+    <React.Fragment>
+      <div></div>
+    </React.Fragment>
+  );
+};
+```
+
+### Commit Message Prefix
 
 🎉 `:tada:` initial commit
 <br>

@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Helmet } from "../../src/components/helmet";
-import { Hero } from "../../src/components/hero";
-import { Main } from "../../src/components/main";
-import { Section } from "../../src/components/section";
-import { Layout } from "../../src/components/layout";
-import { PostCard } from "../../src/components/post-card";
-import { VerticalCard } from "../components/vertical-card";
-import { MoreButton } from "../components/more-button";
+import { Helmet } from "../../src/components/Helmet";
+import { Hero } from "../../src/components/Hero";
+import { Main } from "../../src/components/Main";
+import { Section } from "../../src/components/Section";
+import { Layout } from "../../src/components/Layout";
+import { PostCard } from "../../src/components/PostCard";
+import { VerticalCard } from "../../src/components/VerticalCard";
+import { MoreButton } from "../../src/components/MoreButton";
 type Props = {
   intro: any;
   blogs: any;
@@ -17,12 +17,12 @@ export default function Home({ blogs, works, intro }: Props) {
   const title = "hrkmtsmt";
   const desc = "こんにちは!これは説明文です!";
   return (
-    <div className={"l-overflow-hidden"}>
-      <Layout>
-        <Helmet title={title} desc={desc} image={undefined} />
-        <div className={"l-universal"}>
-          <Hero />
-        </div>
+    <Layout>
+      <Helmet title={title} desc={desc} image={undefined} />
+      <div className={"l-universal"}>
+        <Hero />
+      </div>
+      <div className={"l-overflow-hidden"}>
         <Main>
           <Section
             id={"introduction"}
@@ -72,7 +72,11 @@ export default function Home({ blogs, works, intro }: Props) {
             >
               {works.slice(-10).map((work: any) => (
                 <SwiperSlide key={work.id} className={""}>
-                  <VerticalCard title={work.title} path={`/work/${work.id}`} />
+                  <VerticalCard
+                    title={work.title}
+                    path={`/work/${work.id}`}
+                    category={""}
+                  />
                 </SwiperSlide>
               ))}
             </Swiper>
@@ -84,7 +88,7 @@ export default function Home({ blogs, works, intro }: Props) {
             desc={undefined}
           >
             <div className={"l-grid-full l-grid"}>
-              {blogs.slice(-4).map((blog: any) => (
+              {blogs.slice(-5).map((blog: any) => (
                 <div key={blog.id} className={"l-grid-small"}>
                   <PostCard
                     title={blog.title}
@@ -99,8 +103,8 @@ export default function Home({ blogs, works, intro }: Props) {
             </div>
           </Section>
         </Main>
-      </Layout>
-    </div>
+      </div>
+    </Layout>
   );
 }
 const endpoint: any = process.env.ENDPOINT;

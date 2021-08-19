@@ -1,9 +1,9 @@
 import React from "react";
-import { Layout } from "../../../src/components/layout";
-import { Post } from "../../../src/components/post";
-import { PostCard } from "../../../src/components/post-card";
-import { Section } from "../../../src/components/section";
-import { Main } from "../../components/main";
+import { Layout } from "../../../src/components/Layout";
+import { Post } from "../../../src/components/Post";
+import { PostCard } from "../../../src/components/PostCard";
+import { Section } from "../../../src/components/Section";
+import { Main } from "../../../src/components/Main";
 type Props = {
   blog: any;
   blogs: any;

@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { ThemeToggle } from "../../src/components/theme-toggel";
+import { ThemeToggle } from "../../src/components/ThemeToggel";
 import { headerScroll, slideNavAnimation } from "../utils/hamburger";
 export const Header = () => {
   useEffect(() => {

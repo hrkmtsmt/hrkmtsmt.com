@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import { AppProps } from "next/app";
-import { LoadingIndicator } from "../../src/components/loading-indicator";
+import { LoadingIndicator } from "../../src/components/LoadingIndicator";
 import { discriminationTheme } from "../../src/utils/theme";
 import "swiper/swiper.scss";
 import "../../src/styles/reset.css";
