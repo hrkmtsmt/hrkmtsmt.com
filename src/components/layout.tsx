@@ -8,7 +8,7 @@ export const Layout = (props: Props) => {
   return (
     <React.Fragment>
       <Header />
-      <main className={"l-main"}>{props.children}</main>
+      {props.children}
       <Footer />
     </React.Fragment>
   );

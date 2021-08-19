@@ -1,4 +1,5 @@
 import React from "react";
+import { Main } from "../../src/components/main";
 import { Section } from "../../src/components/section";
 import { Layout } from "../../src/components/layout";
 import { PostCard } from "../../src/components/post-card";
@@ -8,15 +9,21 @@ type Props = {
 export default function Blog({ blogs }: Props) {
   return (
     <Layout>
-      <Section id={"blog"} title={"Blog"} caption={""} desc={undefined}>
-        <div className={"l-grid-full l-grid"}>
-          {blogs.map((blog: any) => (
-            <div key={blog.id} className={"l-grid-medium"}>
-              <PostCard title={blog.title} category={blog.category.category} slug={`/blog/${blog.id}`} />
-            </div>
-          ))}
-        </div>
-      </Section>
+      <Main>
+        <Section id={"blog"} title={"Blog"} caption={""} desc={undefined}>
+          <div className={"l-grid-full l-grid"}>
+            {blogs.map((blog: any) => (
+              <div key={blog.id} className={"l-grid-medium"}>
+                <PostCard
+                  title={blog.title}
+                  category={blog.category.category}
+                  slug={`/blog/${blog.id}`}
+                />
+              </div>
+            ))}
+          </div>
+        </Section>
+      </Main>
     </Layout>
   );
 }

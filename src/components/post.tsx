@@ -25,7 +25,7 @@ export const Post = (props: Props) => {
   return (
     <React.Fragment>
       <Helmet title={props.title} desc={props.desc} image={props.image} />
-      <div className={"l-grid l-inner"}>
+      <div className={"l-grid"}>
         <div className="l-grid-full">
           <div className={"p-article-header"}>
             <p className={"p-article-category"}>{props.category}</p>
