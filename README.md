@@ -24,15 +24,16 @@ export const ComponentsName () => {
 ### Commit Message Prefix
 
 🎉 `:tada:` initial commit
-<br>
+<br />
 🐛 `:bug:` bug fix
-<br>
+<br />
 ⚙️ `:gear:` config
-<br>
+<br />
 👍 `:+1:` feature
-<br>
+<br />
 📦 `:package:` package
-<br>
+<br />
 🎨 `:art:` ui/ux
-<br>
+<br />
 🔨 `:hammer:` refactor code
+<br />
