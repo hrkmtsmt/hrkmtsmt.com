@@ -37,3 +37,4 @@ export const ComponentsName () => {
 <br />
 🔨 `:hammer:` refactor code
 <br />
+🙏 `:pray:` merge
