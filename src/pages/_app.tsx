@@ -1,12 +1,12 @@
 import React, { useEffect } from "react";
 import { AppProps } from "next/app";
-import { LoadingIndicator } from "../components/LoadingIndicator";
-import { discriminationTheme } from "../utils/theme";
+import { LoadingIndicator } from "../../src/components/loading-indicator";
+import { discriminationTheme } from "../../src/utils/theme";
 import "swiper/swiper.scss";
-import "../styles/reset.css";
-import "../styles/coolicons.css";
-import "../styles/style.scss";
-import "../styles/package.scss";
+import "../../src/styles/reset.css";
+import "../../src/styles/coolicons.css";
+import "../../src/styles/style.scss";
+import "../../src/styles/package.scss";
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   useEffect(() => {
     discriminationTheme();

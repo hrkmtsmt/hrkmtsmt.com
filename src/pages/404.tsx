@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Layout } from "../components/Layout";
-import { LinkButton } from "../components/LinkButton";
-import { Main } from "../components/Main";
-import { Section } from "../components/Section";
+import { Layout } from "../../src/components/layout";
+import { LinkButton } from "../../src/components/link-button";
+import { Main } from "../../src/components/main";
+import { Section } from "../../src/components/section";
 export default function Error() {
   const [count, setCount] = useState(404);
   return (

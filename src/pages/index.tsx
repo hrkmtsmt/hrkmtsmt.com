@@ -1,13 +1,13 @@
 import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Helmet } from "../components/Helmet";
-import { Hero } from "../components/Hero";
-import { Main } from "../components/Main";
-import { Section } from "../components/Section";
-import { Layout } from "../components/Layout";
-import { PostCard } from "../components/PostCard";
-import { VerticalCard } from "../components/VerticalCard";
-import { MoreButton } from "../components/MoreButton";
+import { Helmet } from "../../src/components/helmet";
+import { Hero } from "../../src/components/hero";
+import { Main } from "../../src/components/main";
+import { Section } from "../../src/components/section";
+import { Layout } from "../../src/components/layout";
+import { PostCard } from "../../src/components/post-card";
+import { VerticalCard } from "../../src/components/vertical-card";
+import { MoreButton } from "../../src/components/more-button";
 type Props = {
   intro: any;
   blogs: any;
