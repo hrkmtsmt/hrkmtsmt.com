@@ -21,6 +21,8 @@ export const ComponentsName () => {
 };
 ```
 
+### Utilities
+
 ### Commit Message Prefix
 
 🎉 `:tada:` initial commit
