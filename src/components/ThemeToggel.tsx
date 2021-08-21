@@ -1,5 +1,5 @@
 import React from "react";
-import { switchTheme } from "../../src/utils/theme";
+import { switchTheme } from "../utils/theme";
 export const ThemeToggle = () => {
   return (
     <button

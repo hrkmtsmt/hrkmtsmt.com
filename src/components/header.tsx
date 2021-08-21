@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { ThemeToggle } from "../../src/components/ThemeToggel";
-import { headerScroll, slideNavAnimation } from "../../src/utils/hamburger";
+import { ThemeToggle } from "../components/ThemeToggel";
+import { headerScroll, slideNavAnimation } from "../utils/hamburger";
 export const Header = () => {
   useEffect(() => {
     headerScroll();
