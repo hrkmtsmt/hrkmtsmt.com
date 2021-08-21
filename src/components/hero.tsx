@@ -1,5 +1,5 @@
 import React from "react";
-import { LinkButton } from "../components/LinkButton";
+import { LinkButton } from "../../src/components/link-button";
 export const Hero = () => {
   return (
     <div className={"l-grid-full p-hero"}>

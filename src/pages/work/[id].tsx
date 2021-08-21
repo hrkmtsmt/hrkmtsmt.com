@@ -1,10 +1,10 @@
 import React from "react";
-import { Helmet } from "../../components/Helmet";
-import { Post } from "../../components/Post";
-import { PostCard } from "../../components/PostCard";
-import { Layout } from "../../components/Layout";
-import { Section } from "../../components/Section";
-import { Main } from "../../components/Main";
+import { Helmet } from "../../../src/components/helmet";
+import { Post } from "../../../src/components/post";
+import { PostCard } from "../../../src/components/post-card";
+import { Layout } from "../../../src/components/layout";
+import { Section } from "../../../src/components/section";
+import { Main } from "../../../src/components/main";
 type Props = {
   work: any;
   works: any;
