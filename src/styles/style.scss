@@ -237,8 +237,9 @@ select {
 .l-universal {
   width: 100%;
   padding: 0 40px;
-  display: grid;
-  grid-gap: 160px;
+  display: flex;
+  flex-direction: column;
+  gap: 160px;
 }
 @media screen and (max-width: 768px) {
   .l-universal {
