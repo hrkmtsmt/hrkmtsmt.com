@@ -91,7 +91,7 @@ body {
   font-weight: 400;
   width: 100%;
   color: var(--font-color);
-  background: var(--base-color);
+  background: var(--background-color);
 }
 input,
 button,
@@ -1266,9 +1266,37 @@ select {
   line-height: 30px;
 }
 .p-hero {
+  position: relative;
   display: flex;
   align-items: center;
   height: calc(100vh - 80px);
+
+  &-background {
+    position: absolute;
+    top: -80px;
+    left: -40px;
+    width: calc(100% + 80px);
+    height: calc(100% + 160px);
+    padding: -100%;
+    background: var(--base-color);
+    z-index: -1;
+  }
+}
+@media screen and (max-width: 768px) {
+  .p-hero {
+    &-background {
+      left: -30px;
+      width: calc(100% + 60px);
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .p-hero {
+    &-background {
+      left: -20px;
+      width: calc(100% + 40px);
+    }
+  }
 }
 .aaa {
   font-size: 36px;

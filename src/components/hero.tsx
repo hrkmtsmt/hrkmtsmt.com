@@ -20,6 +20,7 @@ export const Hero = () => {
           />
         </div>
       </div>
+      <div className={"p-hero-background"}></div>
     </div>
   );
 };

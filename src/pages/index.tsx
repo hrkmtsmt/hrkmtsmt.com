@@ -9,9 +9,9 @@ import { PostCard } from "../../src/components/post-card";
 import { VerticalCard } from "../../src/components/vertical-card";
 import { MoreButton } from "../../src/components/more-button";
 type Props = {
-  intro: any;
-  blogs: any;
-  works: any;
+  intro: [];
+  blogs: [];
+  works: [];
 };
 export default function Home({ blogs, works, intro }: Props) {
   const title = "hrkmtsmt";
@@ -115,7 +115,7 @@ export const getStaticProps = async () => {
   const res = [
     await fetch(`${endpoint}work`, key),
     await fetch(`${endpoint}blog`, key),
-    await fetch(`${endpoint}feature/intro`, key),
+    await fetch(`${endpoint}home/introduction`, key),
   ];
   const data = [await res[0].json(), await res[1].json(), await res[2].json()];
   return {
