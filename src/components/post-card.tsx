@@ -1,10 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 type Props = {
   title: string;
   category: string;
   slug: string;
 };
+
 export const PostCard = (props: Props) => {
   const cta = "More";
   return (

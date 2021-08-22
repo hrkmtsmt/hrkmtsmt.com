@@ -14,6 +14,11 @@
     "isolatedModules": true,
     "jsx": "preserve"
   },
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": [
+    "next-env.d.ts",
+    "**/*.ts",
+    "**/*.tsx",
+    "src/utils/three-dimensions-hover-effect.js"
+  ],
   "exclude": ["node_modules"]
 }
