@@ -16,7 +16,7 @@ export default function Blog({ blogs }: Props) {
               <div key={blog.id} className={"l-grid-medium"}>
                 <PostCard
                   title={blog.title}
-                  category={blog.category.category}
+                  category={blog.tag}
                   slug={`/blog/${blog.id}`}
                 />
               </div>

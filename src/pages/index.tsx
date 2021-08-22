@@ -92,7 +92,7 @@ export default function Home({ blogs, works, intro }: Props) {
                 <div key={blog.id} className={"l-grid-small"}>
                   <PostCard
                     title={blog.title}
-                    category={blog.category.category}
+                    category={blog.tag}
                     slug={`/blog/${blog.id}`}
                   />
                 </div>
