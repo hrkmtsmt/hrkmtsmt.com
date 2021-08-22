@@ -16,7 +16,7 @@ export default function Blog({ blog, blogs }: Props) {
           date={blog.date}
           title={blog.title}
           desc={blog.description}
-          category={blog.category.category}
+          category={blog.tag}
           image={undefined}
           body={blog.body}
           dir={blog.dir}
@@ -31,7 +31,7 @@ export default function Blog({ blog, blogs }: Props) {
             <div key={blog.id} className={"l-grid-medium"}>
               <PostCard
                 title={blog.title}
-                category={blog.tag.tag}
+                category={blog.tag}
                 slug={`/blog/${blog.id}`}
               />
             </div>
