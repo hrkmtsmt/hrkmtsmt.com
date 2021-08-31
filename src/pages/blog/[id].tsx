@@ -1,9 +1,10 @@
 import React from "react";
-import { Layout } from "../../../src/components/layout";
+import { Layout } from "../../components/layout/layout";
 import { Post } from "../../../src/components/post";
 import { PostCard } from "../../../src/components/post-card";
-import { Section } from "../../../src/components/section";
-import { Main } from "../../../src/components/main";
+import { Section } from "../../components/layout/section";
+import { Main } from "../../components/layout/main";
+import { Medium } from "../../components/layout/grid";
 type Props = {
   blog: any;
   blogs: any;
@@ -28,13 +29,13 @@ export default function Blog({ blog, blogs }: Props) {
           desc={undefined}
         >
           {blogs.slice(-3).map((blog: any) => (
-            <div key={blog.id} className={"l-grid-medium"}>
+            <Medium key={blog.id}>
               <PostCard
                 title={blog.title}
                 category={blog.tag}
                 slug={`/blog/${blog.id}`}
               />
-            </div>
+            </Medium>
           ))}
         </Section>
       </Main>

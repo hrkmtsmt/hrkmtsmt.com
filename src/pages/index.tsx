@@ -2,12 +2,16 @@ import React, { useEffect } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Helmet } from "../../src/components/helmet";
 import { Hero } from "../../src/components/hero";
-import { Main } from "../../src/components/main";
-import { Section } from "../../src/components/section";
-import { Layout } from "../../src/components/layout";
+import { Main } from "../components/layout/main";
+import { Section } from "../components/layout/section";
+import { Layout } from "../components/layout/layout";
 import { PostCard } from "../../src/components/post-card";
 import { VerticalCard } from "../../src/components/vertical-card";
 import { MoreButton } from "../../src/components/more-button";
+import { Universal } from "../components/layout/universal";
+import { Carousel } from "../components/carousel";
+import dayjs from "dayjs";
+
 type Props = {
   intro: [];
   blogs: [];
@@ -16,12 +20,13 @@ type Props = {
 export default function Home({ blogs, works, intro }: Props) {
   const title = "hrkmtsmt";
   const desc = "こんにちは!これは説明文です!";
+  console.log(blogs);
   return (
     <Layout>
       <Helmet title={title} desc={desc} image={undefined} />
-      <div className={"l-universal"}>
+      <Universal>
         <Hero />
-      </div>
+      </Universal>
       <div className={"l-overflow-hidden"}>
         <Main>
           <Section
@@ -87,16 +92,32 @@ export default function Home({ blogs, works, intro }: Props) {
             caption={undefined}
             desc={undefined}
           >
+            <Carousel array={blogs} dir={"blog"} endNumber={10} />
+          </Section>
+          <Section
+            id={"blog"}
+            title={"Blog"}
+            caption={undefined}
+            desc={undefined}
+          >
             <div className={"l-grid-full l-grid"}>
-              {blogs.slice(-5).map((blog: any) => (
-                <div key={blog.id} className={"l-grid-small"}>
-                  <PostCard
-                    title={blog.title}
-                    category={blog.tag}
-                    slug={`/blog/${blog.id}`}
-                  />
-                </div>
-              ))}
+              {blogs
+                .sort(function (a: any, b: any) {
+                  if (a.updatedAt > b.updatedAt) {
+                    return -1;
+                  } else {
+                    return 1;
+                  }
+                })
+                .map((blog: any) => (
+                  <div key={blog.id} className={"l-grid-small"}>
+                    <PostCard
+                      title={blog.title}
+                      category={blog.tag}
+                      slug={`/blog/${blog.id}`}
+                    />
+                  </div>
+                ))}
             </div>
             <div className={"l-grid-full"}>
               <MoreButton link={"/blog"} cta={"More Read"} />
