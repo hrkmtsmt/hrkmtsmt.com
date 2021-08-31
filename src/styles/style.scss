@@ -207,7 +207,7 @@ select {
 @media screen and (max-width: 768px) {
   .l-grid {
     grid-template-columns: repeat(8, 1fr);
-    grid-gap: 30px;
+    grid-gap: 40px 30px;
 
     &-full,
     &-large,
@@ -225,7 +225,7 @@ select {
 @media screen and (max-width: 576px) {
   .l-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 20px;
+    grid-gap: 40px 20px;
 
     &-full,
     &-extra-large,
@@ -247,7 +247,7 @@ select {
 @media screen and (max-width: 768px) {
   .l-universal {
     padding: 0 30px;
-    grid-gap: 80px;
+    grid-gap: 120px;
   }
 }
 @media screen and (max-width: 576px) {
@@ -266,8 +266,8 @@ select {
 }
 @media screen and (max-width: 768px) {
   .l-main {
-    gap: 80px;
-    padding: 80px 0;
+    gap: 120px;
+    padding: 120px 0;
   }
 }
 .l-overflow-hidden {

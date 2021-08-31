@@ -5,6 +5,7 @@ import timezone from "dayjs/plugin/timezone";
 import { Helmet } from "../../src/components/helmet";
 import { StickyNav } from "../../src/components/sticky-nav";
 import { LikeButton } from "../../src/components/like-button";
+import { Full, Grid, Article, Sidebar } from "./layout/grid";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 type Props = {
@@ -25,15 +26,15 @@ export const Post = (props: Props) => {
   return (
     <React.Fragment>
       <Helmet title={props.title} desc={props.desc} image={props.image} />
-      <div className={"l-grid"}>
-        <div className="l-grid-full">
+      <Grid>
+        <Full>
           <div className={"p-article-header"}>
             <p className={"p-article-category"}>{props.category}</p>
             <h1 className="p-article-title">{props.title}</h1>
             {props.date === undefined ? undefined : dateJSX}
           </div>
-        </div>
-        <article className={"l-grid-article"}>
+        </Full>
+        <Article>
           <div className={"p-article-body"}>
             <div
               className=""
@@ -42,12 +43,12 @@ export const Post = (props: Props) => {
               }}
             ></div>
           </div>
-        </article>
-        <aside className={"l-grid-sidebar"}>
+        </Article>
+        <Sidebar>
           <StickyNav />
           <LikeButton />
-        </aside>
-      </div>
+        </Sidebar>
+      </Grid>
     </React.Fragment>
   );
 };

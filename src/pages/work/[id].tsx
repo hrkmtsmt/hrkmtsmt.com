@@ -2,9 +2,10 @@ import React from "react";
 import { Helmet } from "../../../src/components/helmet";
 import { Post } from "../../../src/components/post";
 import { PostCard } from "../../../src/components/post-card";
-import { Layout } from "../../../src/components/layout";
-import { Section } from "../../../src/components/section";
-import { Main } from "../../../src/components/main";
+import { Layout } from "../../components/layout/layout";
+import { Section } from "../../components/layout/section";
+import { Main } from "../../components/layout/main";
+import { Medium } from "../../components/layout/grid";
 type Props = {
   work: any;
   works: any;
@@ -30,13 +31,13 @@ export default function Works({ work, works }: Props) {
           desc={undefined}
         >
           {works.slice(-3).map((work: any) => (
-            <div key={work.id} className={"l-grid-medium"}>
+            <Medium key={work.id}>
               <PostCard
                 title={work.title}
                 category={work.category.category}
                 slug={`/work/${work.id}`}
               />
-            </div>
+            </Medium>
           ))}
         </Section>
       </Main>
