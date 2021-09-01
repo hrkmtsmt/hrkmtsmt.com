@@ -1,5 +1,5 @@
-export const headerScroll = () => {
-  const elementHamburgerButton = document.getElementById("hamburger-button")!;
+export const headerScroll = (elementId: string) => {
+  const elementHamburgerButton = document.getElementById(elementId)!;
   addEventListener("scroll", function () {
     const scroll = window.pageYOffset;
     if (scroll > 160) {
@@ -11,8 +11,8 @@ export const headerScroll = () => {
 };
 export const slideNavAnimation = () => {
   const elementSlideNav = document.getElementById("slide-nav")!;
-  const elementSlideNavItem = document.querySelectorAll(".c-slide-nav-item")!;
   elementSlideNav.classList.toggle("is-active");
+  const elementSlideNavItem = document.querySelectorAll(".c-slide-nav-item")!;
   elementSlideNavItem.forEach((item, index) => {
     const order = index + 1;
     const delay = order * 200;

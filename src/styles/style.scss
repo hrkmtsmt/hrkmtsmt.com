@@ -355,6 +355,34 @@ select {
     }
   }
 }
+.c-sticky-header {
+  position: fixed;
+  height: 80px;
+  top: -80px;
+  left: 0;
+  transition: ease-in-out 0.2s;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 40px;
+  z-index: 999;
+
+  &.is-scroll {
+    top: 0;
+    transition: ease-in-out 0.2s;
+  }
+}
+@media screen and (max-width: 768px) {
+  .c-sticky-header {
+    padding: 0 30px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .c-sticky-header {
+    padding: 0 20px;
+  }
+}
 .c-header-nav {
   display: flex;
   align-items: center;
@@ -460,18 +488,11 @@ select {
   color: var(--base-color);
   background: var(--primary-color);
   border-radius: 20px;
-  z-index: 999;
-  position: fixed;
   display: flex;
   justify-content: center;
   align-items: center;
-  transform: translateY(-60px);
-  transition: ease-in-out 0.2s;
+  z-index: 999;
 
-  &.is-scroll {
-    transform: translateY(0);
-    transition: ease-in-out 0.2s;
-  }
   &-icon {
     opacity: 0;
     position: absolute;
@@ -490,18 +511,16 @@ select {
   list-style: none;
   width: 100vw;
   height: 100vh;
-  opacity: 0;
-  background: var(--glass-base);
-  backdrop-filter: blur(20px);
   left: 0;
   top: 0;
   transform: translateX(-100%);
   transition: ease-in-out 0.2s;
+  z-index: 999;
 
   &-inner {
     max-width: var(--max-width);
     margin: 0 auto;
-    padding: 120px 0 40px;
+    padding: 120px 40px 40px;
   }
   &-item {
     opacity: 0;
@@ -515,17 +534,57 @@ select {
     text-decoration: none;
     color: var(--primary-color);
   }
+  &-background {
+    &-primary {
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      position: fixed;
+      right: 40px;
+      background: var(--primary-color);
+      z-index: 991;
+      transform: scale(1);
+      transition: ease-in-out 0.4s;
+      transition-delay: 0.2s;
+    }
+    &-base {
+      width: 40px;
+      height: 40px;
+      border-radius: 40px;
+      position: fixed;
+      right: 40px;
+      background: var(--base-color);
+      z-index: 991;
+      transform: scale(1);
+      transition: ease-in-out 0.2s;
+    }
+  }
   &.is-active {
     opacity: 1;
     transform: translateX(0);
     transition: ease-in-out 0.2s;
     overflow: hidden;
-    z-index: 99;
 
     .is-order {
       opacity: 1;
       transform: translateX(0);
       transition: ease-in-out 0.4s;
+      transition-delay: 0.2s;
+    }
+  }
+}
+.is-active {
+  ~ .c-slide-nav {
+    &-background {
+      &-primary {
+        transform: scale(100);
+        transition: ease-in-out 0.2s;
+      }
+      &-base {
+        transform: scale(100);
+        transition: ease-in-out 0.4s;
+        transition-delay: 0.2s;
+      }
     }
   }
 }
@@ -533,7 +592,6 @@ select {
   .c-slide-nav {
     &-inner {
       margin: 0;
-      padding: 120px 40px 40px;
     }
   }
 }
@@ -542,12 +600,28 @@ select {
     &-inner {
       padding: 90px 30px 30px;
     }
+    &-background {
+      &-primary {
+        right: 30px;
+      }
+      &-base {
+        right: 30px;
+      }
+    }
   }
 }
 @media screen and (max-width: 576px) {
   .c-slide-nav {
     &-inner {
       padding: 80px 20px 20px;
+    }
+    &-background {
+      &-primary {
+        right: 20px;
+      }
+      &-base {
+        right: 20px;
+      }
     }
   }
 }
@@ -586,6 +660,7 @@ select {
   font-weight: 700;
   font-size: 36px;
   line-height: 40px;
+  height: 50px;
   color: var(--primary-color);
   margin: 0;
   text-decoration: none;
@@ -595,6 +670,9 @@ select {
     text-decoration: none;
     color: var(--primary-color);
     display: block;
+  }
+  path {
+    fill: var(--primary-color);
   }
 }
 /* - Post Card */
@@ -1145,10 +1223,8 @@ select {
   height: 40px;
   padding: 5px;
   border-radius: 20px;
-  position: fixed;
-  z-index: 999;
-  right: calc((100% - var(--max-width)) / 2);
   transition: ease-in-out 0.2s;
+  z-index: 999;
 
   &-circle {
     display: flex;
@@ -1189,13 +1265,6 @@ select {
     margin: 0 0 0 40px;
     transition: ease-in-out 0.4s;
   }
-  .c-toggle-icon {
-    top: 0px;
-
-    &:last-child {
-      top: 30px;
-    }
-  }
 }
 @keyframes a-sun-moon {
   0% {
@@ -1205,21 +1274,7 @@ select {
     transform: rotate(-10deg);
   }
 }
-@media screen and (max-width: 2010px) {
-  .c-toggle {
-    right: 40px;
-  }
-}
-@media screen and (max-width: 768px) {
-  .c-toggle {
-    right: 30px;
-  }
-}
-@media screen and (max-width: 576px) {
-  .c-toggle {
-    right: 20px;
-  }
-}
+
 /* Form */
 .c-form {
   &-body {

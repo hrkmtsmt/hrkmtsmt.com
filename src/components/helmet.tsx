@@ -22,8 +22,9 @@ export const Helmet = (props: Props) => {
       <title key={props.title}>{props.title}</title>
       <link
         rel="icon"
-        href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text x=%2250%%22 y=%2250%%22 style=%22dominant-baseline:central;text-anchor:middle;font-size:90px;%22>😸</text></svg>"
-      ></link>
+        type="image/svg+xml"
+        href="/Users/hrkmtsmt/Projects/hrkmtsmt/src/pulic/favicon.svg"
+      />
       <meta property="og:title" content={props.title} />
       <meta property="og:description" content={props.desc} />
       <meta property="og:image" content={props.image} />
