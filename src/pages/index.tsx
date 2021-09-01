@@ -10,7 +10,6 @@ import { VerticalCard } from "../../src/components/vertical-card";
 import { MoreButton } from "../../src/components/more-button";
 import { Universal } from "../components/layout/universal";
 import { Carousel } from "../components/carousel";
-import dayjs from "dayjs";
 
 type Props = {
   intro: [];
