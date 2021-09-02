@@ -22,9 +22,9 @@ export const StickyHeader = () => {
           </li>
           <li className={"c-slide-nav-item"}></li>
         </ul>
+        <div className={"c-slide-nav-background-primary"}></div>
+        <div className={"c-slide-nav-background-base"}></div>
       </nav>
-      <div className={"c-slide-nav-background-primary"}></div>
-      <div className={"c-slide-nav-background-base"}></div>
       <div id="sticky-header" className={"c-sticky-header"}>
         <ThemeToggle />
         <button
