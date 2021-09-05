@@ -1,13 +1,13 @@
 import React from "react";
 import Link from "next/link";
 type Props = {
-  title: string,
-  slug: string,
+  title: string;
+  path: string;
 };
 export const PostCardMedia = (props: Props) => {
   const cta = "More";
   return (
-    <Link href={props.slug}>
+    <Link href={props.path}>
       <a className={"c-post-card"}>
         <div className={"c-post-card-image"}></div>
         <div className={"c-post-card-body"}>

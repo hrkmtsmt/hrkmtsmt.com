@@ -3,9 +3,8 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import { Helmet } from "../../src/components/helmet";
-import { StickyNav } from "../../src/components/sticky-nav";
-import { LikeButton } from "../../src/components/like-button";
 import { Full, Grid, Article, Sidebar } from "./layout/grid";
+import { StickyNav } from "../../src/components/sticky-nav";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 type Props = {
@@ -46,7 +45,6 @@ export const Post = (props: Props) => {
         </Article>
         <Sidebar>
           <StickyNav />
-          <LikeButton />
         </Sidebar>
       </Grid>
     </React.Fragment>

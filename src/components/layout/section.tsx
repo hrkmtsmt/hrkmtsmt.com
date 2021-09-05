@@ -2,9 +2,9 @@ import React from "react";
 import { Grid, Full } from "./grid";
 type Props = {
   id: string;
-  title: string | undefined;
-  caption: string | undefined;
-  desc: string | undefined;
+  title: string;
+  caption?: string;
+  desc?: string;
   children?: React.ReactNode;
 };
 export const Section = (props: Props) => {

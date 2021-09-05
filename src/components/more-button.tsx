@@ -1,6 +1,5 @@
 import React from "react";
 import Link from "next/link";
-
 type Props = {
   link: string;
   cta: string;

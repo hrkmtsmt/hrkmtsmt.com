@@ -2,9 +2,9 @@ import React from "react";
 import Head from "next/head";
 import { useRouter } from "next/router";
 type Props = {
-  title: string | undefined;
-  desc: string | undefined;
-  image: string | undefined;
+  title?: string;
+  desc?: string;
+  image?: string;
 };
 export const Helmet = (props: Props) => {
   const router = useRouter();

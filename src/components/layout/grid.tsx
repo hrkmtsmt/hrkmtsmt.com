@@ -1,6 +1,6 @@
 import React from "react";
 type Props = {
-  children?: React.ReactNode;
+  children: React.ReactNode;
 };
 export const Grid = (props: Props) => {
   return <div className={"l-grid"}>{props.children}</div>;
