@@ -3,9 +3,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { VerticalCard } from "./vertical-card";
 type Props = {
   array: [];
-  children?: React.ReactNode;
   dir: string;
   endNumber: number;
+  children?: React.ReactNode;
 };
 export const Carousel = (props: Props) => {
   return (

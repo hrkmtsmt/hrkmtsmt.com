@@ -2,14 +2,14 @@ import React, { useEffect } from "react";
 import Link from "next/link";
 type Props = {
   title: string;
-  category: string;
-  slug: string;
+  category?: string;
+  path: string;
 };
 
 export const PostCard = (props: Props) => {
   const cta = "More";
   return (
-    <Link href={props.slug}>
+    <Link href={props.path}>
       <a className={"c-post-card"}>
         <div className={"c-post-card-body"}>
           <p className={"c-post-card-category"}>{props.category}</p>

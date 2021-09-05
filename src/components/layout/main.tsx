@@ -1,6 +1,6 @@
 import React from "react";
 type Props = {
-  children?: React.ReactNode;
+  children: React.ReactNode;
 };
 export const Main = (props: Props) => {
   return (

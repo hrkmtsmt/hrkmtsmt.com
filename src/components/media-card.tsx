@@ -2,12 +2,12 @@ import React from "react";
 import Link from "next/link";
 type Props = {
   title: string;
-  slug: string;
+  path: string;
 };
 export const MediaCard = (props: Props) => {
   const cta = "More";
   return (
-    <Link href={props.slug}>
+    <Link href={props.path}>
       <a className={"c-media-card"}>
         <div className={"c-media-card-inner"}>
           <div className={"c-media-card-image"}></div>
