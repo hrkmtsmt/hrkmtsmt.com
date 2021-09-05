@@ -35,7 +35,7 @@ export default function Works({ work, works }: Props) {
               <PostCard
                 title={work.title}
                 category={work.category.category}
-                slug={`/work/${work.id}`}
+                path={`/work/${work.id}`}
               />
             </Medium>
           ))}
