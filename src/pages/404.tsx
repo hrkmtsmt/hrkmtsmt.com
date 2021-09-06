@@ -8,22 +8,11 @@ export default function Error() {
   return (
     <Layout>
       <Main>
-        <Section
-          id={"404"}
-          title={"Not Found"}
-          caption={undefined}
-          desc={undefined}
-        >
+        <Section id={"404"} title={`Not Found ${count}`}>
           <div className={"l-grid-full"}>
             <div className={"p-error-nav"}>
               <LinkButton link={"/"} cta={"Go back"} />
-            </div>
-          </div>
-          <div className={"l-grid-full"}>
-            <div className={"p-error-number"}>{count}</div>
-          </div>
-          <div className={"l-grid-full"}>
-            <div className={"p-error-nav"}>
+
               <button
                 onClick={() => setCount(count - 1)}
                 className={"p-error-nav-button"}
@@ -38,6 +27,11 @@ export default function Error() {
               </button>
             </div>
           </div>
+
+          <div className={"l-grid-full"}>
+            <div className={"p-error-number"}>Sorry!</div>
+          </div>
+          <div className={"l-grid-full"}></div>
         </Section>
       </Main>
     </Layout>

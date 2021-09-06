@@ -26,21 +26,23 @@ export const StickyHeader = () => {
         <div className={"c-slide-nav-background-base"}></div>
       </nav>
       <div id="sticky-header" className={"c-sticky-header"}>
-        <ThemeToggle />
-        <button
-          onClick={() => slideNavAnimation()}
-          id={"hamburger-button"}
-          className={"c-hamburger-button"}
-        >
-          <i
-            id={"hamburger-open"}
-            className={"c-hamburger-button-icon is-visible ci-menu_alt_01"}
-          ></i>
-          <i
-            id={"hamburger-close"}
-            className={"c-hamburger-button-icon ci-close_big"}
-          ></i>
-        </button>
+        <div className={"c-sticky-header-inner"}>
+          <ThemeToggle />
+          <button
+            onClick={() => slideNavAnimation()}
+            id={"hamburger-button"}
+            className={"c-hamburger-button"}
+          >
+            <i
+              id={"hamburger-open"}
+              className={"c-hamburger-button-icon is-visible ci-menu_alt_01"}
+            ></i>
+            <i
+              id={"hamburger-close"}
+              className={"c-hamburger-button-icon ci-close_big"}
+            ></i>
+          </button>
+        </div>
       </div>
     </React.Fragment>
   );
