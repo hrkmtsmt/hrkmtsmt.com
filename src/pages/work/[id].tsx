@@ -1,45 +1,40 @@
 import React from "react";
 import { Helmet } from "../../../src/components/helmet";
 import { Post } from "../../../src/components/post";
-import { PostCard } from "../../../src/components/post-card";
 import { Layout } from "../../components/layout/layout";
-import { Section } from "../../components/layout/section";
 import { Main } from "../../components/layout/main";
-import { Medium } from "../../components/layout/grid";
+import { Grid, Article, Sidebar } from "../../components/layout/grid";
+import { StickyNav } from "../../components/sticky-nav";
 type Props = {
-  work: any;
-  works: any;
+  work: {
+    title: string;
+    desc: string;
+    date?: string;
+    category?: any;
+    image?: string;
+    body: HTMLElement;
+    dir: string;
+  };
 };
-export default function Works({ work, works }: Props) {
+export default function Works({ work }: Props) {
   return (
     <Layout>
-      <Helmet title={work.title} desc={work.description} image={undefined} />
+      <Helmet title={work.title} desc={work.desc} />
       <Main>
-        <Post
-          date={work.date}
-          title={work.title}
-          desc={work.description}
-          category={work.category.category}
-          image={undefined}
-          body={work.body}
-          dir={work.dir}
-        />
-        <Section
-          id={"related-posts"}
-          title={"Related Posts"}
-          caption={undefined}
-          desc={undefined}
-        >
-          {works.slice(-3).map((work: any) => (
-            <Medium key={work.id}>
-              <PostCard
-                title={work.title}
-                category={work.category.category}
-                path={`/work/${work.id}`}
-              />
-            </Medium>
-          ))}
-        </Section>
+        <Grid>
+          <Article>
+            <Post
+              title={work.title}
+              desc={work.desc}
+              body={work.body}
+              dir={work.dir}
+              image={"/aaa/aa.jpg"}
+            />
+          </Article>
+          <Sidebar>
+            <StickyNav />
+          </Sidebar>
+        </Grid>
       </Main>
     </Layout>
   );
@@ -56,16 +51,11 @@ export const getStaticPaths = async () => {
 };
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
-  const res = [
-    await fetch(`${endpoint}work/${id}`, key),
-    await fetch(`${endpoint}work`, key),
-  ];
-  const work = await res[0].json();
-  const works = await res[1].json();
+  const res = await fetch(`${endpoint}work/${id}`, key);
+  const work = await res.json();
   return {
     props: {
       work: work,
-      works: works.contents,
     },
   };
 };

@@ -23,8 +23,8 @@ export const Header = () => {
           </h1>
           <ul className={"c-header-nav-list"}>
             <li className={"c-header-nav-item"}>
-              <Link href={"/works"}>
-                <a className={"c-header-nav-link"}>Works</a>
+              <Link href={"/about"}>
+                <a className={"c-header-nav-link"}>About</a>
               </Link>
             </li>
             <li className={"c-header-nav-item"}>

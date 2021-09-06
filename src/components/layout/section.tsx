@@ -1,5 +1,5 @@
 import React from "react";
-import { Grid, Full } from "./grid";
+import { Grid, Full } from "../../../src/components/layout/grid";
 type Props = {
   id: string;
   title: string;

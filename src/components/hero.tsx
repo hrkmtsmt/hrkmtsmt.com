@@ -6,9 +6,7 @@ export const Hero = () => {
       <div className={"l-grid"}>
         <div className={"l-grid-full"}>
           <div className={"aaa "}>Front End is</div>
-          <div className={"bbb"}>aaa</div>
         </div>
-        <div className={"l-grid-large aaa"}></div>
         <div className={"l-grid-full"}>
           <LinkButton
             link={"https://github.com/hrkmtsmt"}
