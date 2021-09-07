@@ -4,8 +4,6 @@ import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import Image from "next/image";
 import { Helmet } from "../../src/components/helmet";
-import { Full, Grid, Article, Sidebar } from "./layout/grid";
-import { StickyNav } from "../../src/components/sticky-nav";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 type Props = {
@@ -29,14 +27,8 @@ export const Post = (props: Props) => {
     <p className={"p-article-category"}>{props.category}</p>
   );
   const ThumbnailElement = (
-    <div className={"p-article-thumbnail"}>
-      <Image
-        className={"p-article-image"}
-        src={props.image}
-        alt={props.alt}
-        width={1200}
-        height={630}
-      />
+    <div className={"p-article-image"}>
+      <Image src={props.image} alt={props.alt} width={1200} height={630} />
     </div>
   );
   return (

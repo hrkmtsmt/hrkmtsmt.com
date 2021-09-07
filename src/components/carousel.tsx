@@ -44,7 +44,7 @@ export const Carousel = (props: Props) => {
           <SwiperSlide key={index}>
             <VerticalCard
               title={data.title}
-              category={data.category}
+              image={data.image.url}
               path={`${props.dir}/${data.id}`}
             />
           </SwiperSlide>
