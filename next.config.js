@@ -4,3 +4,8 @@ module.exports = {
 module.exports = {
   target: "serverless",
 };
+module.exports = {
+  images: {
+    domains: ["images.microcms-assets.io"],
+  },
+};

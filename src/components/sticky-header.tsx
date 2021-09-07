@@ -11,13 +11,13 @@ export const StickyHeader = () => {
       <nav id={"slide-nav"} className={"c-slide-nav"}>
         <ul className={"c-slide-nav-inner"}>
           <li className={"c-slide-nav-item"}>
-            <Link href={"sdf"}>
-              <a className={"c-slide-nav-link"}>aaa</a>
+            <Link href={"/about"}>
+              <a className={"c-slide-nav-link"}>About</a>
             </Link>
           </li>
           <li className={"c-slide-nav-item"}>
-            <Link href={"sdf"}>
-              <a className={"c-slide-nav-link"}>aaa</a>
+            <Link href={"/blog"}>
+              <a className={"c-slide-nav-link"}>Blog</a>
             </Link>
           </li>
           <li className={"c-slide-nav-item"}></li>

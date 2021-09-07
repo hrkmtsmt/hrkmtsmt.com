@@ -11,7 +11,7 @@ type Props = {
     desc: string;
     date?: string;
     category?: any;
-    image?: string;
+    image?: any;
     body: HTMLElement;
     dir: string;
   };
@@ -28,7 +28,7 @@ export default function Works({ work }: Props) {
               desc={work.desc}
               body={work.body}
               dir={work.dir}
-              image={"/aaa/aa.jpg"}
+              image={work.image.url}
             />
           </Article>
           <Sidebar>
