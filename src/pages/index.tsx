@@ -8,7 +8,7 @@ import { PostCard } from "../../src/components/post-card";
 import { MoreButton } from "../../src/components/more-button";
 import { Universal } from "../components/layout/universal";
 import { Carousel } from "../components/carousel";
-import { Grid, Full, Medium, Small } from "../components/layout/grid";
+import { Grid, Full, Small } from "../components/layout/grid";
 import zenn from "../../rss/data.json";
 type Props = {
   works: [];

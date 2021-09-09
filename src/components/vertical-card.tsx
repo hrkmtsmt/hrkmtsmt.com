@@ -9,11 +9,23 @@ type Props = {
   alt?: string;
 };
 export const VerticalCard = (props: Props) => {
+  const width = 640;
+  const height = 960;
+  const quality = 100;
+  const loader = () => {
+    return `${props.image}?w=${width}&q=${quality || 75}`;
+  };
   return (
     <Link href={props.path}>
       <a className={"c-vertical-card"}>
         <div className={"c-vertical-card-image"}>
-          <Image src={props.image} alt={props.alt} width={640} height={960} />
+          <Image
+            loader={loader}
+            src={props.image}
+            alt={props.alt}
+            width={width}
+            height={height}
+          />
         </div>
       </a>
     </Link>

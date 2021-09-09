@@ -12,7 +12,6 @@ export default function Error() {
           <div className={"l-grid-full"}>
             <div className={"p-error-nav"}>
               <LinkButton link={"/"} cta={"Go back"} />
-
               <button
                 onClick={() => setCount(count - 1)}
                 className={"p-error-nav-button"}
@@ -27,7 +26,6 @@ export default function Error() {
               </button>
             </div>
           </div>
-
           <div className={"l-grid-full"}>
             <div className={"p-error-number"}>Sorry!</div>
           </div>
