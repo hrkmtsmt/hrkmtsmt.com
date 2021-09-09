@@ -3,8 +3,7 @@ import { Helmet } from "../../src/components/helmet";
 import { Main } from "../components/layout/main";
 import { Section } from "../components/layout/section";
 import { Layout } from "../components/layout/layout";
-
-import { Grid, Full, Medium, Small } from "../components/layout/grid";
+import { Medium } from "../components/layout/grid";
 type Props = {
   intro: [];
   works: [];
