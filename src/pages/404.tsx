@@ -30,7 +30,6 @@ export default function Error() {
           <Full>
             <div className={"p-error-number"}>Sorry!</div>
           </Full>
-          <Full></Full>
         </Section>
       </Main>
     </Layout>
