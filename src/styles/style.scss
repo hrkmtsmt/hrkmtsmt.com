@@ -283,7 +283,6 @@ select {
     height: 100%;
     margin: 0 auto;
     display: flex;
-    justify-content: space-between;
     align-items: center;
   }
 }
@@ -500,12 +499,12 @@ select {
     opacity: 0;
     position: absolute;
     transition: ease-in-out 0.2s;
-    transform: rotateY(180deg);
+    transform: rotate(360deg);
 
     &.is-visible {
       opacity: 1;
       transition: ease-in-out 0.2s;
-      transform: rotateY(0);
+      transform: rotate(0);
     }
   }
 }
@@ -591,7 +590,7 @@ select {
   .c-slide-nav {
     &-inner {
       margin: 0;
-      padding: 120px 40px 40px;
+      padding: 160px 40px 40px;
     }
     &-background {
       &-primary {
@@ -606,7 +605,7 @@ select {
 @media screen and (max-width: 768px) {
   .c-slide-nav {
     &-inner {
-      padding: 90px 30px 30px;
+      padding: 160px 30px 30px;
     }
     &-background {
       &-primary {
@@ -621,7 +620,7 @@ select {
 @media screen and (max-width: 576px) {
   .c-slide-nav {
     &-inner {
-      padding: 80px 20px 20px;
+      padding: 160px 20px 20px;
     }
     &-background {
       &-primary {
@@ -1345,6 +1344,12 @@ select {
   align-items: center;
   padding: 80px 0;
 
+  &-title {
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 700;
+    color: var(--primary-color);
+  }
   &-background {
     position: absolute;
     top: -80px;
@@ -1356,13 +1361,15 @@ select {
     z-index: -1;
   }
 }
-.moji {
-}
 @media screen and (max-width: 768px) {
   .p-hero {
     &-background {
       left: -30px;
       width: calc(100% + 60px);
+    }
+    &-title {
+      font-size: 48px;
+      line-height: 50px;
     }
   }
 }
@@ -1373,18 +1380,6 @@ select {
       width: calc(100% + 40px);
     }
   }
-}
-.aaa {
-  font-size: 80px;
-  line-height: 80px;
-  font-weight: 700;
-  color: var(--primary-color);
-}
-.bbb {
-  font-size: 80px;
-  line-height: 80px;
-  font-weight: 700;
-  color: var(--primary-color);
 }
 .p-section {
   display: flex;
@@ -1425,7 +1420,6 @@ select {
       }
     }
   }
-
   &-image {
     display: flex;
     width: 100%;
@@ -1536,6 +1530,13 @@ select {
     a {
       color: var(--primary-color);
       font-weight: 700;
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+  .p-article {
+    &-image {
+      aspect-ratio: 1 / 1;
     }
   }
 }

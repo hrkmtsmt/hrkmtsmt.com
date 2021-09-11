@@ -11,9 +11,9 @@ type Props = {
 export const VerticalCard = (props: Props) => {
   const width = 640;
   const height = 960;
-  const quality = 100;
+  const quality = 80;
   const loader = () => {
-    return `${props.image}?w=${width}&q=${quality || 75}`;
+    return `${props.image}?w=${width}&q=${quality}`;
   };
   return (
     <Link href={props.path}>
