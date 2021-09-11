@@ -8,7 +8,7 @@ export const Header = () => {
         <nav className={"c-header-nav"}>
           <h1 id={"header-logo"} className={"c-logo"}>
             <Link href={"/"}>
-              <a className={"c-logo"}>
+              <a className={"c-logo-link"}>
                 <svg
                   width="100%"
                   height="100%"

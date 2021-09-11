@@ -670,8 +670,10 @@ select {
   color: var(--primary-color);
   margin: 0;
   text-decoration: none;
+  display: flex;
 
   &-link {
+    width: 40px;
     font-weight: 700;
     text-decoration: none;
     color: var(--primary-color);
@@ -948,7 +950,6 @@ select {
   }
   &-image {
     width: 100%;
-    padding: 0 0 150%;
     aspect-ratio: 2 / 3;
     background: var(--primary-color-light);
     border-radius: 20px;
