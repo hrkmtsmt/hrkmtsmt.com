@@ -10,7 +10,7 @@ export const MoreButton = (props: Props) => {
       <a className={"c-more-button"}>
         <div className={"c-more-button-container"}>
           <div className={"c-more-button-arrow"}>
-            <i className={"ci-short_right"}></i>
+            <i className={"i-arrow-right"}></i>
           </div>
           <div className={"c-more-button-cta"}>{props.cta}</div>
         </div>

@@ -7,7 +7,7 @@ import { Helmet } from "../../src/components/helmet";
 dayjs.extend(utc);
 dayjs.extend(timezone);
 type Props = {
-  date?: string;
+  date?: string | undefined;
   title?: string;
   desc?: string;
   category?: string;
@@ -39,7 +39,7 @@ export const Post = (props: Props) => {
         <div className={"p-article-header-inner"}>
           {props.category === undefined ? undefined : CategoryElement}
           {props.title === undefined ? undefined : TitleElement}
-          {date === undefined ? undefined : DateElement}
+          {props.date === undefined ? undefined : DateElement}
         </div>
       </div>
       <div

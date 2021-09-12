@@ -8,8 +8,8 @@ export const ThemeToggle = () => {
       className={"c-toggle"}
     >
       <div className={"c-toggle-circle"}>
-        <i className={"c-toggle-icon ci-moon"}></i>
-        <i className={"c-toggle-icon ci-sun"}></i>
+        <i className={"c-toggle-icon i-moon"}></i>
+        <i className={"c-toggle-icon i-sun"}></i>
       </div>
     </button>
   );

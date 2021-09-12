@@ -19,7 +19,6 @@ type Props = {
 export default function BlogPost({ blog }: Props) {
   return (
     <Layout>
-      <Helmet title={blog.title} desc={blog.desc} />
       <Main>
         <Grid>
           <Article>

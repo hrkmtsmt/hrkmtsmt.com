@@ -35,11 +35,11 @@ export const StickyHeader = () => {
           >
             <i
               id={"hamburger-open"}
-              className={"c-hamburger-button-icon is-visible ci-menu_alt_01"}
+              className={"c-hamburger-button-icon is-visible i-menu"}
             ></i>
             <i
               id={"hamburger-close"}
-              className={"c-hamburger-button-icon ci-close_big"}
+              className={"c-hamburger-button-icon i-close"}
             ></i>
           </button>
         </div>
