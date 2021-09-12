@@ -210,7 +210,7 @@ select {
 @media screen and (max-width: 768px) {
   .l-grid {
     grid-template-columns: repeat(8, 1fr);
-    grid-gap: 40px 30px;
+    grid-gap: 30px;
 
     &-full,
     &-large,
@@ -228,7 +228,7 @@ select {
 @media screen and (max-width: 576px) {
   .l-grid {
     grid-template-columns: repeat(4, 1fr);
-    grid-gap: 40px 20px;
+    grid-gap: 20px;
 
     &-full,
     &-extra-large,
@@ -499,6 +499,7 @@ select {
     position: absolute;
     transition: ease-in-out 0.2s;
     transform: rotate(360deg);
+    font-size: 16px;
 
     &.is-visible {
       opacity: 1;
@@ -1367,7 +1368,7 @@ select {
     }
     &-title {
       font-size: 48px;
-      line-height: 50px;
+      line-height: 60px;
     }
   }
 }
@@ -1397,7 +1398,7 @@ select {
   &-title {
     display: inline-block;
     font-size: 48px;
-    line-height: 40px;
+    line-height: 60px;
     font-weight: 700;
     color: var(--primary-color);
   }
@@ -1410,6 +1411,17 @@ select {
     display: flex;
     flex-direction: column;
     width: 100%;
+
+    &-inner {
+      > * {
+        margin: 0 0 20px;
+      }
+
+      > *:last-child {
+        margin: 0;
+      }
+    }
+
     > * {
       margin: 0 0 40px;
 
@@ -1508,8 +1520,7 @@ select {
     }
     ol,
     ul {
-      list-style-position: inside;
-      padding: 0;
+      padding: 0 0 0 20px;
       > li {
         margin: 0;
       }
@@ -1528,13 +1539,6 @@ select {
     a {
       color: var(--primary-color);
       font-weight: 700;
-    }
-  }
-}
-@media screen and (max-width: 576px) {
-  .p-article {
-    &-image {
-      aspect-ratio: 1 / 1;
     }
   }
 }
