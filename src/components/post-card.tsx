@@ -5,7 +5,6 @@ type Props = {
   category?: string;
   path: string;
 };
-
 export const PostCard = (props: Props) => {
   const cta = "More";
   return (

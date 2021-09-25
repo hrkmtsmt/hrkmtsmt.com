@@ -8,7 +8,7 @@
     "start": "next start",
     "export": "next export",
     "deploy": "npm run build && npm run export",
-    "update-rss": "node ./rss/rss-parser.mjs"
+    "rss": "node ./rss/rss-parser.mjs"
   },
   "dependencies": {
     "dayjs": "^1.10.6",
