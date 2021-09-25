@@ -1,6 +1,10 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { switchTheme } from "../../src/utils/theme";
+import { discriminationTheme } from "../../src/utils/theme";
 export const ThemeToggle = () => {
+  useEffect(() => {
+    discriminationTheme();
+  }, []);
   return (
     <button
       onClick={() => switchTheme()}
