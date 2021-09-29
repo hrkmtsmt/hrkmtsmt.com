@@ -1,10 +1,10 @@
 import React, { useEffect } from "react";
-import { Helmet } from "../../../src/components/helmet";
-import { Main } from "../../../src/components/layout/main";
-import { Section } from "../../../src/components/layout/section";
-import { Layout } from "../../../src/components/layout/layout";
-import { Grid, Full, Small } from "../../../src/components/layout/grid";
-import { PostCard } from "../../../src/components/post-card";
+import { Helmet } from "../../components/Helmet";
+import { Main } from "../../components/layout/Main";
+import { Section } from "../../components/layout/Section";
+import { Layout } from "../../components/layout/Layout";
+import { Grid, Full, Small } from "../../components/layout/Grid";
+import { PostCard } from "../../components/PostCard";
 type Props = {
   blog: [];
 };

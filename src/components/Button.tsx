@@ -1,10 +1,18 @@
 import React from "react";
 import Link from "next/link";
 type Props = {
-  link: string;
   cta: string;
+  link: string;
 };
-export const MoreButton = (props: Props) => {
+export const LinkButton = (props: Props) => {
+  return (
+    <Link href={props.link}>
+      <a className="c-link-button">{props.cta}</a>
+    </Link>
+  );
+};
+
+export const LinkButtonMore = (props: Props) => {
   return (
     <Link href={props.link}>
       <a className={"c-more-button"}>

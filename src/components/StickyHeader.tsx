@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { ThemeToggle } from "../../src/components/theme-toggel";
-import { headerScroll, slideNavAnimation } from "../../src/utils/hamburger";
+import { ThemeToggle } from "./ThemeToggel";
+import { headerScroll, slideNavAnimation } from "../utils/hamburger";
 export const StickyHeader = () => {
   useEffect(() => {
     headerScroll("sticky-header");

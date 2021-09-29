@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
-import { StickyHeader } from "../../src/components/sticky-header";
+import { StickyHeader } from "./StickyHeader";
 export const Header = () => {
   return (
     <header id={"header"} className={"l-header"}>

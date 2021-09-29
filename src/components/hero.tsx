@@ -1,7 +1,7 @@
 import React from "react";
 import Ztext from "react-ztext";
-import { LinkButton } from "../../src/components/link-button";
-import { Grid, Full } from "../../src/components/layout/grid";
+import { LinkButton } from "./Button";
+import { Grid, Full } from "./layout/Grid";
 export const Hero = () => {
   return (
     <div className={"p-hero"}>

@@ -1,15 +1,16 @@
-import React, { useEffect } from "react";
+import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Helmet } from "../../src/components/helmet";
-import { Hero } from "../../src/components/hero";
-import { Main } from "../../src/components/layout/main";
-import { Section } from "../../src/components/layout/section";
-import { Layout } from "../../src/components/layout/layout";
-import { Universal } from "../../src/components/layout/universal";
-import { Grid, Full, Small } from "../../src/components/layout/grid";
-import { PostCard } from "../../src/components/post-card";
-import { MoreButton } from "../../src/components/more-button";
-import { VerticalCard } from "../../src/components/vertical-card";
+import { Helmet } from "../components/Helmet";
+import { Hero } from "../components/Hero";
+import { Main } from "../components/layout/Main";
+import { Section } from "../components/layout/Section";
+import { Layout } from "../components/layout/Layout";
+import { Universal } from "../components/layout/Universal";
+import { Grid, Full, Small } from "../components/layout/Grid";
+import { PostCard } from "../components/PostCard";
+import { LinkButtonMore } from "../../src/components/Button";
+import { PostCardVertical } from "../components/PostCard";
+import { ENDPOINT, API_KEY } from "../config/environment-variable";
 import zenn from "../../rss/data.json";
 type Props = {
   works: [];
@@ -20,11 +21,11 @@ export default function Home({ works, blog }: Props) {
   const desc = "こんにちは!これは説明文です!";
   return (
     <Layout>
-      <Helmet title={title} desc={desc} />
-      <Universal>
-        <Hero />
-      </Universal>
       <div className={"l-overflow-hidden"}>
+        <Helmet title={title} desc={desc} />
+        <Universal>
+          <Hero />
+        </Universal>
         <Main>
           <Section id={"zenn"} title={"Zenn"}>
             <Full>
@@ -37,7 +38,7 @@ export default function Home({ works, blog }: Props) {
               </Grid>
             </Full>
             <Full>
-              <MoreButton
+              <LinkButtonMore
                 link={"https://zenn.dev/hrkmtsmt"}
                 cta={"View Zenn"}
               />
@@ -54,7 +55,7 @@ export default function Home({ works, blog }: Props) {
               </Grid>
             </Full>
             <Full>
-              <MoreButton link={"blog"} cta={"Other Blog"} />
+              <LinkButtonMore link={"blog"} cta={"Other Blog"} />
             </Full>
           </Section>
           <Section id={"work"} title={"Works"}>
@@ -91,7 +92,7 @@ export default function Home({ works, blog }: Props) {
                 .slice(0, 10)
                 .map((data: any, index: number) => (
                   <SwiperSlide key={index}>
-                    <VerticalCard
+                    <PostCardVertical
                       title={data.title}
                       image={data.image.url}
                       path={`works/${data.id}`}
@@ -105,14 +106,11 @@ export default function Home({ works, blog }: Props) {
     </Layout>
   );
 }
-const endpoint: string | undefined = process.env.ENDPOINT;
-const key: {} = {
-  headers: { "X-API-KEY": process.env.API_KEY },
-};
+
 export const getStaticProps = async () => {
   const res = [
-    await fetch(`${endpoint}blog`, key),
-    await fetch(`${endpoint}works`, key),
+    await fetch(`${ENDPOINT}blog`, API_KEY),
+    await fetch(`${ENDPOINT}works`, API_KEY),
   ];
   const data = [await res[0].json(), await res[1].json()];
   return {

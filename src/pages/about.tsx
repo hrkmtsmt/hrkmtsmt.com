@@ -1,14 +1,14 @@
-import React, { useEffect } from "react";
-import { Helmet } from "../../src/components/helmet";
-import { Main } from "../components/layout/main";
-import { Section } from "../components/layout/section";
-import { Layout } from "../components/layout/layout";
-import { Medium } from "../components/layout/grid";
+import React from "react";
+import { Helmet } from "../components/Helmet";
+import { Main } from "../components/layout/Main";
+import { Section } from "../components/layout/Section";
+import { Layout } from "../components/layout/Layout";
+import { Medium } from "../components/layout/Grid";
+import { ENDPOINT, API_KEY } from "../config/environment-variable";
 type Props = {
   intro: [];
-  works: [];
 };
-export default function Home({ works, intro }: Props) {
+export default function About({ intro }: Props) {
   const title = "hrkmtsmt";
   const desc = "こんにちは!これは説明文です!";
   return (
@@ -30,12 +30,9 @@ export default function Home({ works, intro }: Props) {
     </Layout>
   );
 }
-const endpoint: any = process.env.ENDPOINT;
-const key: {} = {
-  headers: { "X-API-KEY": process.env.API_KEY },
-};
+
 export const getStaticProps = async () => {
-  const res = await fetch(`${endpoint}home/introduction`, key);
+  const res = await fetch(`${ENDPOINT}home/introduction`, API_KEY);
   const data = await res.json();
   return {
     props: {

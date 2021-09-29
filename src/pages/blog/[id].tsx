@@ -1,10 +1,10 @@
 import React from "react";
-import { Helmet } from "../../components/helmet";
-import { Post } from "../../components/post";
-import { Layout } from "../../components/layout/layout";
-import { Main } from "../../components/layout/main";
-import { Grid, Article, Sidebar } from "../../components/layout/grid";
-import { StickyNav } from "../../components/sticky-nav";
+import { Helmet } from "../../components/Helmet";
+import { Post } from "../../components/Post";
+import { Layout } from "../../components/layout/Layout";
+import { Main } from "../../components/layout/Main";
+import { Grid, Article, Sidebar } from "../../components/layout/Grid";
+import { StickyNav } from "../../components/StickyNav";
 type Props = {
   blog: {
     title: string;
