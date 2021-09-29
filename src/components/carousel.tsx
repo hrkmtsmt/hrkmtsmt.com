@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { VerticalCard } from "./vertical-card";
+import { PostCardVertical } from "./PostCard";
 type Props = {
   array: [];
   dir: string;
@@ -42,7 +42,7 @@ export const Carousel = (props: Props) => {
         .slice(0, props.endNumber)
         .map((data: any, index) => (
           <SwiperSlide key={index}>
-            <VerticalCard
+            <PostCardVertical
               title={data.title}
               image={data.image.url}
               path={`${props.dir}/${data.id}`}

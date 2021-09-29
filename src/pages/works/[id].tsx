@@ -1,10 +1,12 @@
 import React from "react";
-import { Helmet } from "../../components/helmet";
-import { Post } from "../../components/post";
-import { Layout } from "../../components/layout/layout";
-import { Main } from "../../components/layout/main";
-import { Grid, Article, Sidebar } from "../../components/layout/grid";
-import { StickyNav } from "../../components/sticky-nav";
+import { Helmet } from "../../components/Helmet";
+import { Post } from "../../components/Post";
+import { Layout } from "../../components/layout/Layout";
+import { Main } from "../../components/layout/Main";
+import { Grid, Article, Sidebar } from "../../components/layout/Grid";
+import { StickyNav } from "../../components/StickyNav";
+import { ProfileCard } from "../../components/ProfileCard";
+
 type Props = {
   work: {
     title: string;
@@ -32,7 +34,9 @@ export default function WorksPost({ work }: Props) {
             />
           </Article>
           <Sidebar>
-            <StickyNav />
+            <StickyNav>
+              <ProfileCard />
+            </StickyNav>
           </Sidebar>
         </Grid>
       </Main>

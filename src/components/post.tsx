@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import Image from "next/image";
-import { Helmet } from "../../src/components/helmet";
+import { Helmet } from "./Helmet";
 
 type Props = {
   date?: string;

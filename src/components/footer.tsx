@@ -1,5 +1,5 @@
 import React from "react";
-import { NavHorizonal, NavItem, NavIcon } from "./navigation";
+import { NavHorizonal, NavItem, NavIcon } from "./Navigation";
 import json from "../pulic/index.json";
 
 export const Footer = () => {
