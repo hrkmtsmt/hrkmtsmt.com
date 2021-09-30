@@ -1,0 +1,15 @@
+/* Swiper */
+.swiper {
+  &-container {
+    overflow: visible !important;
+  }
+  &-pagination-bullet {
+    background: var(--primary-color) !important;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+
+    &-active {
+      background: var(--primary-color) !important;
+    }
+  }
+}
