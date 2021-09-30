@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { scrollIntersectionAnimation } from "../../utils/animation";
+import { startAnimateEntersScreen } from "../../utils/animation";
 
 type Props = {
   effect: string;
@@ -8,7 +8,7 @@ type Props = {
 
 export const FadeIn = (props: Props) => {
   useEffect(() => {
-    scrollIntersectionAnimation(props.effect);
+    startAnimateEntersScreen(props.effect);
   }, []);
   return <div className={"a-target"}>{props.children}</div>;
 };

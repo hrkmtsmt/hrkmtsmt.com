@@ -1,5 +1,5 @@
-export function scrollIntersectionAnimation(effect: string) {
-  const elementsIsTarget = document.querySelectorAll(".a-target");
+export function startAnimateEntersScreen(effect: string) {
+  const elementsTarget = document.querySelectorAll(".a-target");
   const callback = (entries: any, observer: any) => {
     entries.forEach((entry: any) => {
       if (entry.isIntersecting) {
@@ -13,7 +13,7 @@ export function scrollIntersectionAnimation(effect: string) {
     threshold: 0,
   };
   const io = new IntersectionObserver(callback, options);
-  elementsIsTarget.forEach((targetElement) => {
-    io.observe(targetElement);
+  elementsTarget.forEach((target) => {
+    io.observe(target);
   });
 }

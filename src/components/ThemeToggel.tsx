@@ -18,3 +18,15 @@ export const ThemeToggle = () => {
     </button>
   );
 };
+export const ThemeSwitch = () => {
+  return (
+    <button
+      onClick={() => switchTheme()}
+      id={"theme-switch"}
+      className={"c-switch"}
+    >
+      <i className={"c-switch-icon i-moon"}></i>
+      <i className={"c-switch-icon i-sun"}></i>
+    </button>
+  );
+};
