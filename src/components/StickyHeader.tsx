@@ -1,35 +1,38 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { ThemeToggle } from "./ThemeToggel";
-import { headerScroll, slideNavAnimation } from "../utils/hamburger";
+import {
+  addClassNameOnScroll,
+  animateInOrderOnAddClassName,
+} from "../utils/hamburger";
 export const StickyHeader = () => {
   useEffect(() => {
-    headerScroll("sticky-header");
+    addClassNameOnScroll("sticky-header", "is-scroll", 160);
   }, []);
   return (
     <React.Fragment>
-      <nav id={"slide-nav"} className={"c-slide-nav"}>
-        <ul className={"c-slide-nav-inner"}>
-          <li className={"c-slide-nav-item"}>
+      <nav id={"menu"} className={"c-menu"}>
+        <ul className={"c-menu-inner"}>
+          <li className={"c-menu-item"}>
             <Link href={"/about"}>
-              <a className={"c-slide-nav-link"}>About</a>
+              <a className={"c-menu-link"}>About</a>
             </Link>
           </li>
-          <li className={"c-slide-nav-item"}>
+          <li className={"c-menu-item"}>
             <Link href={"/blog"}>
-              <a className={"c-slide-nav-link"}>Blog</a>
+              <a className={"c-menu-link"}>Blog</a>
             </Link>
           </li>
-          <li className={"c-slide-nav-item"}></li>
+          <li className={"c-menu-item"}></li>
         </ul>
-        <div className={"c-slide-nav-background-primary"}></div>
-        <div className={"c-slide-nav-background-base"}></div>
+        <div className={"c-menu-background-primary"}></div>
+        <div className={"c-menu-background-base"}></div>
       </nav>
       <div id="sticky-header" className={"c-sticky-header"}>
         <div className={"c-sticky-header-inner"}>
           <ThemeToggle />
           <button
-            onClick={() => slideNavAnimation()}
+            onClick={() => animateInOrderOnAddClassName()}
             id={"hamburger-button"}
             className={"c-hamburger-button"}
           >

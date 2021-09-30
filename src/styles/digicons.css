@@ -1,7 +1,6 @@
 @font-face {
   font-family: "digicons";
-  src: url("../fonts/digicons.ttf") format("truetype"),
-    url("../fonts/digicons.woff") format("woff"),
+  src: url("../fonts/digicons.woff") format("woff"),
     url("../fonts/digicons.woff2") format("woff2");
   font-weight: normal;
   font-style: normal;

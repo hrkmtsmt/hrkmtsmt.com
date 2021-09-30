@@ -1,7 +1,7 @@
 /* Foundation */
 @font-face {
   font-family: "QualionRound";
-  src: url("../fonts/qualion-round.ttf") format("truetype");
+  src: url("../fonts/qualion-round.woff") format("woff");
   src: url("../fonts/qualion-round.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -9,7 +9,7 @@
 }
 @font-face {
   font-family: "QualionRound";
-  src: url("../fonts/qualion-round-bold.ttf") format("truetype");
+  src: url("../fonts/qualion-round-bold.woff") format("woff");
   src: url("../fonts/qualion-round-bold.woff2") format("woff2");
   font-weight: 400;
   font-style: normal;
@@ -508,7 +508,7 @@ select {
     }
   }
 }
-.c-slide-nav {
+.c-menu {
   position: fixed;
   list-style: none;
   width: 100vw;
@@ -572,7 +572,7 @@ select {
   }
 }
 .is-active {
-  .c-slide-nav {
+  .c-menu {
     &-background {
       &-primary {
         transform: scale(200);
@@ -587,7 +587,7 @@ select {
   }
 }
 @media screen and (max-width: 1170px) {
-  .c-slide-nav {
+  .c-menu {
     &-inner {
       margin: 0;
       padding: 160px 40px 40px;
@@ -603,7 +603,7 @@ select {
   }
 }
 @media screen and (max-width: 768px) {
-  .c-slide-nav {
+  .c-menu {
     &-inner {
       padding: 160px 30px 30px;
     }
@@ -618,7 +618,7 @@ select {
   }
 }
 @media screen and (max-width: 576px) {
-  .c-slide-nav {
+  .c-menu {
     &-inner {
       padding: 160px 20px 20px;
     }
@@ -1277,6 +1277,56 @@ select {
 
     &:last-child {
       top: 30px;
+    }
+  }
+}
+.c-switch {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  flex-direction: column;
+  border-radius: 40px;
+  width: 40px;
+  height: 40px;
+  transition: ease-in-out 0.2s;
+  animation: a-sun-moon 1.6s linear infinite alternate;
+  position: relative;
+
+  &-icon {
+    font-size: 36px;
+    display: flex;
+    position: absolute;
+    top: -40px;
+    transform: rotateY(0);
+    transition: ease-in-out 0.4s;
+    opacity: 0;
+
+    &:last-child {
+      top: 0px;
+      opacity: 1;
+    }
+    &::before {
+      color: var(--primary-color);
+      width: 40px;
+      height: 40px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+  }
+}
+.is-theme-dark {
+  .c-switch {
+    margin: 0 0 0 40px;
+    transition: ease-in-out 0.4s;
+  }
+  .c-switch-icon {
+    top: 0px;
+    opacity: 1;
+
+    &:last-child {
+      top: 40px;
+      opacity: 0;
     }
   }
 }

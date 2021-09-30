@@ -1,11 +1,11 @@
-export const applyTheme = (themeName: string) => {
+const applyTheme = (themeName: string) => {
   sessionStorage.setItem("theme", themeName);
   document.documentElement.className = themeName;
 };
 const applyVisited = (status: string) => {
   sessionStorage.setItem("visited", status);
 };
-export const initialTheme = () => {
+const initialTheme = () => {
   const prefersColorSchemeDark = matchMedia(
     "(prefers-color-scheme: dark)"
   ).matches;
@@ -15,7 +15,7 @@ export const initialTheme = () => {
     applyTheme("is-theme-light");
   }
 };
-export const getStorageTheme = () => {
+const getStorageTheme = () => {
   const storageTheme = sessionStorage.getItem("theme");
   if (storageTheme === "is-theme-dark") {
     applyTheme("is-theme-dark");

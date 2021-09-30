@@ -1,6 +1,8 @@
 import React, { useEffect } from "react";
 import Link from "next/link";
 import { StickyHeader } from "./StickyHeader";
+import { ThemeSwitch } from "./ThemeToggel";
+
 export const Header = () => {
   return (
     <header id={"header"} className={"l-header"}>
@@ -38,6 +40,7 @@ export const Header = () => {
               </Link>
             </li>
           </ul>
+          <ThemeSwitch />
         </nav>
         <StickyHeader />
       </div>

@@ -21,11 +21,11 @@ export default function Home({ works, blog }: Props) {
   const desc = "こんにちは!これは説明文です!";
   return (
     <Layout>
+      <Helmet title={title} desc={desc} />
+      <Universal>
+        <Hero />
+      </Universal>
       <div className={"l-overflow-hidden"}>
-        <Helmet title={title} desc={desc} />
-        <Universal>
-          <Hero />
-        </Universal>
         <Main>
           <Section id={"zenn"} title={"Zenn"}>
             <Full>
