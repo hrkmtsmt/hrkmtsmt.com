@@ -16,6 +16,10 @@ export const NavHorizonal = (props: Props) => {
 };
 
 export const NavItem = (props: Props) => {
+  return <li className={"c-nav-item"}>{props.children}</li>;
+};
+
+export const NavItemLink = (props: Props) => {
   return (
     <li className={"c-nav-item"}>
       <Link href={props.link}>

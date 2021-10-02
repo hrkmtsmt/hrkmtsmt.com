@@ -1,5 +1,5 @@
 import React from "react";
-import { NavHorizonal, NavItem, NavIcon } from "./Navigation";
+import { NavHorizonal, NavItemLink, NavIcon } from "./Navigation";
 import json from "../pulic/index.json";
 
 export const Footer = () => {
@@ -9,9 +9,9 @@ export const Footer = () => {
         <nav className={"l-footer-nav"}>
           <NavHorizonal>
             {json.socialMedia.map((data) => (
-              <NavItem key={data.id} link={data.link}>
+              <NavItemLink key={data.id} link={data.link}>
                 <NavIcon className={`i-${data.id}`} />
-              </NavItem>
+              </NavItemLink>
             ))}
           </NavHorizonal>
         </nav>

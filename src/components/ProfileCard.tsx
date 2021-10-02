@@ -1,10 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import {
-  NavHorizonal,
-  NavItem,
-  NavIcon,
-} from "../../src/components/Navigation";
+import { NavHorizonal, NavItemLink, NavIcon } from "../../src/components/Navigation";
 import { square } from "../config/image-size";
 import json from "../pulic/index.json";
 import image from "../pulic/hrkmtsmt.png";
@@ -14,12 +10,7 @@ export const ProfileCard = () => {
     <div className={"c-profile-card"}>
       <div className={"c-profile-card-user"}>
         <div className={"c-profile-card-image"}>
-          <Image
-            alt={""}
-            src={image}
-            width={square.width}
-            height={square.height}
-          />
+          <Image alt={""} src={image} width={square.width} height={square.height} />
         </div>
         <div className={"c-profile-card-name"}>{json.name}</div>
       </div>
@@ -27,9 +18,9 @@ export const ProfileCard = () => {
       <div className={"c-profile-card-social"}>
         <NavHorizonal>
           {json.socialMedia.map((data) => (
-            <NavItem key={data.id} link={data.link}>
+            <NavItemLink key={data.id} link={data.link}>
               <NavIcon className={`i-${data.id}`} />
-            </NavItem>
+            </NavItemLink>
           ))}
         </NavHorizonal>
       </div>

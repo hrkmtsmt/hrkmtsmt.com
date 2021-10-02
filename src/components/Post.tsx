@@ -1,16 +1,18 @@
-import React from "react";
+import React, { ReactNode } from "react";
 import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import Image from "next/image";
 import { Helmet } from "./Helmet";
+import { square } from "../config/image-size";
 
 type Props = {
-  date?: string;
   title?: string;
-  desc?: string;
-  category?: string;
   body?: HTMLElement;
+  date?: string;
+  tag?: React.ReactNode | string;
+  desc?: string;
+  category?: string | {};
   dir?: string;
   image?: any;
   alt?: string;
@@ -19,27 +21,43 @@ type Props = {
 const PostDate = (props: Props) => {
   dayjs.extend(utc);
   dayjs.extend(timezone);
-  const date: string = dayjs
-    .utc(props.date)
-    .tz("Asia/Tokyo")
-    .format("YYYY/MM/DD");
-  return <p className={"p-article-date"}>{date}</p>;
+  const date: string = dayjs.utc(props.date).tz("Asia/Tokyo").format("YYYY.MM.DD");
+  if (props.date !== undefined) {
+    return <p className={"p-article-date"}>{date}</p>;
+  }
+  return null;
 };
 
 const PostTitle = (props: Props) => {
-  return <h1 className="p-article-title">{props.title}</h1>;
+  if (props.title !== undefined) {
+    return <h1 className="p-article-title">{props.title}</h1>;
+  }
+  return null;
 };
 
 const PostCategory = (props: Props) => {
-  return <p className={"p-article-category"}>{props.category}</p>;
+  if (props.category !== undefined) {
+    return <div className={"p-article-category"}>{props.category}</div>;
+  }
+  return null;
 };
 
 const PostThumbnail = (props: Props) => {
-  return (
-    <div className={"p-article-image"}>
-      <Image src={props.image} alt={props.alt} width={1200} height={630} />
-    </div>
-  );
+  if (props.image !== undefined) {
+    return (
+      <div className={"p-article-image"}>
+        <Image src={props.image} alt={props.alt} width={square.width} height={square.height} />
+      </div>
+    );
+  }
+  return null;
+};
+
+export const PostTag = (props: Props) => {
+  if (props.tag !== undefined) {
+    return <div className={"p-article-tag"}>{props.tag}</div>;
+  }
+  return null;
 };
 
 export const Post = (props: Props) => {
@@ -47,13 +65,12 @@ export const Post = (props: Props) => {
     <React.Fragment>
       <Helmet title={props.title} desc={props.desc} image={props.image} />
       <div className={"p-article-header"}>
-        {props.image === undefined ? undefined : (
-          <PostThumbnail image={props.image} />
-        )}
+        <PostThumbnail image={props.image} />
         <div className={"p-article-header-inner"}>
-          {props.category === undefined ? undefined : <PostCategory />}
-          {props.title === undefined ? undefined : <PostTitle />}
-          {props.date === undefined ? undefined : <PostDate />}
+          <PostCategory category={props.category} />
+          <PostDate date={props.date} />
+          <PostTitle title={props.title} />
+          {props.tag}
         </div>
       </div>
       <div
