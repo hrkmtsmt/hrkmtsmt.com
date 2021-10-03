@@ -10,8 +10,8 @@ type Props = {
   title?: string;
   body?: HTMLElement;
   date?: string;
-  tag?: React.ReactNode | string;
-  desc?: string;
+  tag?: React.ReactNode | string | any;
+  desc?: string | any;
   category?: string | {};
   dir?: string;
   image?: any;

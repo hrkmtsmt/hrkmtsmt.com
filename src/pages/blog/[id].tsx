@@ -1,5 +1,4 @@
 import React from "react";
-import { Helmet } from "../../components/Helmet";
 import { Post, PostTag } from "../../components/Post";
 import { Layout } from "../../components/layout/Layout";
 import { Main } from "../../components/layout/Main";
@@ -15,15 +14,14 @@ type Props = {
     body?: HTMLElement;
     dir: string;
     image?: any;
-    date?: string;
+    updatedAt: string;
     desc?: string;
     category?: any;
-    tag?: [];
+    tag?: [] | any;
   };
 };
 
 export default function BlogPost({ blog }: Props) {
-  console.log(typeof blog.image);
   return (
     <Layout>
       <Main>
@@ -39,8 +37,7 @@ export default function BlogPost({ blog }: Props) {
               tag={
                 <Navigation>
                   <NavHorizonal>
-                    {blog.tag?.map((data, index) => {
-                      console.log(data.tag);
+                    {blog.tag?.map((data: any, index: number) => {
                       return (
                         <NavItem key={index}>
                           <PostTag tag={data.tag} />

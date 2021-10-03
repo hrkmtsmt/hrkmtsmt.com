@@ -13,23 +13,14 @@ export default function Error() {
           <Grid>
             <div className={"p-error-nav"}>
               <LinkButton link={"/"} cta={"Go back"} />
-              <button
-                onClick={() => setCount(count - 1)}
-                className={"p-error-nav-button"}
-              >
+              <button onClick={() => setCount(count - 1)} className={"p-error-nav-button"}>
                 <i className={"ci-minus"}></i>
               </button>
-              <button
-                onClick={() => setCount(count + 1)}
-                className={"p-error-nav-button"}
-              >
+              <button onClick={() => setCount(count + 1)} className={"p-error-nav-button"}>
                 <i className={"ci-plus"}></i>
               </button>
             </div>
           </Grid>
-          <Full>
-            <div className={"p-error-number"}>Sorry!</div>
-          </Full>
         </Section>
       </Main>
     </Layout>
