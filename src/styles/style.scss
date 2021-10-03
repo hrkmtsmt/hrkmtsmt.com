@@ -652,7 +652,7 @@ select {
   height: 100%;
   background: var(--base-color);
   border-radius: 24px;
-  padding: 16px;
+  padding: 24px;
 
   &-emoji {
     line-height: 64px;
@@ -1504,13 +1504,7 @@ select {
     display: flex;
     flex-direction: column;
     width: 100%;
-    gap: 32px;
-
-    &-inner {
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
+    gap: 16px;
   }
   &-image {
     display: flex;
@@ -1549,26 +1543,25 @@ select {
   &-body {
     width: 100%;
     color: var(--font-color);
-    line-height: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
 
-    * {
-      margin: 0 0 16px;
-      &:last-child {
-        margin: 0;
-      }
+    *:last-child {
+      margin: 0;
     }
     h2,
     h3,
     h4,
     h5,
     h6 {
-      margin: 32px 0 16px;
+      margin: 40px 0 0;
       font-size: 24px;
       line-height: 40px;
       font-weight: 700;
 
       &:first-child {
-        margin: 0 0 16px;
+        margin: 0;
       }
     }
     p {
@@ -1604,7 +1597,7 @@ select {
 
       code {
         font-family: var(--monospace);
-        color: var(--font-color);
+        color: var(--base-color);
         line-height: 24px;
       }
     }
@@ -1633,6 +1626,14 @@ select {
   @include animation($name: a-fade-in);
 }
 @keyframes a-fade-in {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes a-fade-in-up {
   0% {
     opacity: 0;
     transform: translateY(80px);

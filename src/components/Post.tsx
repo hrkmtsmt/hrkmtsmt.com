@@ -66,12 +66,10 @@ export const Post = (props: Props) => {
       <Helmet title={props.title} desc={props.desc} image={props.image} />
       <div className={"p-article-header"}>
         <PostThumbnail image={props.image} />
-        <div className={"p-article-header-inner"}>
-          <PostCategory category={props.category} />
-          <PostDate date={props.date} />
-          <PostTitle title={props.title} />
-          {props.tag}
-        </div>
+        <PostCategory category={props.category} />
+        <PostDate date={props.date} />
+        <PostTitle title={props.title} />
+        {props.tag}
       </div>
       <div
         className={"p-article-body"}

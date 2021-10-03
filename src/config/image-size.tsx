@@ -18,6 +18,11 @@ export const ogp = {
   height: 630,
 };
 
+export const icon = {
+  width: 80,
+  height: 80,
+};
+
 export const loader = (image: string, width: number, quality: number) => {
   return `${image}?w=${width}&q=${quality}`;
 };
