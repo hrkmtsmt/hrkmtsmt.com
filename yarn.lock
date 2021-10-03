@@ -6397,7 +6397,7 @@
   "resolved" "https://registry.npmjs.org/strip-json-comments/-/strip-json-comments-3.1.1.tgz"
   "version" "3.1.1"
 
-"styled-components@^5.2.1", "styled-components@>= 2":
+"styled-components@^5.2.1", "styled-components@^5.3.1", "styled-components@>= 2":
   "integrity" "sha512-JThv2JRzyH0NOIURrk9iskdxMSAAtCfj/b2Sf1WJaCUsloQkblepy1jaCLX/bYE+mhYo3unmwVSI9I5d9ncSiQ=="
   "resolved" "https://registry.npmjs.org/styled-components/-/styled-components-5.3.1.tgz"
   "version" "5.3.1"

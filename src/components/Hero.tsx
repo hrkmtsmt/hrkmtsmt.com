@@ -4,30 +4,25 @@ import { LinkButton } from "./Button";
 import { Grid, Full } from "./layout/Grid";
 
 const HeroTitle = () => {
-  const [isZtext, setIsZtext] = useState(true);
-  if (isZtext === false) {
-    return (
-      <div onClick={() => setIsZtext(!isZtext)} className={"p-hero-title"}>
-        Front End & Design
-      </div>
-    );
-  } else if (isZtext === true) {
-    return (
-      <div onClick={() => setIsZtext(!isZtext)} className={"p-hero-title"}>
-        <Ztext depth="40px" direction="both" event="pointer" eventRotation="30deg" eventDirection="default" fade={false} layers={10} perspective="2400px">
-          Hello!
-        </Ztext>
-      </div>
-    );
-  }
+  return <span>Front End & Design</span>;
+};
+const HeroTitleZtext = () => {
+  return (
+    <Ztext depth="40px" direction="both" event="pointer" eventRotation="30deg" eventDirection="default" fade={false} layers={10} perspective="2400px">
+      Hello!
+    </Ztext>
+  );
 };
 
 export const Hero = () => {
+  const [isZtext, setIsZtext] = useState(true);
   return (
     <div className={"p-hero"}>
       <Grid>
         <Full>
-          <HeroTitle />
+          <div onClick={() => setIsZtext(!isZtext)} className={"p-hero-title"}>
+            {isZtext === true ? <HeroTitle /> : <HeroTitleZtext />}
+          </div>
         </Full>
         <Full>
           <LinkButton link={"https://github.com/hrkmtsmt"} cta={"View GitHub"} />

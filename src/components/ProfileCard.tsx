@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 import { NavHorizonal, NavItemLink, NavIcon } from "../../src/components/Navigation";
-import { square } from "../config/image-size";
+import { icon } from "../config/image-size";
 import json from "../pulic/index.json";
 import image from "../pulic/hrkmtsmt.png";
 
@@ -10,7 +10,7 @@ export const ProfileCard = () => {
     <div className={"c-profile-card"}>
       <div className={"c-profile-card-user"}>
         <div className={"c-profile-card-image"}>
-          <Image alt={""} src={image} width={square.width} height={square.height} />
+          <Image alt={""} src={image} width={icon.width} height={icon.height} />
         </div>
         <div className={"c-profile-card-name"}>{json.name}</div>
       </div>
