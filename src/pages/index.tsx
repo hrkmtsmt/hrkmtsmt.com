@@ -67,7 +67,7 @@ export default function Home({ works, blog }: Props) {
                 pagination={{ clickable: true }}
                 breakpoints={{
                   0: {
-                    spaceBetween: 16,
+                    spaceBetween: 24,
                     slidesPerView: 1.33333,
                   },
                   576: {
