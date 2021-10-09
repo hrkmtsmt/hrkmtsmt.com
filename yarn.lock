@@ -1198,10 +1198,10 @@
   "resolved" "https://registry.npmjs.org/@types/scheduler/-/scheduler-0.16.2.tgz"
   "version" "0.16.2"
 
-"@types/styled-components@^5.1.9":
-  "integrity" "sha512-d6P1/tyNytqKwam3cQXq7a9uPtovc/mdAs7dBiz1YbDdNIT3X4WmuFU78YdSYh84TXVuhOwezZ3EeKuNBhwsHQ=="
-  "resolved" "https://registry.npmjs.org/@types/styled-components/-/styled-components-5.1.14.tgz"
-  "version" "5.1.14"
+"@types/styled-components@^5.1.15", "@types/styled-components@^5.1.9":
+  "integrity" "sha512-4evch8BRI3AKgb0GAZ/sn+mSeB+Dq7meYtMi7J/0Mg98Dt1+r8fySOek7Sjw1W+Wskyjc93565o5xWAT/FdY0Q=="
+  "resolved" "https://registry.npmjs.org/@types/styled-components/-/styled-components-5.1.15.tgz"
+  "version" "5.1.15"
   dependencies:
     "@types/hoist-non-react-statics" "*"
     "@types/react" "*"
