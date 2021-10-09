@@ -1,11 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-
-type Props = {
-  cta: string;
-  link: string;
-};
+import { Props } from "@src/_components/types";
 
 const Anker = styled.a`
   position: relative;
