@@ -6,6 +6,7 @@ import { Section } from "../components/layout/Section";
 import { Layout } from "../components/layout/Layout";
 import { Large } from "../components/layout/Grid";
 import { FeatureBox } from "../components/FeatureBox";
+import { List, ListItem } from "../components/List";
 import { Accordion } from "../components/Accordion";
 import { ENDPOINT, API_KEY } from "../config/environment-variable";
 type Props = {
@@ -45,11 +46,15 @@ export default function About({ intro }: Props) {
           </Swiper>
         </Section>
         <Section id={"q-and-a"} title={"Q&A"}>
-          {intro.map((intro: any, index) => (
-            <Large key={index}>
-              <Accordion question={intro.title} answer={intro.desc} />
-            </Large>
-          ))}
+          <Large>
+            <List>
+              {intro.map((intro: any, index) => (
+                <ListItem key={index}>
+                  <Accordion question={intro.title} answer={intro.desc} />
+                </ListItem>
+              ))}
+            </List>
+          </Large>
         </Section>
       </Main>
     </Layout>

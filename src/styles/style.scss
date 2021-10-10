@@ -1450,6 +1450,22 @@ select {
     }
   }
 }
+.c-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media screen and (max-width: 768px) {
+  .c-list {
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .c-list {
+    gap: 16px;
+  }
+}
+
 .p-hero {
   position: relative;
   display: flex;
