@@ -4,21 +4,28 @@ import { Helmet } from "../components/Helmet";
 import { Main } from "../components/layout/Main";
 import { Section } from "../components/layout/Section";
 import { Layout } from "../components/layout/Layout";
-import { Large } from "../components/layout/Grid";
+import { Grid, Large } from "../components/layout/Grid";
 import { FeatureBox } from "../components/FeatureBox";
 import { List, ListItem } from "../components/List";
 import { Accordion } from "../components/Accordion";
 import { ENDPOINT, API_KEY } from "../config/environment-variable";
 type Props = {
-  intro: [];
+  about: {};
+  feature: {};
+  questionAndAnswer: {};
 };
-export default function About({ intro }: Props) {
+export default function About({ about, feature, questionAndAnswer }: Props) {
+  console.log(questionAndAnswer);
   const title = "hrkmtsmt";
   const desc = "こんにちは!これは説明文です!";
   return (
     <Layout>
       <Helmet title={title} desc={desc} />
       <Main>
+        <Grid id={""}>
+          <Large></Large>
+          <Large></Large>
+        </Grid>
         <Section id={"introduction"} title={"Introduction"}>
           <Swiper
             className={"l-grid-full"}
@@ -38,19 +45,19 @@ export default function About({ intro }: Props) {
               },
             }}
           >
-            {intro.map((intro: any, index) => (
-              <SwiperSlide key={index}>
-                <FeatureBox title={intro.title} desc={intro.desc} image={intro.image} />
+            {feature.map((data: any) => (
+              <SwiperSlide key={data.title}>
+                <FeatureBox title={data.title} desc={data.desc} image={data.image} />
               </SwiperSlide>
             ))}
           </Swiper>
         </Section>
-        <Section id={"q-and-a"} title={"Q&A"}>
+        <Section id={questionAndAnswer.fieldId} title={questionAndAnswer.title}>
           <Large>
             <List>
-              {intro.map((intro: any, index) => (
-                <ListItem key={index}>
-                  <Accordion question={intro.title} answer={intro.desc} />
+              {questionAndAnswer.repeaterField.map((data: any) => (
+                <ListItem key={data.text}>
+                  <Accordion question={data.text} answer={data.textarea} />
                 </ListItem>
               ))}
             </List>
@@ -62,11 +69,13 @@ export default function About({ intro }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const res = await fetch(`${ENDPOINT}home/introduction`, API_KEY);
+  const res = await fetch(`${ENDPOINT}about`, API_KEY);
   const data = await res.json();
   return {
     props: {
-      intro: data.body,
+      about: data.contents[0].about,
+      questionAndAnswer: data.contents[0].questionAndAnswer[0],
+      feature: data.contents[0].feature,
     },
   };
 };
