@@ -1421,6 +1421,35 @@ select {
     line-height: 24px;
   }
 }
+.c-accordion {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--base-color);
+
+  &-question {
+    font-weight: 700;
+    padding: 24px;
+  }
+  &-answer {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-24px);
+    transition: 0.4s ease-in-out;
+    padding: 0 24px;
+
+    &[aria-expanded="true"] {
+      height: auto;
+      opacity: 1;
+      transform: translateY(0);
+      transition: 0.4s ease-in-out;
+      padding: 0 24px 24px;
+      margin: -8px 0 0;
+    }
+  }
+}
 .p-hero {
   position: relative;
   display: flex;
