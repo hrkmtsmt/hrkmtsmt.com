@@ -10,21 +10,33 @@ import { List, ListItem } from "../components/List";
 import { Accordion } from "../components/Accordion";
 import { ENDPOINT, API_KEY } from "../config/environment-variable";
 type Props = {
-  about: {};
-  feature: {};
-  questionAndAnswer: {};
+  about: any;
+  feature: any;
+  questionAndAnswer: any;
 };
 export default function About({ about, feature, questionAndAnswer }: Props) {
-  console.log(questionAndAnswer);
+  console.log(feature);
   const title = "hrkmtsmt";
   const desc = "こんにちは!これは説明文です!";
   return (
     <Layout>
       <Helmet title={title} desc={desc} />
       <Main>
-        <Grid id={""}>
-          <Large></Large>
-          <Large></Large>
+        <Grid id={"p-about-hero"}>
+          <Large>
+            <div>
+              <h1 className={"p-about-hero-title"}>{about.title}</h1>
+              <p className={"p-about-hero-desc"}>{about.desc}</p>
+            </div>
+          </Large>
+          <Large>
+            <div
+              className={"p-about-hero-image"}
+              dangerouslySetInnerHTML={{
+                __html: `${about.svg}`,
+              }}
+            />
+          </Large>
         </Grid>
         <Section id={"introduction"} title={"Introduction"}>
           <Swiper
@@ -45,7 +57,7 @@ export default function About({ about, feature, questionAndAnswer }: Props) {
               },
             }}
           >
-            {feature.map((data: any) => (
+            {feature.repeaterField.map((data: any) => (
               <SwiperSlide key={data.title}>
                 <FeatureBox title={data.title} desc={data.desc} image={data.image} />
               </SwiperSlide>
@@ -75,7 +87,7 @@ export const getStaticProps = async () => {
     props: {
       about: data.contents[0].about,
       questionAndAnswer: data.contents[0].questionAndAnswer[0],
-      feature: data.contents[0].feature,
+      feature: data.contents[0].feature[0],
     },
   };
 };
