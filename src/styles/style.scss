@@ -653,10 +653,13 @@ select {
   border-radius: 24px;
   padding: 24px;
 
-  &-emoji {
-    line-height: 64px;
-    font-size: 48px;
+  &-image {
     margin: 0 auto 16px;
+
+    svg {
+      height: 160%;
+      fill: var(--font-color);
+    }
   }
   &-title {
     font-weight: 700;

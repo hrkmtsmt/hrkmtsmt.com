@@ -33,12 +33,12 @@ export default function About({ about, feature, questionAndAnswer }: Props) {
             <div
               className={"p-about-hero-image"}
               dangerouslySetInnerHTML={{
-                __html: `${about.svg}`,
+                __html: about.svg,
               }}
             />
           </Large>
         </Grid>
-        <Section id={"introduction"} title={"Introduction"}>
+        <Section id={feature.id} title={feature.title}>
           <Swiper
             className={"l-grid-full"}
             pagination={{ clickable: true }}
@@ -59,7 +59,7 @@ export default function About({ about, feature, questionAndAnswer }: Props) {
           >
             {feature.repeaterField.map((data: any) => (
               <SwiperSlide key={data.title}>
-                <FeatureBox title={data.title} desc={data.desc} image={data.image} />
+                <FeatureBox title={data.title} desc={data.desc} svg={{ __html: data.svg }} />
               </SwiperSlide>
             ))}
           </Swiper>
@@ -86,8 +86,8 @@ export const getStaticProps = async () => {
   return {
     props: {
       about: data.contents[0].about,
-      questionAndAnswer: data.contents[0].questionAndAnswer[0],
-      feature: data.contents[0].feature[0],
+      questionAndAnswer: data.contents[0].questionAndAnswer,
+      feature: data.contents[0].feature,
     },
   };
 };
