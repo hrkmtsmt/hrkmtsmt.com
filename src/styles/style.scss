@@ -653,10 +653,13 @@ select {
   border-radius: 24px;
   padding: 24px;
 
-  &-emoji {
-    line-height: 64px;
-    font-size: 48px;
+  &-image {
     margin: 0 auto 16px;
+
+    svg {
+      height: 160%;
+      fill: var(--font-color);
+    }
   }
   &-title {
     font-weight: 700;
@@ -1423,6 +1426,51 @@ select {
     line-height: 24px;
   }
 }
+.c-accordion {
+  display: flex;
+  flex-direction: column;
+  border-radius: 24px;
+  overflow: hidden;
+  background: var(--base-color);
+
+  &-question {
+    font-weight: 700;
+    padding: 24px;
+  }
+  &-answer {
+    height: 0;
+    overflow: hidden;
+    opacity: 0;
+    transform: translateY(-24px);
+    transition: 0.4s ease-in-out;
+    padding: 0 24px;
+
+    &[aria-expanded="true"] {
+      height: auto;
+      opacity: 1;
+      transform: translateY(0);
+      transition: 0.4s ease-in-out;
+      padding: 0 24px 24px;
+      margin: -8px 0 0;
+    }
+  }
+}
+.c-list {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+@media screen and (max-width: 768px) {
+  .c-list {
+    gap: 24px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .c-list {
+    gap: 16px;
+  }
+}
+
 .p-hero {
   position: relative;
   display: flex;
@@ -1452,6 +1500,7 @@ select {
     z-index: -1;
   }
 }
+
 @media screen and (max-width: 768px) {
   .p-hero {
     &-background {
@@ -1472,6 +1521,68 @@ select {
     }
   }
 }
+
+.p-about-hero {
+  position: relative;
+  display: flex;
+  align-items: center;
+  padding: 80px 0;
+
+  &-container {
+  }
+  &-title {
+    font-size: 80px;
+    line-height: 80px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin: 0 0 32px;
+  }
+  &-desc {
+    font-size: 16px;
+  }
+  &-image {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    height: 100%;
+
+    svg {
+      height: 160%;
+      position: absolute;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      -webkit-transform: translate(-50%, -50%);
+      -ms-transform: translate(-50%, -50%);
+      fill: var(--font-color);
+    }
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .p-about-hero {
+    &-title {
+      font-size: 48px;
+      line-height: 64px;
+      margin: 0 0 16px;
+    }
+    &-image {
+      display: flex;
+      justify-content: center;
+      position: relative;
+      height: 100%;
+
+      svg {
+        height: 100%;
+        position: relative;
+      }
+    }
+  }
+}
+@media screen and (max-width: 576px) {
+}
+
 .p-section {
   display: flex;
   flex-direction: column;
