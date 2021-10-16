@@ -3,7 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { Props } from "@src/_components/types";
 
-const Anker = styled.a`
+const Anchor = styled.a`
   position: relative;
   display: inline-block;
   padding: 0 20px;
@@ -50,7 +50,7 @@ const Anker = styled.a`
 export const LinkButton: React.VFC<Props> = (props) => {
   return (
     <Link href={props.link} passHref>
-      <Anker>{props.cta}</Anker>
+      <Anchor>{props.cta}</Anchor>
     </Link>
   );
 };
