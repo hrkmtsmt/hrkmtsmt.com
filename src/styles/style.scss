@@ -200,7 +200,7 @@ select {
       grid-column: span 4;
     }
     &-extra-small {
-      grid-column: span 2;
+      grid-column: span 3;
     }
   }
 }
@@ -1002,6 +1002,7 @@ select {
     transition: ease-in-out 0.1s;
   }
 }
+// ✅ Styled-components
 .c-link-button {
   position: relative;
   display: inline-block;
@@ -1116,6 +1117,7 @@ select {
     transition: ease-in-out 0.1s;
   }
 }
+// ✅ Styled-components
 .c-like-button {
   width: 40px;
   display: flex;

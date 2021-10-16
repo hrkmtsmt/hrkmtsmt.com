@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Ztext from "react-ztext";
-import { LinkButton } from "./Button";
+import { LinkButton } from "@src/_components/LinkButton";
 import { Grid, Full } from "./layout/Grid";
 
 const HeroTitle = () => {

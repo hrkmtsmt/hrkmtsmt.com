@@ -6,7 +6,8 @@ import { Main } from "../components/layout/Main";
 import { Section } from "../components/layout/Section";
 import { Layout } from "../components/layout/Layout";
 import { Universal } from "../components/layout/Universal";
-import { Grid, Full, Small } from "../components/layout/Grid";
+import { Full, Small } from "../components/layout/Grid";
+import { Grid } from "../_components/layout/Grid";
 import { PostCard } from "../components/PostCard";
 import { LinkButtonMore } from "../../src/components/Button";
 import { PostCardVertical } from "../components/PostCard";
@@ -40,7 +41,10 @@ export default function Home({ works, blog }: Props) {
                 </Grid>
               </Full>
               <Full>
-                <LinkButtonMore link={"https://zenn.dev/hrkmtsmt"} cta={"View Zenn"} />
+                <LinkButtonMore
+                  link={"https://zenn.dev/hrkmtsmt"}
+                  cta={"View Zenn"}
+                />
               </Full>
             </Section>
           </FadeIn>
@@ -95,7 +99,11 @@ export default function Home({ works, blog }: Props) {
                   .slice(0, 10)
                   .map((data: any, index: number) => (
                     <SwiperSlide key={index}>
-                      <PostCardVertical title={data.title} image={data.image.url} path={`works/${data.id}`} />
+                      <PostCardVertical
+                        title={data.title}
+                        image={data.image.url}
+                        path={`works/${data.id}`}
+                      />
                     </SwiperSlide>
                   ))}
               </Swiper>
@@ -108,7 +116,10 @@ export default function Home({ works, blog }: Props) {
 }
 
 export const getStaticProps = async () => {
-  const res = [await fetch(`${ENDPOINT}blog`, API_KEY), await fetch(`${ENDPOINT}works`, API_KEY)];
+  const res = [
+    await fetch(`${ENDPOINT}blog`, API_KEY),
+    await fetch(`${ENDPOINT}works`, API_KEY),
+  ];
   const data = [await res[0].json(), await res[1].json()];
   return {
     props: {
