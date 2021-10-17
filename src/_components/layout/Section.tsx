@@ -41,11 +41,9 @@ export const Section: React.VFC<Props> = (props) => {
   return (
     <Wrapper id={props.id}>
       <Header>
-        {props.caption === undefined ? undefined : (
-          <Caption>{props.caption}</Caption>
-        )}
-        {props.title === undefined ? undefined : <Title>{props.title}</Title>}
-        {props.desc === undefined ? undefined : <Desc>{props.desc}</Desc>}
+        {props.caption !== undefined && <Caption>{props.caption}</Caption>}
+        {props.title !== undefined && <Title>{props.title}</Title>}
+        {props.desc !== undefined && <Desc>{props.desc}</Desc>}
       </Header>
       {props.children}
     </Wrapper>

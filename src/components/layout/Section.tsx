@@ -24,13 +24,9 @@ export const Section = (props: Props) => {
       <Grid>
         <Full>
           <div className={"p-section"}>
-            {props.caption === undefined ? undefined : (
-              <Caption caption={props.caption} />
-            )}
-            {props.title === undefined ? undefined : (
-              <Title title={props.title} />
-            )}
-            {props.desc === undefined ? undefined : <Desc desc={props.desc} />}
+            {props.caption !== undefined && <Caption caption={props.caption} />}
+            {props.title !== undefined && <Title title={props.title} />}
+            {props.desc !== undefined && <Desc desc={props.desc} />}
           </div>
         </Full>
         {props.children}
