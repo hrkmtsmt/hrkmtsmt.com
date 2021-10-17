@@ -17,9 +17,12 @@
 }
 :root {
   --max-width: 1080px;
-  --sans-serif: "QualionRound", "QualionRound-Regular", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic",
-    "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif;
-  --monospace: "Courier", "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
+  --sans-serif: "QualionRound", "QualionRound-Regular", "游ゴシック体", YuGothic,
+    "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic",
+    "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans",
+    Meiryo, sans-serif;
+  --monospace: "Courier", "游ゴシック体", YuGothic, "游ゴシック Medium",
+    "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
 }
 :root,
 .is-theme-light {
@@ -235,7 +238,6 @@ select {
     }
   }
 }
-/* - Main */
 .l-universal {
   width: 100%;
   padding: 0 32px;
@@ -255,10 +257,10 @@ select {
 }
 .l-main {
   width: 100%;
-  display: grid;
-  grid-gap: 8px;
+  display: flex;
+  flex-direction: column;
+  grid-gap: 80px;
   padding: 80px 0;
-  grid-template-columns: 1fr;
   background: var(--background-color);
   border-radius: 24px 24px 0 0;
 }
@@ -684,9 +686,9 @@ select {
     text-decoration: none;
     color: var(--primary-color);
     display: block;
-  }
-  path {
-    fill: var(--primary-color);
+    path {
+      fill: var(--primary-color);
+    }
   }
 }
 /* - Post Card */
@@ -1730,7 +1732,15 @@ select {
 }
 
 /* Animation */
-@mixin animation($name, $delay: 0.4s, $duration: 0.6s, $timing-function: ease-in-out, $iteration-count: 1, $direction: normal, $fill-mode: forwards) {
+@mixin animation(
+  $name,
+  $delay: 0.4s,
+  $duration: 0.6s,
+  $timing-function: ease-in-out,
+  $iteration-count: 1,
+  $direction: normal,
+  $fill-mode: forwards
+) {
   animation: {
     name: $name;
     delay: $delay;
