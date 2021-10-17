@@ -42,6 +42,7 @@ export default function Home({ works, blog }: Props) {
               </Full>
               <Full>
                 <LinkButtonMore
+                  key={"https://zenn.dev/hrkmtsmt"}
                   link={"https://zenn.dev/hrkmtsmt"}
                   cta={"View Zenn"}
                 />

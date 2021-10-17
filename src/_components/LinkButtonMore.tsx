@@ -8,7 +8,7 @@ const Anker = styled.a`
   overflow: hidden;
   z-index: 1;
 `;
-const Container = styled.div`
+const Wrapper = styled.div`
   display: flex;
   position: relative;
   height: 40px;
@@ -78,12 +78,12 @@ export const LinkButtonMore: React.VFC<Props> = (props) => {
   return (
     <Link href={props.link} passHref>
       <Anker>
-        <Container>
+        <Wrapper>
           <Arrow>
             <i className={"i-arrow-right"}></i>
           </Arrow>
           <CTA>{props.cta}</CTA>
-        </Container>
+        </Wrapper>
       </Anker>
     </Link>
   );

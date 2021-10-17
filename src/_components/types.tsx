@@ -1,10 +1,12 @@
 export type Props = {
+  id?: string;
   title?: string;
   body?: HTMLElement;
   children?: React.ReactNode;
   date?: string;
   tag?: string;
   desc?: string;
+  caption?: string;
   cat?: string;
   dir?: string;
   img?: string;
