@@ -11,8 +11,8 @@ export type Props = {
   caption?: string;
   cat?: string;
   dir?: string;
-  img?: string;
-  link: string;
+  src?: string;
+  href: string;
   cta: string;
   alt?: string;
 };
