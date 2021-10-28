@@ -15,6 +15,7 @@ export type Props = {
   href: string;
   cta: string;
   alt?: string;
+  svg?: undefined | any;
 };
 
 export type EventHandler = {

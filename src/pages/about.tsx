@@ -5,7 +5,7 @@ import { Main } from "../components/layout/Main";
 import { Section } from "../components/layout/Section";
 import { Layout } from "../components/layout/Layout";
 import { Grid, Large } from "../components/layout/Grid";
-import { FeatureBox } from "../components/FeatureBox";
+import { FeatureBox } from "../components/_FeatureBox";
 import { List, ListItem } from "../components/List";
 import { Accordion } from "../components/Accordion";
 import { ENDPOINT, API_KEY } from "../config/environment-variable";
@@ -59,7 +59,11 @@ export default function About({ about, feature, questionAndAnswer }: Props) {
           >
             {feature.repeaterField.map((data: any) => (
               <SwiperSlide key={data.title}>
-                <FeatureBox title={data.title} desc={data.desc} svg={{ __html: data.svg }} />
+                <FeatureBox
+                  title={data.title}
+                  desc={data.desc}
+                  svg={{ __html: data.svg }}
+                />
               </SwiperSlide>
             ))}
           </Swiper>
