@@ -6,7 +6,11 @@ import { Grid, Article, Sidebar } from "../../components/layout/_Grid";
 import { StickyNav } from "../../components/StickyNav";
 import { ProfileCard } from "../../components/ProfileCard";
 import { ENDPOINT, API_KEY } from "../../config/environment-variable";
-import { Navigation, NavHorizonal, NavItem } from "../../components/Navigation";
+import {
+  Navigation,
+  NavHorizonal,
+  NavItem,
+} from "../../components/_Navigation";
 
 type Props = {
   blog: {
