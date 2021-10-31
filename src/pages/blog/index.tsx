@@ -1,9 +1,9 @@
 import React, { useEffect } from "react";
 import { Helmet } from "../../components/Helmet";
-import { Main } from "../../components/layout/Main";
+import { Main } from "../../components/layout/_Main";
 import { Section } from "../../components/layout/Section";
 import { Layout } from "../../components/layout/Layout";
-import { Grid, Full, Small } from "../../components/layout/Grid";
+import { Grid, Full, Small } from "../../components/layout/_Grid";
 import { PostCard } from "../../components/PostCard";
 type Props = {
   blog: [];
