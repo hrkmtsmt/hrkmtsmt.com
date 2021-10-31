@@ -5,9 +5,12 @@ import { Section } from "../../components/layout/Section";
 import { Layout } from "../../components/layout/Layout";
 import { Grid, Full, Small } from "../../components/layout/_Grid";
 import { PostCard } from "../../components/PostCard";
+import { ENDPOINT, API_KEY } from "../../config/environment-variable";
+
 type Props = {
   blog: [];
 };
+
 export default function Blog({ blog }: Props) {
   const title = "hrkmtsmt";
   const desc = "こんにちは!これは説明文です!";
@@ -40,12 +43,9 @@ export default function Blog({ blog }: Props) {
     </Layout>
   );
 }
-const endpoint: string | undefined = process.env.ENDPOINT;
-const key: {} = {
-  headers: { "X-API-KEY": process.env.API_KEY },
-};
+
 export const getStaticProps = async () => {
-  const res = await fetch(`${endpoint}blog`, key);
+  const res = await fetch(`${ENDPOINT}blog`, API_KEY);
   const data = await res.json();
   return {
     props: {

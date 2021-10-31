@@ -14,10 +14,12 @@ import { PostCardVertical } from "../components/PostCard";
 import { FadeIn } from "../components/animation/FadeIn";
 import { ENDPOINT, API_KEY } from "../config/environment-variable";
 import zenn from "../../rss/data.json";
+
 type Props = {
   works: [];
   blog: [];
 };
+
 export default function Home({ works, blog }: Props) {
   const title = "hrkmtsmt";
   const desc = "こんにちは!これは説明文です!";
