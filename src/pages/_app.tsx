@@ -6,6 +6,7 @@ import "../../src/styles/reset.css";
 import "../../src/styles/digicons.css";
 import "../../src/styles/style.scss";
 import "../../src/styles/package.scss";
+
 const App = ({ Component, pageProps }: AppProps): JSX.Element => {
   return (
     <React.Fragment>
