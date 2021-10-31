@@ -3,7 +3,7 @@ import Link from "next/link";
 import styled from "styled-components";
 import { Props } from "@src/_components/types";
 
-const Anker = styled.a`
+const Anchor = styled.a`
   display: inline-block;
   overflow: hidden;
   z-index: 1;
@@ -76,15 +76,15 @@ const CTA = styled.div`
 
 export const LinkButtonMore: React.VFC<Props> = (props) => {
   return (
-    <Link href={props.link} passHref>
-      <Anker>
+    <Link href={props.href} passHref>
+      <Anchor>
         <Wrapper>
           <Arrow>
             <i className={"i-arrow-right"}></i>
           </Arrow>
           <CTA>{props.cta}</CTA>
         </Wrapper>
-      </Anker>
+      </Anchor>
     </Link>
   );
 };

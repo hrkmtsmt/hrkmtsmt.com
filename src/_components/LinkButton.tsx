@@ -49,7 +49,7 @@ const Anchor = styled.a`
 
 export const LinkButton: React.VFC<Props> = (props) => {
   return (
-    <Link href={props.link} passHref>
+    <Link href={props.href} passHref>
       <Anchor>{props.cta}</Anchor>
     </Link>
   );

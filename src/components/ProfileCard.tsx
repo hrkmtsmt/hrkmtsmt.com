@@ -1,6 +1,6 @@
 import React from "react";
 import Image from "next/image";
-import { NavHorizonal, NavItemLink, NavIcon } from "../../src/components/Navigation";
+import { NavHorizonal, NavItemLink, NavIcon } from "./_Navigation";
 import { icon } from "../config/image-size";
 import json from "../pulic/index.json";
 import image from "../pulic/hrkmtsmt.png";

@@ -1,18 +1,21 @@
 export type Props = {
   id?: string;
   title?: string;
+  header?: string;
   body?: HTMLElement;
   children?: React.ReactNode;
   date?: string;
   tag?: string;
   desc?: string;
+  content?: string;
   caption?: string;
   cat?: string;
   dir?: string;
-  img?: string;
-  link: string;
+  src?: string;
+  href: string;
   cta: string;
   alt?: string;
+  svg?: undefined | any;
 };
 
 export type EventHandler = {
