@@ -1,6 +1,9 @@
 import React from "react";
 import styled from "styled-components";
+import Link from "next/link";
+import { Logo } from "@src/_components/Logo";
 import { mediaQuery } from "@src/styles/style";
+import { Props } from "../types";
 
 const Wrapper = styled.header`
   width: 100%;
@@ -35,7 +38,7 @@ const List = styled.ul`
   display: flex;
 `;
 
-const ListItem = styled.li`
+const Item = styled.li`
   margin: 0 16px 0 0;
   line-height: 40px;
   position: relative;
@@ -45,7 +48,7 @@ const ListItem = styled.li`
   }
 `;
 
-const ListLink = styled.a`
+const Anchor = styled.a`
   display: block;
   font-weight: 700;
   color: var(--primary-color);
@@ -83,11 +86,30 @@ const ListLink = styled.a`
     }
   }
 `;
+const ItemLink: React.VFC<Props> = (props) => {
+  return (
+    <Link href={props.href} passHref>
+      <Item>
+        <Anchor>{props.label}</Anchor>
+      </Item>
+    </Link>
+  );
+};
 
-export const Header = () => {
+export const Header: React.VFC = () => {
   return (
     <Wrapper>
-      <Inner></Inner>
+      <Inner>
+        <Nav>
+          <List>
+            <Item>
+              <Logo />
+            </Item>
+            <ItemLink href={"/about"} label={"About"} />
+            <ItemLink href={"/blog"} label={"Blog"} />
+          </List>
+        </Nav>
+      </Inner>
     </Wrapper>
   );
 };

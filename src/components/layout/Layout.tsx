@@ -1,5 +1,5 @@
 import React from "react";
-import { Header } from "../_Header";
+import { Header } from "@src/_components/layout/Header";
 import { Footer } from "../Footer";
 
 type Props = {
