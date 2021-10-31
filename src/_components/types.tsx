@@ -13,8 +13,9 @@ export type Props = {
   dir?: string;
   src?: string;
   href: string;
-  cta: string;
+  cta?: string;
   alt?: string;
+  label?: string;
   svg?: undefined | any;
 };
 

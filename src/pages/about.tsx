@@ -17,7 +17,6 @@ type Props = {
 };
 
 export default function About({ about, feature, questionAndAnswer }: Props) {
-  console.log(feature);
   const title = "hrkmtsmt";
   const desc = "こんにちは!これは説明文です!";
   return (
