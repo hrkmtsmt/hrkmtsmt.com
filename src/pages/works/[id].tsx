@@ -6,6 +6,7 @@ import { Main } from "../../components/layout/_Main";
 import { Grid, Article, Sidebar } from "../../components/layout/_Grid";
 import { StickyNav } from "../../components/StickyNav";
 import { ProfileCard } from "../../components/ProfileCard";
+import { API_KEY, ENDPOINT } from "@src/config/environment-variable";
 
 type Props = {
   work: {
@@ -18,6 +19,7 @@ type Props = {
     dir: string;
   };
 };
+
 export default function WorksPost({ work }: Props) {
   return (
     <Layout>
@@ -43,20 +45,17 @@ export default function WorksPost({ work }: Props) {
     </Layout>
   );
 }
-const endpoint: any = process.env.ENDPOINT;
-const key: {} = {
-  headers: { "X-API-KEY": process.env.API_KEY },
-};
+
 const dir = "works";
 export const getStaticPaths = async () => {
-  const res = await fetch(endpoint + dir, key);
+  const res = await fetch(ENDPOINT + dir, API_KEY);
   const data = await res.json();
   const paths = (data.contents || []).map((data: any) => `/${dir}/${data.id}`);
   return { paths, fallback: false };
 };
 export const getStaticProps = async (context: any) => {
   const id = context.params.id;
-  const res = await fetch(`${endpoint + dir}/${id}`, key);
+  const res = await fetch(`${ENDPOINT + dir}/${id}`, API_KEY);
   const data = await res.json();
   return {
     props: {

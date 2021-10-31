@@ -6,6 +6,7 @@ import { Grid, Article, Sidebar } from "../../components/layout/_Grid";
 import { StickyNav } from "../../components/StickyNav";
 import { ProfileCard } from "../../components/ProfileCard";
 import { ENDPOINT, API_KEY } from "../../config/environment-variable";
+
 import {
   Navigation,
   NavHorizonal,
@@ -63,6 +64,7 @@ export default function BlogPost({ blog }: Props) {
     </Layout>
   );
 }
+
 const dir = "blog";
 export const getStaticPaths = async () => {
   const res = await fetch(ENDPOINT + dir, API_KEY);

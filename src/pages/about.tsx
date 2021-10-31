@@ -9,11 +9,13 @@ import { FeatureBox } from "../components/_FeatureBox";
 import { List, ListItem } from "../components/_List";
 import { Accordion } from "../components/_Accordion";
 import { ENDPOINT, API_KEY } from "../config/environment-variable";
+
 type Props = {
   about: any;
   feature: any;
   questionAndAnswer: any;
 };
+
 export default function About({ about, feature, questionAndAnswer }: Props) {
   console.log(feature);
   const title = "hrkmtsmt";
