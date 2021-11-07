@@ -1,18 +1,21 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import { Props } from "@src/_components/types";
+import { URL } from "@src/_components/types";
 
-const Anchor = styled.a`
+type Button = URL & {
+  cta: string;
+};
+
+const Wrapper = styled.a`
   position: relative;
-  display: inline-block;
+  display: flex;
+  width: fit-content;
   padding: 0 20px;
   line-height: 40px;
   font-weight: 700;
   border-radius: 40px;
   text-align: center;
-  text-decoration: none;
-  background: none;
   color: var(--base-color);
   background: var(--primary-color);
   overflow: hidden;
@@ -47,10 +50,10 @@ const Anchor = styled.a`
   }
 `;
 
-export const LinkButton: React.VFC<Props> = (props) => {
+export const Button: React.VFC<Button> = (props) => {
   return (
     <Link href={props.href} passHref>
-      <Anchor>{props.cta}</Anchor>
+      <Wrapper>{props.cta}</Wrapper>
     </Link>
   );
 };

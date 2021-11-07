@@ -1,12 +1,9 @@
 import React from "react";
+import type { Props } from "@src/_components/types";
 import { Header } from "@src/_components/layout/Header";
-import { Footer } from "../Footer";
+import { Footer } from "@src/_components/layout/Footer";
 
-type Props = {
-  children: React.ReactNode;
-};
-
-export const Layout = (props: Props) => {
+export const Layout: React.VFC<Props> = (props) => {
   return (
     <React.Fragment>
       <Header />

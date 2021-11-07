@@ -1,3 +1,5 @@
+import { UrlObject } from "url";
+
 export type Props = {
   id?: string;
   title?: string;
@@ -12,11 +14,14 @@ export type Props = {
   cat?: string;
   dir?: string;
   src?: string;
-  href: string;
   cta?: string;
   alt?: string;
   label?: string;
   svg?: undefined | any;
+};
+
+export type URL = {
+  href: string;
 };
 
 export type EventHandler = {

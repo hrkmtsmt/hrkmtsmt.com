@@ -1,7 +1,11 @@
 import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
-import { Props } from "@src/_components/types";
+import { URL } from "@src/_components/types";
+
+type ButtonMore = URL & {
+  cta: string;
+};
 
 const Anchor = styled.a`
   display: inline-block;
@@ -74,7 +78,7 @@ const CTA = styled.div`
   z-index: 1;
 `;
 
-export const LinkButtonMore: React.VFC<Props> = (props) => {
+export const ButtonMore: React.VFC<ButtonMore> = (props) => {
   return (
     <Link href={props.href} passHref>
       <Anchor>

@@ -1,8 +1,8 @@
 import React, { useEffect } from "react";
 import { Helmet } from "../../components/Helmet";
 import { Main } from "../../components/layout/_Main";
-import { Section } from "../../components/layout/Section";
-import { Layout } from "../../components/layout/Layout";
+import { Section } from "../../components/layout/_Section";
+import { Layout } from "@src/_components/layout/Layout";
 import { Grid, Full, Small } from "../../components/layout/_Grid";
 import { PostCard } from "../../components/PostCard";
 import { ENDPOINT, API_KEY } from "../../config/environment-variable";
