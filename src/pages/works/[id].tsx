@@ -1,7 +1,7 @@
 import React from "react";
 import { Helmet } from "../../components/Helmet";
 import { Post } from "../../components/Post";
-import { Layout } from "../../components/layout/Layout";
+import { Layout } from "@src/_components/layout/Layout";
 import { Main } from "../../components/layout/_Main";
 import { Grid, Article, Sidebar } from "../../components/layout/_Grid";
 import { StickyNav } from "../../components/StickyNav";
