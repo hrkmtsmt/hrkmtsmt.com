@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Layout } from "../components/layout/_Layout";
-import { LinkButton } from "../components/Button";
+import { LinkButton } from "../components/_Button";
 import { Main } from "../components/layout/_Main";
 import { Section } from "../components/layout/_Section";
 import { Grid, Full } from "../components/layout/_Grid";
