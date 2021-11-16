@@ -9,7 +9,7 @@ import { Universal } from "../components/layout/Universal";
 import { Full, Small } from "../components/layout/_Grid";
 import { Grid } from "../_components/layout/Grid";
 import { PostCard } from "../components/PostCard";
-import { LinkButtonMore } from "../../src/components/Button";
+import { LinkButtonMore } from "../components/_Button";
 import { PostCardVertical } from "../components/PostCard";
 import { FadeIn } from "../components/animation/FadeIn";
 import { ENDPOINT, API_KEY } from "../config/environment-variable";

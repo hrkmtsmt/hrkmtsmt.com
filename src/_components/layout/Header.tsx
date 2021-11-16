@@ -2,6 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import Link from "next/link";
 import { Logo } from "@src/_components/Logo";
+import { StickyHeader } from "@src/_components/StickyHeader";
 import { mediaQuery } from "@src/styles/style";
 import { Props } from "../types";
 
@@ -36,12 +37,12 @@ const Nav = styled.nav`
 
 const List = styled.ul`
   display: flex;
+  align-items: center;
 `;
 
 const Item = styled.li`
   margin: 0 16px 0 0;
   line-height: 40px;
-  position: relative;
 
   &:last-child {
     margin: 0;
@@ -56,7 +57,6 @@ const Anchor = styled.a`
   line-height: 40px;
   position: relative;
   transition: ease-in-out 0.2s;
-
   &::before {
     content: "";
     display: block;
@@ -73,11 +73,9 @@ const Anchor = styled.a`
     -ms-transform: translate(-50%, -50%);
     transition: ease-in-out 0.2s;
   }
-
   &:hover {
     color: var(--primary-color-dark);
     transition: ease-in-out 0.2s;
-
     &::before {
       background: var(--primary-color-dark);
       opacity: 1;
@@ -109,6 +107,7 @@ export const Header: React.VFC = () => {
             <ItemLink href={"/blog"} label={"Blog"} />
           </List>
         </Nav>
+        <StickyHeader />
       </Inner>
     </Wrapper>
   );
