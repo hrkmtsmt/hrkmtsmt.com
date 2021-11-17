@@ -11,7 +11,7 @@ const Container = styled.nav`
   height: 100vh;
   left: 0;
   top: 0;
-  z-index: 99;
+  z-index: 998;
   visibility: hidden;
   padding: 0 32px;
   &[aria-expanded="true"] {
@@ -33,6 +33,11 @@ const Item = styled.li`
   transition: ease-in-out 0.2s;
   font-size: 36px;
   line-height: 80px;
+  &[aria-expanded="true"] {
+    transform: translateX(0);
+    transition: ease-in-out 0.4s;
+    transition-delay: 0.2s;
+  }
 `;
 
 const Anchor = styled.a`
@@ -77,23 +82,35 @@ const BackgroundBase = styled.div`
   }
 `;
 
+const menus = [{ link: "/about", label: "About" }];
+
 const SlideNav: React.VFC<Props> = (props) => {
+  const indexDelay = (boolean: boolean, delay: number) => {
+    setTimeout(() => {
+      return boolean;
+    }, delay);
+  };
   return (
     <Container aria-expanded={props.ariaExpanded}>
       <List>
-        <Item>
-          <Link href={"/about"} passHref>
-            <Anchor>About</Anchor>
-          </Link>
-        </Item>
+        {menus.map((item, index) => (
+          // key と aria-expandedの型にエラーあり
+          // SlideNavコンポーネントにレイヤーの重なりに不具合あり
+          <Item
+            key={index}
+            aria-expanded={() => indexDelay(props.ariaExpanded!, index * 200)}
+          >
+            <Link href={item.link} passHref>
+              <Anchor>{item.label}</Anchor>
+            </Link>
+          </Item>
+        ))}
       </List>
-      <BackgroundPrimary aria-expanded={props.ariaExpanded} />
-      <BackgroundBase aria-expanded={props.ariaExpanded} />
     </Container>
   );
 };
 
-const AAA = styled.nav`
+const ScrollContainer = styled.nav`
   position: fixed;
   height: 80px;
   top: -80px;
@@ -101,14 +118,14 @@ const AAA = styled.nav`
   transition: ease-in-out 0.2s;
   width: 100%;
   padding: 0 32px;
-  z-index: 99;
+  z-index: 999;
   &[aria-expanded="true"] {
     top: 0;
     transition: ease-in-out 0.2s;
   }
 `;
 
-const BBB = styled.div`
+const ScrollWrapper = styled.div`
   width: 100%;
   max-width: var(--max-width);
   height: 100%;
@@ -128,7 +145,6 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 999;
 `;
 
 export const StickyHeader = () => {
@@ -147,8 +163,8 @@ export const StickyHeader = () => {
   const [isOpen, setIsOpen] = useState(false);
   return (
     <React.Fragment>
-      <AAA aria-expanded={isScrollDown}>
-        <BBB>
+      <ScrollContainer aria-expanded={isScrollDown}>
+        <ScrollWrapper>
           <ThemeToggle />
           <Button onClick={() => setIsOpen((prevsIsOpen) => !prevsIsOpen)}>
             <i
@@ -160,18 +176,11 @@ export const StickyHeader = () => {
               className={"c-hamburger-button-icon i-close"}
             ></i>
           </Button>
-        </BBB>
-      </AAA>
+        </ScrollWrapper>
+        <BackgroundPrimary aria-expanded={isOpen} />
+        <BackgroundBase aria-expanded={isOpen} />
+      </ScrollContainer>
       <SlideNav ariaExpanded={isOpen} />
-    </React.Fragment>
-  );
-};
-
-export const StickyHeaderAndSlideNav = () => {
-  const [isActive, setIsActive] = useState(false);
-  return (
-    <React.Fragment>
-      <SlideNav aria-expanded={isActive} />
     </React.Fragment>
   );
 };
