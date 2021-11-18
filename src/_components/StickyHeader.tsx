@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { ThemeToggle } from "@src/components/ThemeToggel";
-import { Props } from "./types";
+import { mediaQuery } from "@src/styles/style";
 
 const Container = styled.nav`
   position: fixed;
@@ -36,7 +36,7 @@ const Item = styled.li`
   &[aria-expanded="true"] {
     transform: translateX(0);
     transition: ease-in-out 0.4s;
-    transition-delay: 0.2s;
+    transition-delay: ${(props) => (props.second / 10) * 2 + 0.4 + "s"};
   }
 `;
 
@@ -54,13 +54,23 @@ const BackgroundPrimary = styled.div`
   top: 20px;
   right: calc((100% - var(--max-width)) / 2);
   background: var(--primary-color);
-  z-index: -1;
-  transform: scale(1);
+  transform: scale(0);
   transition: ease-in-out 0.4s;
   transition-delay: 0.2s;
+  z-index: 997;
   &[aria-expanded="true"] {
     transform: scale(200);
     transition: ease-in-out 0.2s;
+    opacity: 998;
+  }
+  ${mediaQuery.desktop} {
+    right: 32px;
+  }
+  ${mediaQuery.tablet} {
+    right: 24px;
+  }
+  ${mediaQuery.mobile} {
+    right: 16px;
   }
 `;
 
@@ -72,43 +82,24 @@ const BackgroundBase = styled.div`
   top: 20px;
   right: calc((100% - var(--max-width)) / 2);
   background: var(--base-color);
-  z-index: -1;
-  transform: scale(1);
+  transform: scale(0);
   transition: ease-in-out 0.2s;
+  z-index: 997;
   &[aria-expanded="true"] {
     transform: scale(200);
     transition: ease-in-out 0.4s;
     transition-delay: 0.2s;
   }
+  ${mediaQuery.wide} {
+    right: 32px;
+  }
+  ${mediaQuery.tablet} {
+    right: 24px;
+  }
+  ${mediaQuery.mobile} {
+    right: 16px;
+  }
 `;
-
-const menus = [{ link: "/about", label: "About" }];
-
-const SlideNav: React.VFC<Props> = (props) => {
-  const indexDelay = (boolean: boolean, delay: number) => {
-    setTimeout(() => {
-      return boolean;
-    }, delay);
-  };
-  return (
-    <Container aria-expanded={props.ariaExpanded}>
-      <List>
-        {menus.map((item, index) => (
-          // key と aria-expandedの型にエラーあり
-          // SlideNavコンポーネントにレイヤーの重なりに不具合あり
-          <Item
-            key={index}
-            aria-expanded={() => indexDelay(props.ariaExpanded!, index * 200)}
-          >
-            <Link href={item.link} passHref>
-              <Anchor>{item.label}</Anchor>
-            </Link>
-          </Item>
-        ))}
-      </List>
-    </Container>
-  );
-};
 
 const ScrollContainer = styled.nav`
   position: fixed;
@@ -122,6 +113,12 @@ const ScrollContainer = styled.nav`
   &[aria-expanded="true"] {
     top: 0;
     transition: ease-in-out 0.2s;
+  }
+  ${mediaQuery.tablet} {
+    padding: 0 24px;
+  }
+  ${mediaQuery.mobile} {
+    padding: 0 16px;
   }
 `;
 
@@ -161,6 +158,19 @@ export const StickyHeader = () => {
   }, []);
 
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isOrder, setIsOrder] = useState(false);
+  const indexDelay = (boolean: boolean, delay: number) => {
+    setTimeout(() => {
+      return boolean;
+    }, delay);
+  };
+
+  const menus = [
+    { link: "/about", label: "About" },
+    { link: "/contact", label: "Contact" },
+  ];
+
   return (
     <React.Fragment>
       <ScrollContainer aria-expanded={isScrollDown}>
@@ -177,10 +187,21 @@ export const StickyHeader = () => {
             ></i>
           </Button>
         </ScrollWrapper>
-        <BackgroundPrimary aria-expanded={isOpen} />
-        <BackgroundBase aria-expanded={isOpen} />
       </ScrollContainer>
-      <SlideNav ariaExpanded={isOpen} />
+      <Container aria-expanded={isOpen}>
+        <List>
+          {menus.map((item, index) => (
+            // secondに型エラーあり
+            <Item key={index} second={index} aria-expanded={isOpen}>
+              <Link href={item.link} passHref>
+                <Anchor>{item.label}</Anchor>
+              </Link>
+            </Item>
+          ))}
+        </List>
+      </Container>
+      <BackgroundPrimary aria-expanded={isOpen} />
+      <BackgroundBase aria-expanded={isOpen} />
     </React.Fragment>
   );
 };
