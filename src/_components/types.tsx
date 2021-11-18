@@ -19,6 +19,7 @@ export type Props = {
   label?: string;
   svg?: undefined | any;
   ariaExpanded?: boolean;
+  array: [];
 };
 
 export type URL = {
