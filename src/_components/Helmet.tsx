@@ -35,6 +35,7 @@ export const Helmet = (props: Props) => {
       <meta property="og:locale" content="ja_JP" />
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:site" content="@hrkmtsmt" />
+
       <meta property="og:site_name" content="hrkmtsmt" />
       <meta property="fb:app_id" content="189027196570007" />
     </Head>
