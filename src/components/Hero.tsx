@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import Ztext from "react-ztext";
-import { LinkButton } from "@src/_components/LinkButton";
+import { Button } from "@src/_components/Button";
 import { Grid, Full } from "./layout/_Grid";
 
 const HeroTitle = () => {
@@ -34,10 +34,7 @@ export const Hero = () => {
           </div>
         </Full>
         <Full>
-          <LinkButton
-            href={"https://github.com/hrkmtsmt"}
-            cta={"View GitHub"}
-          />
+          <Button href={"https://github.com/hrkmtsmt"} cta={"View GitHub"} />
         </Full>
       </Grid>
       <div className={"p-hero-background"}></div>

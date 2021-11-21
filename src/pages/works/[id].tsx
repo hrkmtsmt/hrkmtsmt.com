@@ -1,10 +1,10 @@
 import React from "react";
-import { Helmet } from "../../components/Helmet";
+import { Helmet } from "../../components/_Helmet";
 import { Post } from "../../components/Post";
-import { Layout } from "../../components/layout/Layout";
+import { Layout } from "@src/_components/layout/Layout";
 import { Main } from "../../components/layout/_Main";
 import { Grid, Article, Sidebar } from "../../components/layout/_Grid";
-import { StickyNav } from "../../components/StickyNav";
+import { StickyNav } from "@src/_components/StickyNav";
 import { ProfileCard } from "../../components/ProfileCard";
 import { API_KEY, ENDPOINT } from "@src/config/environment-variable";
 

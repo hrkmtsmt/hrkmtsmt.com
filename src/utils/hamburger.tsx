@@ -1,19 +1,3 @@
-export const addClassNameOnScroll = (
-  idName: string,
-  addClassName: string,
-  scrollDistance: number
-) => {
-  const elemnt = document.getElementById(idName)!;
-  addEventListener("scroll", () => {
-    const scrollY = window.pageYOffset;
-    if (scrollY > scrollDistance) {
-      elemnt.classList.add(addClassName)!;
-    } else {
-      elemnt.classList.remove(addClassName)!;
-    }
-  });
-};
-
 export const animateInOrderOnAddClassName = () => {
   const elementSlideNav = document.getElementById("menu")!;
   elementSlideNav.classList.toggle("is-active");
