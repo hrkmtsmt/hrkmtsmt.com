@@ -142,6 +142,11 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  &[aria-expanded="true"] {
+    opacity: 1;
+    transition: ease-in-out 0.2s;
+    transform: rotate(0);
+  }
 `;
 
 export const StickyHeader = () => {
@@ -176,7 +181,10 @@ export const StickyHeader = () => {
       <ScrollContainer aria-expanded={isScrollDown}>
         <ScrollWrapper>
           <ThemeToggle />
-          <Button onClick={() => setIsOpen((prevsIsOpen) => !prevsIsOpen)}>
+          <Button
+            aria-expanded={isOpen}
+            onClick={() => setIsOpen((prevsIsOpen) => !prevsIsOpen)}
+          >
             <i
               id={"hamburger-open"}
               className={"c-hamburger-button-icon is-visible i-menu"}

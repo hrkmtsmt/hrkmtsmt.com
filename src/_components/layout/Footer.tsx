@@ -1,6 +1,6 @@
 import React from "react";
 import { HorizonalList, NavLink } from "@src/_components/Nav";
-import json from "@src/public/index.json";
+import json from "@public/index.json";
 import { color, mediaQuery } from "@src/styles/style";
 import styled from "styled-components";
 

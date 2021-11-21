@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { Helmet } from "../../components/Helmet";
+import { Helmet } from "../../components/_Helmet";
 import { Main } from "../../components/layout/_Main";
 import { Section } from "../../components/layout/_Section";
 import { Layout } from "@src/_components/layout/Layout";
