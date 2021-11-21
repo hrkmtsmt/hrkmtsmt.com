@@ -7,7 +7,8 @@ const Anchor = styled.a`
   font-weight: 700;
   text-decoration: none;
   color: var(--primary-color);
-  display: block;
+  display: flex;
+  align-items: center;
   path {
     fill: var(--primary-color);
   }

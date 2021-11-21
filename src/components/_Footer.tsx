@@ -1,6 +1,6 @@
 import React from "react";
 import { NavHorizonal, NavItemLink, NavIcon } from "./_Navigation";
-import json from "../pulic/index.json";
+import json from "../public/index.json";
 
 export const Footer = () => {
   return (

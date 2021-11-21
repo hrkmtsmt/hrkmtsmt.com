@@ -3,7 +3,7 @@ import dayjs from "dayjs";
 import utc from "dayjs/plugin/utc";
 import timezone from "dayjs/plugin/timezone";
 import Image from "next/image";
-import { Helmet } from "./Helmet";
+import { Helmet } from "./_Helmet";
 import { square } from "../config/image-size";
 
 type Props = {
@@ -21,7 +21,10 @@ type Props = {
 const PostDate = (props: Props) => {
   dayjs.extend(utc);
   dayjs.extend(timezone);
-  const date: string = dayjs.utc(props.date).tz("Asia/Tokyo").format("YYYY.MM.DD");
+  const date: string = dayjs
+    .utc(props.date)
+    .tz("Asia/Tokyo")
+    .format("YYYY.MM.DD");
   if (props.date !== undefined) {
     return <p className={"p-article-date"}>{date}</p>;
   }
@@ -46,7 +49,12 @@ const PostThumbnail = (props: Props) => {
   if (props.image !== undefined) {
     return (
       <div className={"p-article-image"}>
-        <Image src={props.image} alt={props.alt} width={square.width} height={square.height} />
+        <Image
+          src={props.image}
+          alt={props.alt}
+          width={square.width}
+          height={square.height}
+        />
       </div>
     );
   }

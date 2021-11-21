@@ -1,9 +1,9 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Helmet } from "../components/Helmet";
+import { Helmet } from "../components/_Helmet";
 import { Main } from "../components/layout/_Main";
-import { Section } from "../components/layout/Section";
-import { Layout } from "../components/layout/Layout";
+import { Section } from "../components/layout/_Section";
+import { Layout } from "@src/_components/layout/Layout";
 import { Grid, Large } from "../components/layout/_Grid";
 import { FeatureBox } from "../components/_FeatureBox";
 import { List, ListItem } from "../components/_List";
@@ -17,7 +17,6 @@ type Props = {
 };
 
 export default function About({ about, feature, questionAndAnswer }: Props) {
-  console.log(feature);
   const title = "hrkmtsmt";
   const desc = "こんにちは!これは説明文です!";
   return (
