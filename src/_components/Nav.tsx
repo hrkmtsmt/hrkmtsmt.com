@@ -2,8 +2,6 @@ import React from "react";
 import Link from "next/link";
 import styled from "styled-components";
 import { Props, URL } from "@src/_components/types";
-import { mediaQuery } from "@src/styles/style";
-import { NavigationEvents } from "swiper/types/components/navigation";
 
 type NavItem = URL & {
   children?: React.ReactNode;

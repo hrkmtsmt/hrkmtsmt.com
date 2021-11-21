@@ -4,7 +4,7 @@ import { Layout } from "@src/_components/layout/Layout";
 import { Main } from "../../components/layout/_Main";
 import { Grid, Article, Sidebar } from "../../components/layout/_Grid";
 import { StickyNav } from "@src/_components/StickyNav";
-import { ProfileCard } from "../../components/ProfileCard";
+import { ProfileCard } from "@src/_components/ProfileCard";
 import { ENDPOINT, API_KEY } from "../../config/environment-variable";
 
 import {
