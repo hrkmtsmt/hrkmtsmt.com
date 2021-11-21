@@ -1,6 +1,6 @@
 import React from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Helmet } from "../components/Helmet";
+import { Helmet } from "../components/_Helmet";
 import { Hero } from "../components/Hero";
 import { Main } from "../components/layout/_Main";
 import { Section } from "../components/layout/_Section";
