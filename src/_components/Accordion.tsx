@@ -1,6 +1,6 @@
-import React, { useState } from "react";
-import styled from "styled-components";
-import { Props } from "@src/_components/types";
+import React, { useState } from 'react';
+import styled from 'styled-components';
+import { Props } from '@src/_components/types';
 
 const Wrapper = styled.div`
   display: flex;
@@ -23,7 +23,7 @@ const Content = styled.div`
     transform: translateY(-24px);
     transition: 0.4s ease-in-out;
     padding: 0 24px;
-    &[aria-expanded="true"] {
+    &[aria-expanded='true'] {
       height: auto;
       opacity: 1;
       transform: translateY(0);

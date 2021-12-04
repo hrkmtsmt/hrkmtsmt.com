@@ -1,21 +1,21 @@
-import React from "react";
-import Image from "next/image";
-import { NavHorizonal, NavItemLink, NavIcon } from "./_Navigation";
-import { icon } from "../config/image-size";
-import json from "@public/index.json";
-import image from "@public/hrkmtsmt.png";
+import React from 'react';
+import Image from 'next/image';
+import { NavHorizonal, NavItemLink, NavIcon } from './_Navigation';
+import { icon } from '../config/image-size';
+import json from '@public/index.json';
+import image from '@public/hrkmtsmt.png';
 
 export const ProfileCard = () => {
   return (
-    <div className={"c-profile-card"}>
-      <div className={"c-profile-card-user"}>
-        <div className={"c-profile-card-image"}>
-          <Image alt={""} src={image} width={icon.width} height={icon.height} />
+    <div className={'c-profile-card'}>
+      <div className={'c-profile-card-user'}>
+        <div className={'c-profile-card-image'}>
+          <Image alt={''} src={image} width={icon.width} height={icon.height} />
         </div>
-        <div className={"c-profile-card-name"}>{json.name}</div>
+        <div className={'c-profile-card-name'}>{json.name}</div>
       </div>
-      <div className={"c-profile-card-intro"}>{json.intro}</div>
-      <div className={"c-profile-card-social"}>
+      <div className={'c-profile-card-intro'}>{json.intro}</div>
+      <div className={'c-profile-card-social'}>
         <NavHorizonal>
           {json.socialMedia.map((data) => (
             <NavItemLink key={data.id} link={data.link}>

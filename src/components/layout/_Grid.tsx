@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 type Props = {
   id?: string;
@@ -7,7 +7,7 @@ type Props = {
 
 export const Grid = (props: Props) => {
   return (
-    <div id={props.id} className={"l-grid"}>
+    <div id={props.id} className={'l-grid'}>
       {props.children}
     </div>
   );
@@ -15,7 +15,7 @@ export const Grid = (props: Props) => {
 
 export const Full = (props: Props) => {
   return (
-    <div id={props.id} className={"l-grid-full"}>
+    <div id={props.id} className={'l-grid-full'}>
       {props.children}
     </div>
   );
@@ -23,7 +23,7 @@ export const Full = (props: Props) => {
 
 export const ExtraLarge = (props: Props) => {
   return (
-    <div id={props.id} className={"l-grid-extra-large"}>
+    <div id={props.id} className={'l-grid-extra-large'}>
       {props.children}
     </div>
   );
@@ -31,7 +31,7 @@ export const ExtraLarge = (props: Props) => {
 
 export const Large = (props: Props) => {
   return (
-    <div id={props.id} className={"l-grid-large"}>
+    <div id={props.id} className={'l-grid-large'}>
       {props.children}
     </div>
   );
@@ -39,7 +39,7 @@ export const Large = (props: Props) => {
 
 export const Medium = (props: Props) => {
   return (
-    <div id={props.id} className={"l-grid-medium"}>
+    <div id={props.id} className={'l-grid-medium'}>
       {props.children}
     </div>
   );
@@ -47,7 +47,7 @@ export const Medium = (props: Props) => {
 
 export const Small = (props: Props) => {
   return (
-    <div id={props.id} className={"l-grid-small"}>
+    <div id={props.id} className={'l-grid-small'}>
       {props.children}
     </div>
   );
@@ -55,7 +55,7 @@ export const Small = (props: Props) => {
 
 export const ExtraSmall = (props: Props) => {
   return (
-    <div id={props.id} className={"l-grid-extra-small"}>
+    <div id={props.id} className={'l-grid-extra-small'}>
       {props.children}
     </div>
   );
@@ -63,7 +63,7 @@ export const ExtraSmall = (props: Props) => {
 
 export const Article = (props: Props) => {
   return (
-    <article id={props.id} className={"l-grid-article"}>
+    <article id={props.id} className={'l-grid-article'}>
       {props.children}
     </article>
   );
@@ -71,7 +71,7 @@ export const Article = (props: Props) => {
 
 export const Sidebar = (props: Props) => {
   return (
-    <aside id={props.id} className={"l-grid-sidebar"}>
+    <aside id={props.id} className={'l-grid-sidebar'}>
       {props.children}
     </aside>
   );

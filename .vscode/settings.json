@@ -1,5 +1,10 @@
 {
   "editor.tabSize": 2,
+  "html.completion.attributeDefaultValue": "doublequotes",
+  "javascript.preferences.quoteStyle": "single",
+  "typescript.preferences.quoteStyle": "single",
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true,
   "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
   "vscode-neovim.neovimInitVimPaths.darwin": "/Users/hrkmtmt/.config/nvim/init.vim"
 }

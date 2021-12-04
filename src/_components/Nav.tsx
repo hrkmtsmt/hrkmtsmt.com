@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import { Props, URL } from "@src/_components/types";
+import React from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import { Props, URL } from '@src/_components/types';
 
 type NavItem = URL & {
   children?: React.ReactNode;
