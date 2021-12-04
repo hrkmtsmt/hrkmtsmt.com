@@ -1,8 +1,8 @@
-import React, { useState, useEffect } from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import { ThemeToggle } from "@src/components/ThemeToggel";
-import { mediaQuery } from "@src/styles/style";
+import React, { useState, useEffect } from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import { ThemeToggle } from '@src/components/ThemeToggel';
+import { mediaQuery } from '@src/styles/style';
 
 const Container = styled.nav`
   position: fixed;
@@ -14,7 +14,7 @@ const Container = styled.nav`
   z-index: 998;
   visibility: hidden;
   padding: 0 32px;
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     visibility: visible;
   }
 `;
@@ -33,10 +33,10 @@ const Item = styled.li`
   transition: ease-in-out 0.2s;
   font-size: 36px;
   line-height: 80px;
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     transform: translateX(0);
     transition: ease-in-out 0.4s;
-    transition-delay: ${(props) => (props.second / 10) * 2 + 0.4 + "s"};
+    transition-delay: ${(props) => (props.second / 10) * 2 + 0.4}s;
   }
 `;
 
@@ -58,7 +58,7 @@ const BackgroundPrimary = styled.div`
   transition: ease-in-out 0.4s;
   transition-delay: 0.2s;
   z-index: 997;
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     transform: scale(200);
     transition: ease-in-out 0.2s;
     opacity: 998;
@@ -85,7 +85,7 @@ const BackgroundBase = styled.div`
   transform: scale(0);
   transition: ease-in-out 0.2s;
   z-index: 997;
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     transform: scale(200);
     transition: ease-in-out 0.4s;
     transition-delay: 0.2s;
@@ -110,7 +110,7 @@ const ScrollContainer = styled.nav`
   width: 100%;
   padding: 0 32px;
   z-index: 999;
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
     top: 0;
     transition: ease-in-out 0.2s;
   }
@@ -142,7 +142,20 @@ const Button = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
-  &[aria-expanded="true"] {
+  &[aria-expanded='true'] {
+    opacity: 1;
+    transition: ease-in-out 0.2s;
+    transform: rotate(0);
+  }
+`;
+
+const Icon = styled.i`
+  opacity: 0;
+  position: absolute;
+  transition: ease-in-out 0.2s;
+  transform: rotate(180deg);
+  font-size: 16px;
+  &[aria-hidden='false'] {
     opacity: 1;
     transition: ease-in-out 0.2s;
     transform: rotate(0);
@@ -151,8 +164,9 @@ const Button = styled.button`
 
 export const StickyHeader = () => {
   const [isScrollDown, setIsScrollDown] = useState(false);
+
   useEffect(() => {
-    addEventListener("scroll", () => {
+    addEventListener('scroll', () => {
       const scrollY = window.pageYOffset;
       if (scrollY > 300) {
         setIsScrollDown(true);
@@ -172,8 +186,8 @@ export const StickyHeader = () => {
   };
 
   const menus = [
-    { link: "/about", label: "About" },
-    { link: "/contact", label: "Contact" },
+    { link: '/about', label: 'About' },
+    { link: '/contact', label: 'Contact' },
   ];
 
   return (
@@ -185,14 +199,8 @@ export const StickyHeader = () => {
             aria-expanded={isOpen}
             onClick={() => setIsOpen((prevsIsOpen) => !prevsIsOpen)}
           >
-            <i
-              id={"hamburger-open"}
-              className={"c-hamburger-button-icon is-visible i-menu"}
-            ></i>
-            <i
-              id={"hamburger-close"}
-              className={"c-hamburger-button-icon i-close"}
-            ></i>
+            <Icon aria-hidden={isOpen} className={'i-menu'} />
+            <Icon aria-hidden={!isOpen} className={'i-close'} />
           </Button>
         </ScrollWrapper>
       </ScrollContainer>

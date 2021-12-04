@@ -1,8 +1,8 @@
-import React from "react";
-import { HorizonalList, NavLink } from "@src/_components/Nav";
-import json from "@public/index.json";
-import { color, mediaQuery } from "@src/styles/style";
-import styled from "styled-components";
+import React from 'react';
+import { HorizonalList, NavLink } from '@src/_components/Nav';
+import json from '@public/index.json';
+import { color, mediaQuery } from '@src/styles/style';
+import styled from 'styled-components';
 
 const Container = styled.footer`
   width: 100%;
@@ -43,7 +43,7 @@ export const Footer = () => {
   return (
     <Container>
       <Wrapper>
-        <nav className={"l-footer-nav"}>
+        <nav className={'l-footer-nav'}>
           <HorizonalList>
             {json.socialMedia.map((data: any) => (
               <NavLink key={data.id} href={data.link}>
@@ -52,7 +52,7 @@ export const Footer = () => {
             ))}
           </HorizonalList>
         </nav>
-        <p className={"c-copyright"}>2021 hrkmtsmt</p>
+        <p className={'c-copyright'}>2021 hrkmtsmt</p>
       </Wrapper>
     </Container>
   );

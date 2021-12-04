@@ -1,12 +1,12 @@
-import React from "react";
-import { Helmet } from "../../components/_Helmet";
-import { Post } from "../../components/Post";
-import { Layout } from "@src/_components/layout/Layout";
-import { Main } from "../../components/layout/_Main";
-import { Grid, Article, Sidebar } from "../../components/layout/_Grid";
-import { StickyNav } from "@src/_components/StickyNav";
-import { ProfileCard } from "../../components/ProfileCard";
-import { API_KEY, ENDPOINT } from "@src/config/environment-variable";
+import React from 'react';
+import { Helmet } from '../../components/_Helmet';
+import { Post } from '../../components/Post';
+import { Layout } from '@src/_components/layout/Layout';
+import { Main } from '../../components/layout/_Main';
+import { Grid, Article, Sidebar } from '../../components/layout/_Grid';
+import { StickyNav } from '@src/_components/StickyNav';
+import { ProfileCard } from '../../components/ProfileCard';
+import { API_KEY, ENDPOINT } from '@src/config/environment-variable';
 
 type Props = {
   work: {
@@ -46,7 +46,7 @@ export default function WorksPost({ work }: Props) {
   );
 }
 
-const dir = "works";
+const dir = 'works';
 export const getStaticPaths = async () => {
   const res = await fetch(ENDPOINT + dir, API_KEY);
   const data = await res.json();

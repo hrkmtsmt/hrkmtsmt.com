@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { Props } from "@src/_components/types";
-import { mediaQuery } from "@src/styles/style";
+import React from 'react';
+import styled from 'styled-components';
+import { Props } from '@src/_components/types';
+import { mediaQuery } from '@src/styles/style';
 
 const Inner = styled.main`
   width: 100%;

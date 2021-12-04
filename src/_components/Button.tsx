@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import { URL } from "@src/_components/types";
+import React from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import { URL } from '@src/_components/types';
 
 type Button = URL & {
   cta: string;
@@ -27,7 +27,7 @@ const Wrapper = styled.a`
     transition: ease-in-out 0.2s;
   }
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 40px;

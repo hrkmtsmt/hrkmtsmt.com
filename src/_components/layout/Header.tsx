@@ -1,10 +1,10 @@
-import React from "react";
-import styled from "styled-components";
-import Link from "next/link";
-import { Logo } from "@src/_components/Logo";
-import { StickyHeader } from "@src/_components/StickyHeader";
-import { mediaQuery } from "@src/styles/style";
-import { Props } from "../types";
+import React from 'react';
+import styled from 'styled-components';
+import Link from 'next/link';
+import { Logo } from '@src/_components/Logo';
+import { StickyHeader } from '@src/_components/StickyHeader';
+import { mediaQuery } from '@src/styles/style';
+import { Props } from '../types';
 
 const Wrapper = styled.header`
   width: 100%;
@@ -58,7 +58,7 @@ const Anchor = styled.a`
   position: relative;
   transition: ease-in-out 0.2s;
   &::before {
-    content: "";
+    content: '';
     display: block;
     position: absolute;
     width: 8px;
@@ -104,8 +104,8 @@ export const Header: React.VFC = () => {
             <Item>
               <Logo />
             </Item>
-            <ItemLink href={"/about"} label={"About"} />
-            <ItemLink href={"/blog"} label={"Blog"} />
+            <ItemLink href={'/about'} label={'About'} />
+            <ItemLink href={'/blog'} label={'Blog'} />
           </List>
         </Nav>
         <StickyHeader />

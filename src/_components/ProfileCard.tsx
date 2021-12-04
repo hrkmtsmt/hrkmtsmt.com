@@ -1,10 +1,10 @@
-import React from "react";
-import Image from "next/image";
-import { HorizonalList, NavLink, NavItem } from "@src/_components/Nav";
-import { icon } from "@src/config/image-size";
-import json from "@public/index.json";
-import image from "@public/hrkmtsmt.png";
-import styled from "styled-components";
+import React from 'react';
+import Image from 'next/image';
+import { HorizonalList, NavLink, NavItem } from '@src/_components/Nav';
+import { icon } from '@src/config/image-size';
+import json from '@public/index.json';
+import image from '@public/hrkmtsmt.png';
+import styled from 'styled-components';
 
 const Wrapper = styled.div`
   display: flex;
@@ -50,7 +50,7 @@ export const ProfileCard = () => {
     <Wrapper>
       <User>
         <ImageContainer>
-          <Image alt={""} src={image} width={icon.width} height={icon.height} />
+          <Image alt={''} src={image} width={icon.width} height={icon.height} />
         </ImageContainer>
         <Name>{json.name}</Name>
       </User>

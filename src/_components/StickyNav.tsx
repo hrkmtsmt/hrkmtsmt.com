@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { mediaQuery } from "@src/styles/style";
+import React from 'react';
+import styled from 'styled-components';
+import { mediaQuery } from '@src/styles/style';
 
 export const StickyNav = styled.div`
   background: var(--base-color);

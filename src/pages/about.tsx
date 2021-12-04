@@ -1,14 +1,14 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Helmet } from "../components/_Helmet";
-import { Main } from "../components/layout/_Main";
-import { Section } from "../components/layout/_Section";
-import { Layout } from "@src/_components/layout/Layout";
-import { Grid, Large } from "../components/layout/_Grid";
-import { FeatureBox } from "../components/_FeatureBox";
-import { List, ListItem } from "../components/_List";
-import { Accordion } from "../components/_Accordion";
-import { ENDPOINT, API_KEY } from "../config/environment-variable";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Helmet } from '../components/_Helmet';
+import { Main } from '../components/layout/_Main';
+import { Section } from '../components/layout/_Section';
+import { Layout } from '@src/_components/layout/Layout';
+import { Grid, Large } from '../components/layout/_Grid';
+import { FeatureBox } from '../components/_FeatureBox';
+import { List, ListItem } from '../components/_List';
+import { Accordion } from '../components/_Accordion';
+import { ENDPOINT, API_KEY } from '../config/environment-variable';
 
 type Props = {
   about: any;
@@ -17,22 +17,22 @@ type Props = {
 };
 
 export default function About({ about, feature, questionAndAnswer }: Props) {
-  const title = "hrkmtsmt";
-  const desc = "こんにちは!これは説明文です!";
+  const title = 'hrkmtsmt';
+  const desc = 'こんにちは!これは説明文です!';
   return (
     <Layout>
       <Helmet title={title} desc={desc} />
       <Main>
-        <Grid id={"p-about-hero"}>
+        <Grid id={'p-about-hero'}>
           <Large>
             <div>
-              <h1 className={"p-about-hero-title"}>{about.title}</h1>
-              <p className={"p-about-hero-desc"}>{about.desc}</p>
+              <h1 className={'p-about-hero-title'}>{about.title}</h1>
+              <p className={'p-about-hero-desc'}>{about.desc}</p>
             </div>
           </Large>
           <Large>
             <div
-              className={"p-about-hero-image"}
+              className={'p-about-hero-image'}
               dangerouslySetInnerHTML={{
                 __html: about.svg,
               }}
@@ -41,7 +41,7 @@ export default function About({ about, feature, questionAndAnswer }: Props) {
         </Grid>
         <Section id={feature.id} title={feature.title}>
           <Swiper
-            className={"l-grid-full"}
+            className={'l-grid-full'}
             pagination={{ clickable: true }}
             breakpoints={{
               0: {
