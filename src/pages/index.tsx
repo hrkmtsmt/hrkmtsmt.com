@@ -1,7 +1,7 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Helmet } from '../components/_Helmet';
-import { Hero } from '../components/Hero';
+import { Hero } from '@src/_components/Hero';
 import { Main } from '../components/layout/_Main';
 import { Section } from '../components/layout/_Section';
 import { Layout } from '@src/_components/layout/Layout';
