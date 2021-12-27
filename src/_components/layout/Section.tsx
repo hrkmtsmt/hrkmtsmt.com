@@ -1,6 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-import { Props } from "@src/_components/types";
+import React from 'react';
+import styled from 'styled-components';
+import { Props } from '@src/_components/types';
 
 const Wrapper = styled.div`
   display: flex;

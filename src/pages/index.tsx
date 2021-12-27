@@ -1,19 +1,19 @@
-import React from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Helmet } from "../components/_Helmet";
-import { Hero } from "../components/Hero";
-import { Main } from "../components/layout/_Main";
-import { Section } from "../components/layout/_Section";
-import { Layout } from "@src/_components/layout/Layout";
-import { Universal } from "../components/layout/Universal";
-import { Full, Small } from "../components/layout/_Grid";
-import { Grid } from "../_components/layout/Grid";
-import { PostCard } from "../components/PostCard";
-import { LinkButtonMore } from "../components/_Button";
-import { PostCardVertical } from "../components/PostCard";
-import { FadeIn } from "../components/animation/FadeIn";
-import { ENDPOINT, API_KEY } from "../config/environment-variable";
-import zenn from "../../rss/data.json";
+import React from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Helmet } from '../components/_Helmet';
+import { Hero } from '@src/_components/Hero';
+import { Main } from '../components/layout/_Main';
+import { Section } from '../components/layout/_Section';
+import { Layout } from '@src/_components/layout/Layout';
+import { Universal } from '../components/layout/Universal';
+import { Full, Small } from '../components/layout/_Grid';
+import { Grid } from '../_components/layout/Grid';
+import { PostCard } from '../components/PostCard';
+import { LinkButtonMore } from '../components/_Button';
+import { PostCardVertical } from '../components/PostCard';
+import { FadeIn } from '../components/animation/FadeIn';
+import { ENDPOINT, API_KEY } from '../config/environment-variable';
+import zenn from '../../rss/data.json';
 
 type Props = {
   works: [];
@@ -21,18 +21,18 @@ type Props = {
 };
 
 export default function Home({ works, blog }: Props) {
-  const title = "hrkmtsmt";
-  const desc = "こんにちは!これは説明文です!";
+  const title = 'hrkmtsmt';
+  const desc = 'こんにちは!これは説明文です!';
   return (
     <Layout>
       <Helmet title={title} desc={desc} />
       <Universal>
         <Hero />
       </Universal>
-      <div className={"l-overflow-hidden"}>
+      <div className={'l-overflow-hidden'}>
         <Main>
-          <FadeIn effect={"a-fade-in"}>
-            <Section id={"zenn"} title={"Zenn"}>
+          <FadeIn effect={'a-fade-in'}>
+            <Section id={'zenn'} title={'Zenn'}>
               <Full>
                 <Grid>
                   {zenn.map((data: any) => (
@@ -44,15 +44,15 @@ export default function Home({ works, blog }: Props) {
               </Full>
               <Full>
                 <LinkButtonMore
-                  key={"https://zenn.dev/hrkmtsmt"}
-                  link={"https://zenn.dev/hrkmtsmt"}
-                  cta={"View Zenn"}
+                  key={'https://zenn.dev/hrkmtsmt'}
+                  link={'https://zenn.dev/hrkmtsmt'}
+                  cta={'View Zenn'}
                 />
               </Full>
             </Section>
           </FadeIn>
-          <FadeIn effect={"a-fade-in"}>
-            <Section id={"blog"} title={"Blog"}>
+          <FadeIn effect={'a-fade-in'}>
+            <Section id={'blog'} title={'Blog'}>
               <Full>
                 <Grid>
                   {blog.map((data: any) => (
@@ -63,14 +63,14 @@ export default function Home({ works, blog }: Props) {
                 </Grid>
               </Full>
               <Full>
-                <LinkButtonMore link={"blog"} cta={"Other Blog"} />
+                <LinkButtonMore link={'blog'} cta={'Other Blog'} />
               </Full>
             </Section>
           </FadeIn>
-          <FadeIn effect={"a-fade-in"}>
-            <Section id={"work"} title={"Works"}>
+          <FadeIn effect={'a-fade-in'}>
+            <Section id={'work'} title={'Works'}>
               <Swiper
-                className={"l-grid-full"}
+                className={'l-grid-full'}
                 pagination={{ clickable: true }}
                 breakpoints={{
                   0: {

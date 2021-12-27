@@ -1,7 +1,7 @@
-import React from "react";
-import Link from "next/link";
-import styled from "styled-components";
-import { URL } from "@src/_components/types";
+import React from 'react';
+import Link from 'next/link';
+import styled from 'styled-components';
+import { URL } from '@src/_components/types';
 
 type ButtonMore = URL & {
   cta: string;
@@ -22,7 +22,7 @@ const Wrapper = styled.div`
   &::before {
     width: 100%;
     height: 100%;
-    content: "";
+    content: '';
     position: absolute;
     left: 0;
     border-radius: 40px;
@@ -84,7 +84,7 @@ export const ButtonMore: React.VFC<ButtonMore> = (props) => {
       <Anchor>
         <Wrapper>
           <Arrow>
-            <i className={"i-arrow-right"}></i>
+            <i className={'i-arrow-right'}></i>
           </Arrow>
           <CTA>{props.cta}</CTA>
         </Wrapper>

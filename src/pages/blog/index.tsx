@@ -1,25 +1,25 @@
-import React, { useEffect } from "react";
-import { Helmet } from "../../components/_Helmet";
-import { Main } from "../../components/layout/_Main";
-import { Section } from "../../components/layout/_Section";
-import { Layout } from "@src/_components/layout/Layout";
-import { Grid, Full, Small } from "../../components/layout/_Grid";
-import { PostCard } from "../../components/PostCard";
-import { ENDPOINT, API_KEY } from "../../config/environment-variable";
+import React, { useEffect } from 'react';
+import { Helmet } from '../../components/_Helmet';
+import { Main } from '../../components/layout/_Main';
+import { Section } from '../../components/layout/_Section';
+import { Layout } from '@src/_components/layout/Layout';
+import { Grid, Full, Small } from '../../components/layout/_Grid';
+import { PostCard } from '../../components/PostCard';
+import { ENDPOINT, API_KEY } from '../../config/environment-variable';
 
 type Props = {
   blog: [];
 };
 
 export default function Blog({ blog }: Props) {
-  const title = "hrkmtsmt";
-  const desc = "こんにちは!これは説明文です!";
+  const title = 'hrkmtsmt';
+  const desc = 'こんにちは!これは説明文です!';
   return (
     <Layout>
       <Helmet title={title} desc={desc} />
-      <div className={"l-overflow-hidden"}>
+      <div className={'l-overflow-hidden'}>
         <Main>
-          <Section id={"blog"} title={"Blog"}>
+          <Section id={'blog'} title={'Blog'}>
             <Full>
               <Grid>
                 {blog

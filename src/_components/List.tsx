@@ -1,7 +1,7 @@
-import React from "react";
-import styled from "styled-components";
-import { mediaQuery } from "@src/styles/style";
-import { color } from "@src/styles/style";
+import React from 'react';
+import styled from 'styled-components';
+import { mediaQuery } from '@src/styles/style';
+import { color } from '@src/styles/style';
 
 export const List: React.VFC = styled.ul`
   display: flex;

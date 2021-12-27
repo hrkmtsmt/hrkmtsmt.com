@@ -1,5 +1,5 @@
-import React from "react";
-import { Grid, Full } from "./_Grid";
+import React from 'react';
+import { Grid, Full } from './_Grid';
 type Props = {
   id?: string;
   title?: string;
@@ -9,13 +9,13 @@ type Props = {
 };
 
 const Title = (props: Props) => {
-  return <h2 className={"p-section-title"}>{props.title}</h2>;
+  return <h2 className={'p-section-title'}>{props.title}</h2>;
 };
 const Desc = (props: Props) => {
-  return <div className={"p-section-desc"}>{props.desc}</div>;
+  return <div className={'p-section-desc'}>{props.desc}</div>;
 };
 const Caption = (props: Props) => {
-  return <div className={"p-section-caption"}>{props.caption}</div>;
+  return <div className={'p-section-caption'}>{props.caption}</div>;
 };
 
 export const Section = (props: Props) => {
@@ -23,7 +23,7 @@ export const Section = (props: Props) => {
     <section id={props.id}>
       <Grid>
         <Full>
-          <div className={"p-section"}>
+          <div className={'p-section'}>
             {props.caption !== undefined && <Caption caption={props.caption} />}
             {props.title !== undefined && <Title title={props.title} />}
             {props.desc !== undefined && <Desc desc={props.desc} />}
