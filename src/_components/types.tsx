@@ -1,4 +1,4 @@
-import { UrlObject } from "url";
+import { UrlObject } from 'url';
 
 export type Props = {
   id?: string;

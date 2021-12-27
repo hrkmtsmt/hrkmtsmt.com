@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
-import Link from "next/link";
-import Image from "next/image";
-import { Props } from "@src/_components/types";
-import { landscape } from "@src/config/image-size";
+import React from 'react';
+import styled from 'styled-components';
+import Link from 'next/link';
+import Image from 'next/image';
+import { Props } from '@src/_components/types';
+import { landscape } from '@src/config/image-size';
 
 const Wrapper = styled.a`
   display: flex;
@@ -89,7 +89,7 @@ const Button = styled.div`
     transition: ease-in-out 0.2s;
   }
   &::before {
-    content: "";
+    content: '';
     position: absolute;
     width: 100%;
     height: 40px;
