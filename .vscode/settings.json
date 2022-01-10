@@ -1,10 +1,33 @@
 {
+  // VSCode
+  "editor.fontFamily": "'Courier Prime', 'Gen Shin Gothic Monospace Regular', 'Gen Shin Gothic Monospace Bold'",
+  "editor.fontSize": 16,
   "editor.tabSize": 2,
+  "editor.formatOnSave": true,
+  "editor.wordWrap": "on",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "workbench.editor.enablePreview": false,
+  "workbench.editor.enablePreviewFromQuickOpen": false,
+  "workbench.iconTheme": "material-icon-theme",
   "html.completion.attributeDefaultValue": "doublequotes",
   "javascript.preferences.quoteStyle": "single",
   "typescript.preferences.quoteStyle": "single",
-  "prettier.jsxSingleQuote": true,
+  // Prettier
   "prettier.singleQuote": true,
-  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
-  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/hrkmtmt/.config/nvim/init.vim"
+  "prettier.jsxSingleQuote": true,
+  "prettier.trailingComma": "es5",
+  "prettier.printWidth": 80,
+  // Emmet
+  "emmet.includeLanguages": {
+    "vue-html": "html",
+    "javascript": "javascriptreact"
+  },
+  "emmet.variables": {
+    "lang": "ja"
+  },
+  "emmet.syntaxProfiles": {
+    "html": {
+      "filters": "html,c"
+    }
+  }
 }
