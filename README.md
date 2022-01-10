@@ -2,7 +2,7 @@
 
 ## Overview
 
-React + Next.js + microCMS + Netlify
+React + Next.js + Vercel + microCMS
 
 ## Rurle and Naming Convention
 
@@ -10,7 +10,9 @@ React + Next.js + microCMS + Netlify
 
 File Name 👉 Upper Camel Case
 
-```JavaScript
+# こんにちは
+
+```js
 import { ComponentsName } from "src/components/ComponentsName"
 export const ComponentsName () => {
   return (
@@ -40,5 +42,3 @@ export const ComponentsName () => {
 🔨 `:hammer:` refactor code
 <br />
 🙏 `:pray:` merge
-
-test
