@@ -1,6 +1,12 @@
 {
+  // Neovim
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vscode-neovim.neovimInitVimPaths.darwin": "/Users/hrkmtsmt/.config/nvim/init.vim",
+  "vscode-neovim.revealCursorScrollLine": true,
+  // Terminal
+  "terminal.integrated.fontSize": 12,
   // VSCode
-  "editor.fontFamily": "'Courier Prime', 'Gen Shin Gothic Monospace Regular', 'Gen Shin Gothic Monospace Bold'",
+  "editor.fontFamily": "'JetBrains Mono', 'GenJyuuGothic-Monospace-Regular', monospace",
   "editor.fontSize": 16,
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
