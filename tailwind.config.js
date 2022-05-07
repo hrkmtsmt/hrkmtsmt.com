@@ -1,3 +1,7 @@
+const { resolve } = require('path');
+const colorsPath = resolve(__dirname, 'src/styles/colors.ts');
+const colors = require(colorsPath);
+
 module.exports = {
   mode: 'jit',
   purge: [
@@ -6,7 +10,7 @@ module.exports = {
   ],
   content: [],
   theme: {
-    extend: {},
+    colors: colors,
   },
   plugins: [],
 };
