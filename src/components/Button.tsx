@@ -1,23 +1,22 @@
 import React from 'react';
 
-type Color = 'primary' | 'secondary';
+type SelectColor = 'primary' | 'secondary';
 
 type Props = {
-  color: Color;
+  color: SelectColor;
 } & React.ComponentProps<'button'>;
 
-const Component: React.VFC<Props> = (props) => {
-  const { color } = props;
+const Component: React.VFC<Props> = props => {
+  const { color = 'primary' } = props;
 
-  const primaryButtonColor =
-    'bg-primary text-white before:bg-secondary hover:bg-secondary hover:text-primary';
+  const changeButtonColor = (selectColor: SelectColor) => {
+    const primaryColor =
+      'bg-primary text-white before:bg-secondary hover:bg-secondary hover:text-primary';
+    const secondaryColor =
+      'bg-secondary text-primary before:bg-primary hover:bg-secondary hover:text-white';
 
-  const secondaryButtonColor =
-    'bg-secondary text-primary before:bg-primary hover:bg-secondary hover:text-white';
-
-  const changeButtonColor = (color: Color) => {
-    if (color === 'primary') return primaryButtonColor;
-    if (color === 'secondary') return secondaryButtonColor;
+    if (selectColor === 'primary') return primaryColor;
+    if (selectColor === 'secondary') return secondaryColor;
   };
 
   return (
