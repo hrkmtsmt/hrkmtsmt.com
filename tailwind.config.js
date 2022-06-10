@@ -1,3 +1,5 @@
+const { resolve } = require('path');
+
 module.exports = {
   mode: 'jit',
   purge: [
@@ -6,7 +8,12 @@ module.exports = {
   ],
   content: [],
   theme: {
-    extend: {},
+    colors: {
+      base: '#FFFFFF',
+      primary: '#2F76E6',
+      secondary: '#D1E2FF',
+      white: '#FFFFFF',
+    },
   },
   plugins: [],
 };
