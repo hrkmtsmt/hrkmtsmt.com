@@ -1,6 +1,4 @@
 const { resolve } = require('path');
-const colorsPath = resolve(__dirname, 'src/styles/colors.ts');
-const colors = require(colorsPath);
 
 module.exports = {
   mode: 'jit',
@@ -10,7 +8,12 @@ module.exports = {
   ],
   content: [],
   theme: {
-    colors: colors,
+    colors: {
+      base: '#FFFFFF',
+      primary: '#2F76E6',
+      secondary: '#D1E2FF',
+      white: '#FFFFFF',
+    },
   },
   plugins: [],
 };
