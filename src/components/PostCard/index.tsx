@@ -9,7 +9,7 @@ type Props = {
   media: string;
 };
 
-export const PostCard: React.VFC<Props> = props => {
+const Component: React.VFC<Props> = props => {
   return (
     <Link href={props.href} passHref>
       <a
@@ -26,3 +26,5 @@ export const PostCard: React.VFC<Props> = props => {
     </Link>
   );
 };
+
+export const PostCard = React.memo(Component);
