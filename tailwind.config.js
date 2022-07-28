@@ -14,6 +14,12 @@ module.exports = {
     dropShadow: {
       regular: '0 0 1rem rgba(47, 118, 230, 0.2)',
     },
+    extend: {
+      fontFamily: {
+        qualion: '"QualionRound-Regular", sans-serif',
+        'qualion-bold': '"QualionRound-Bold", sans-serif',
+      },
+    },
   },
   plugins: [],
 };
