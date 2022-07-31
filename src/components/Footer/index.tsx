@@ -28,11 +28,7 @@ const Components: React.FC<Props> = props => {
           {props.socialLinks.map(item => {
             return (
               <li key={item.name}>
-                <a
-                  href={item.link}
-                  title={item.name}
-                  className={'flex justify-center items-center h-[1.5rem] w-[1.5rem] text-white'}
-                >
+                <a href={item.link} title={item.name} className={'flex justify-center items-center h-6 w-6 text-white'}>
                   {item.children}
                 </a>
               </li>
