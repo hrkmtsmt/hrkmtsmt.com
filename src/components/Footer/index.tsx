@@ -16,12 +16,12 @@ const Components: React.FC<Props> = props => {
   return (
     <footer
       className={
-        'bg-black rounded-t-[16px] pl-[32px] pr-[32px] pt-[64px] pb-[64px] text-white font-qualion flex justify-center'
+        'bg-black rounded-t-[16px] pl-4 pr-4 sm:pl-8 sm:pr-8 pt-[64px] pb-[64px] text-white font-qualion flex justify-center'
       }
     >
       <nav
         className={
-          'gap-x-[16px] max-w-[1280px] w-full gap-y-[8px] flex justify-start flex-wrap sm:flex-nowrap sm:justify-between'
+          'gap-x-4 max-w-screen-xl w-full gap-y-2 flex justify-start flex-wrap sm:flex-nowrap sm:justify-between'
         }
       >
         <ul>
