@@ -10,6 +10,7 @@ module.exports = {
       primary: '#2F76E6',
       secondary: '#D1E2FF',
       white: '#FFFFFF',
+      black: '#202020',
     },
     dropShadow: {
       regular: '0 0 1rem rgba(47, 118, 230, 0.2)',
