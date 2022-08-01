@@ -1,15 +1,15 @@
-import React from 'react';
-import Link from 'next/link';
-import { Button } from '@src/components/Button';
-import { UrlObject } from 'url';
+import React from 'react'
+import Link from 'next/link'
+import { Button } from '@src/components/Button'
+import { UrlObject } from 'url'
 
 type Props = {
-  title: string;
-  href: string | UrlObject;
-  media: string;
-};
+  title: string
+  href: string | UrlObject
+  media: string
+}
 
-const Component: React.VFC<Props> = props => {
+const Component: React.VFC<Props> = (props) => {
   return (
     <Link href={props.href} passHref>
       <a
@@ -24,7 +24,7 @@ const Component: React.VFC<Props> = props => {
         <Button color={'secondary'}>More</Button>
       </a>
     </Link>
-  );
-};
+  )
+}
 
-export const PostCard = React.memo(Component);
+export const PostCard = React.memo(Component)
