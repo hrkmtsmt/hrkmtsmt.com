@@ -1,17 +1,17 @@
-import React from 'react';
-import Link from 'next/link';
-import { Logo } from '@src/components/Logo';
+import React from 'react'
+import Link from 'next/link'
+import { Logo } from '@src/components/Logo'
 
 type Props = {
   headerMenus: Array<{
-    name: string;
-    link: string;
-  }>;
-};
+    name: string
+    link: string
+  }>
+}
 
-export type HeaderProps = Props;
+export type HeaderProps = Props
 
-const Component: React.FC<Props> = props => {
+const Component: React.FC<Props> = (props) => {
   return (
     <header className={'pl-4 pr-4 sm:pl-8 sm:pr-8 flex justify-center'}>
       <div className={`w-full max-w-screen-xl h-[64px] flex flex-row`}>
@@ -24,7 +24,7 @@ const Component: React.FC<Props> = props => {
             </Link>
           </h1>
           <ul className={'flex flex-row gap-4 items-center'}>
-            {props.headerMenus.map(menu => {
+            {props.headerMenus.map((menu) => {
               return (
                 <li>
                   <Link href={menu.link} passHref>
@@ -37,13 +37,13 @@ const Component: React.FC<Props> = props => {
                     </a>
                   </Link>
                 </li>
-              );
+              )
             })}
           </ul>
         </nav>
       </div>
     </header>
-  );
-};
+  )
+}
 
-export const Header = React.memo(Component);
+export const Header = React.memo(Component)

@@ -1,17 +1,19 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
-  children: React.ReactNode;
-};
+  children: React.ReactNode
+}
 
-export type MainProps = Props;
+export type MainProps = Props
 
-const Component: React.FC<Props> = props => {
+const Component: React.FC<Props> = (props) => {
   return (
     <main className={'pt-8 pb-8 pr-4 pl-4 sm:pr-8 sm:pl-8 flex justify-center'}>
-      <div className={'w-full max-w-screen-xl grid grid-cols-1 gap-10'}>{props.children}</div>
+      <div className={'w-full max-w-screen-xl grid grid-cols-1 gap-10'}>
+        {props.children}
+      </div>
     </main>
-  );
-};
+  )
+}
 
-export const Main = React.memo(Component);
+export const Main = React.memo(Component)

@@ -1,11 +1,11 @@
-import React from 'react';
+import React from 'react'
 
 type Props = {
-  size?: string | number;
-  color?: 'primary' | 'secondary' | 'base' | 'white';
-};
+  size?: string | number
+  color?: 'primary' | 'secondary' | 'base' | 'white'
+}
 
-const Component: React.VFC<Props> = props => {
+const Component: React.VFC<Props> = (props) => {
   return (
     <svg
       width={props.size}
@@ -21,12 +21,12 @@ const Component: React.VFC<Props> = props => {
         className={`fill-${props.color}`}
       />
     </svg>
-  );
-};
+  )
+}
 
 Component.defaultProps = {
   size: '100%',
-  color: 'primary',
-};
+  color: 'primary'
+}
 
-export const Logo = React.memo(Component);
+export const Logo = React.memo(Component)
