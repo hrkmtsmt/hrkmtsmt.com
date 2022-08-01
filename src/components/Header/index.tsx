@@ -1,15 +1,15 @@
-import React from 'react'
-import Link from 'next/link'
-import { Logo } from '@src/components/Logo'
+import React from 'react';
+import Link from 'next/link';
+import { Logo } from '@src/components/Logo';
 
 type Props = {
   headerMenus: Array<{
-    name: string
-    link: string
-  }>
-}
+    name: string;
+    link: string;
+  }>;
+};
 
-export type HeaderProps = Props
+export type HeaderProps = Props;
 
 const Component: React.FC<Props> = (props) => {
   return (
@@ -37,13 +37,13 @@ const Component: React.FC<Props> = (props) => {
                     </a>
                   </Link>
                 </li>
-              )
+              );
             })}
           </ul>
         </nav>
       </div>
     </header>
-  )
-}
+  );
+};
 
-export const Header = React.memo(Component)
+export const Header = React.memo(Component);

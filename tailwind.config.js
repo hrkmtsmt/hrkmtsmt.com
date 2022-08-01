@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const { resolve } = require('path');
 
 module.exports = {
   mode: 'jit',
@@ -26,4 +26,4 @@ module.exports = {
     }
   },
   plugins: []
-}
+};

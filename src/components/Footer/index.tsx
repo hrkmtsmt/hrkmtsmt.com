@@ -1,16 +1,16 @@
-import React from 'react'
-import dayjs from 'dayjs'
+import React from 'react';
+import dayjs from 'dayjs';
 
 type Props = {
   socialLinks: Array<{
-    name: string
-    link: string
-    children: React.ReactNode
-  }>
-  copyright: string
-}
+    name: string;
+    link: string;
+    children: React.ReactNode;
+  }>;
+  copyright: string;
+};
 
-export type FooterProps = Props
+export type FooterProps = Props;
 
 const Components: React.FC<Props> = (props) => {
   return (
@@ -38,13 +38,13 @@ const Components: React.FC<Props> = (props) => {
                   {item.children}
                 </a>
               </li>
-            )
+            );
           })}
         </ul>
         <div>{`© 2021-${dayjs().format('YYYY')} ${props.copyright}`}</div>
       </nav>
     </footer>
-  )
-}
+  );
+};
 
-export const Footer = React.memo(Components)
+export const Footer = React.memo(Components);
