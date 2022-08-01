@@ -30,7 +30,7 @@ const Component: React.FC<Props> = (props) => {
                   <Link href={menu.link} passHref>
                     <a
                       className={
-                        'font-qualion-bold relative text-[24px] block leading-10 text-primary hover:text-secondary ease-in-out duration-200 hover:ease-in-out hover:duration-200 hover:after:content-[""] after:w-2 after:h-2 after:bg-primary after:block after:rounded-[8px] after:absolute after:left-[50%] after:-translate-x-[50%] after:-bottom-4 after:opacity-0 hover:after:bg-secondary hover:after:opacity-100 after:hover:-bottom-2 after:ease-in-out after:duration-200 after:hover:duration-200 after:hover:ease-in-out'
+                        'relative text-[24px] block leading-10 font-bold text-primary hover:text-secondary ease-in-out duration-200 hover:ease-in-out hover:duration-200 hover:after:content-[""] after:w-2 after:h-2 after:bg-primary after:block after:rounded-[8px] after:absolute after:left-[50%] after:-translate-x-[50%] after:-bottom-4 after:opacity-0 hover:after:bg-secondary hover:after:opacity-100 after:hover:-bottom-2 after:ease-in-out after:duration-200 after:hover:duration-200 after:hover:ease-in-out'
                       }
                     >
                       {menu.name}
