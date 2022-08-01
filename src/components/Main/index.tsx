@@ -4,6 +4,8 @@ type Props = {
   children: React.ReactNode;
 };
 
+export type MainProps = Props;
+
 const Component: React.FC<Props> = props => {
   return (
     <main className={'pt-8 pb-8 pr-4 pl-4 sm:pr-8 sm:pl-8 flex justify-center'}>

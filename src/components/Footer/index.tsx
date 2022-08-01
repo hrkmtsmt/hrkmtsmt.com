@@ -7,7 +7,7 @@ type Props = {
     link: string;
     children: React.ReactNode;
   }>;
-  copyrights: string;
+  copyright: string;
 };
 
 export type FooterProps = Props;
@@ -35,7 +35,7 @@ const Components: React.FC<Props> = props => {
             );
           })}
         </ul>
-        <div>{`© 2021-${dayjs().format('YYYY')} ${props.copyrights}`}</div>
+        <div>{`© 2021-${dayjs().format('YYYY')} ${props.copyright}`}</div>
       </nav>
     </footer>
   );
