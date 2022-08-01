@@ -2,7 +2,7 @@ import { Html, Head, Main, NextScript } from 'next/document';
 
 const Document = () => {
   return (
-    <Html className={'font-qualion'}>
+    <Html className={'font-qualion bg-base'}>
       <Head />
       <body>
         <Main />
