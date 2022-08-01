@@ -1,13 +1,13 @@
-import React from 'react'
+import React from 'react';
 
 type ColumnProps = {
-  children: React.ReactNode
-  size: 'small' | 'medium' | 'large' | 'full'
-}
+  children: React.ReactNode;
+  size: 'small' | 'medium' | 'large' | 'full';
+};
 
 type Column = {
-  Column: typeof Column
-}
+  Column: typeof Column;
+};
 
 const Column: React.FC<ColumnProps> = (props) => {
   if (props.size === 'small') {
@@ -15,34 +15,34 @@ const Column: React.FC<ColumnProps> = (props) => {
       <div className={'col-span-2 sm:col-span-2 md:col-span-3'}>
         {props.children}
       </div>
-    )
+    );
   }
   if (props.size === 'medium') {
     return (
       <div className={'col-span-2 sm:col-span-4 md:col-span-4'}>
         {props.children}
       </div>
-    )
+    );
   }
   if (props.size === 'large') {
     return (
       <div className={'col-span-4 sm:col-span-4 md:col-span-6'}>
         {props.children}
       </div>
-    )
+    );
   }
   if (props.size === 'full') {
     return (
       <div className={'col-span-4 sm:col-span-8 md:col-span-12'}>
         {props.children}
       </div>
-    )
+    );
   }
-}
+};
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
 export const Grid: React.FC<Props> & Column = (props) => {
   return (
@@ -53,7 +53,7 @@ export const Grid: React.FC<Props> & Column = (props) => {
     >
       {props.children}
     </div>
-  )
-}
+  );
+};
 
-Grid.Column = Column
+Grid.Column = Column;

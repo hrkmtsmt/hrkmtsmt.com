@@ -1,10 +1,10 @@
-import React from 'react'
+import React from 'react';
 
 type Props = {
-  children: React.ReactNode
-}
+  children: React.ReactNode;
+};
 
-export type MainProps = Props
+export type MainProps = Props;
 
 const Component: React.FC<Props> = (props) => {
   return (
@@ -13,7 +13,7 @@ const Component: React.FC<Props> = (props) => {
         {props.children}
       </div>
     </main>
-  )
-}
+  );
+};
 
-export const Main = React.memo(Component)
+export const Main = React.memo(Component);

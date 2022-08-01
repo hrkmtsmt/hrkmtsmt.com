@@ -1,4 +1,4 @@
-const { resolve } = require('path')
+const { resolve } = require('path');
 
 module.exports = {
   mode: 'jit',
@@ -10,6 +10,7 @@ module.exports = {
   theme: {
     colors: {
       base: '#FFFFFF',
+      main: '#F5F9FF',
       primary: '#2F76E6',
       secondary: '#D1E2FF',
       white: '#FFFFFF',
@@ -26,4 +27,4 @@ module.exports = {
     }
   },
   plugins: []
-}
+};
