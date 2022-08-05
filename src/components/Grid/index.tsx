@@ -19,7 +19,7 @@ const Column: React.FC<ColumnProps> = (props) => {
   }
   if (props.size === 'medium') {
     return (
-      <div className={'col-span-2 sm:col-span-4 md:col-span-4'}>
+      <div className={'col-span-4 sm:col-span-4 md:col-span-4'}>
         {props.children}
       </div>
     );
@@ -48,7 +48,7 @@ export const Grid: React.FC<Props> & Column = (props) => {
   return (
     <div
       className={
-        'w-full max-w-screen-lg grid grid-cols-4 gap-4 sm:grid-cols-8 sm:gap-8 md:grid-cols-12'
+        'w-full grid grid-cols-4 gap-4 sm:grid-cols-8 sm:gap-8 md:grid-cols-12'
       }
     >
       {props.children}
