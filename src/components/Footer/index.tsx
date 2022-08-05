@@ -1,5 +1,6 @@
 import React from 'react';
 import dayjs from 'dayjs';
+import Link from 'next/link';
 
 type Props = {
   socialLinks: Array<{
@@ -21,22 +22,23 @@ const Components: React.FC<Props> = (props) => {
     >
       <nav
         className={
-          'gap-x-4 max-w-screen-xl w-full gap-y-2 flex justify-start flex-wrap sm:flex-nowrap sm:justify-between'
+          'gap-x-4 max-w-screen-xl w-full gap-y-2 flex flex-col justify-start flex-wrap sm:flex-row sm:flex-nowrap sm:justify-between'
         }
       >
-        <ul>
+        <ul className={'flex gap-2'}>
           {props.socialLinks.map((item) => {
             return (
               <li key={item.name}>
-                <a
-                  href={item.link}
-                  title={item.name}
-                  className={
-                    'flex justify-center items-center h-6 w-6 text-white'
-                  }
-                >
-                  {item.children}
-                </a>
+                <Link href={item.link} passHref>
+                  <a
+                    title={item.name}
+                    className={
+                      'flex justify-center items-center h-6 w-6 text-white'
+                    }
+                  >
+                    {item.children}
+                  </a>
+                </Link>
               </li>
             );
           })}
