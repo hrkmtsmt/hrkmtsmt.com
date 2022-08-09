@@ -1,4 +1,6 @@
-const { resolve } = require('path');
+/**
+ * @type {import('tailwindcss').Config}
+ */
 
 module.exports = {
   mode: 'jit',
@@ -7,13 +9,14 @@ module.exports = {
     './src/components/**/*.{js,ts,jsx,tsx}'
   ],
   content: [],
+  darkMode: 'class',
   theme: {
     colors: {
       base: '#FFFFFF',
       main: '#F5F9FF',
       primary: '#2F76E6',
       secondary: '#D1E2FF',
-      white: '#FFFFFF',
+      white: '#F0F0F0',
       black: '#202020'
     },
     dropShadow: {
