@@ -10,7 +10,7 @@ const Component: React.FC<Props> = (props) => {
     <section className={'grid grid-cols-1 gap-4'}>
       <h2
         className={
-          'text-primary font-bold sm:text-[48px] sm:leading-[64px] text-[32px] leading-[48px] w-full'
+          'w-full text-[32px] font-bold leading-[48px] text-primary-400 sm:text-[48px] sm:leading-[64px]'
         }
       >
         {props.title}
