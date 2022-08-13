@@ -2,6 +2,7 @@ import React from 'react';
 import { Main } from '@src/components/Main';
 import { Header } from '@src/components/Header';
 import { Footer } from '@src/components/Footer';
+import { DarkModeToggle } from '../DarkModeToggle';
 import type { MainProps } from '@src/components/Main';
 import type { HeaderProps } from '@src/components/Header';
 import type { FooterProps } from '@src/components/Footer';
@@ -15,11 +16,12 @@ type Props = {
 
 const Component: React.FC<Props> = (props) => {
   return (
-    <React.Fragment>
+    <div className={'grid min-h-[100vh] grid-cols-1 grid-rows-1'}>
       <Header headerMenus={props.headerMenus} />
+      <DarkModeToggle />
       <Main>{props.mainContent}</Main>
       <Footer socialLinks={props.socialLinks} copyright={props.copyright} />
-    </React.Fragment>
+    </div>
   );
 };
 

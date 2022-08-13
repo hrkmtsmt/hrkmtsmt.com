@@ -48,7 +48,7 @@ export const Grid: React.FC<Props> & Column = (props) => {
   return (
     <div
       className={
-        'w-full grid grid-cols-4 gap-4 sm:grid-cols-8 sm:gap-8 md:grid-cols-12'
+        'grid w-full grid-cols-4 gap-4 sm:grid-cols-8 sm:gap-6 md:grid-cols-12 md:gap-8'
       }
     >
       {props.children}

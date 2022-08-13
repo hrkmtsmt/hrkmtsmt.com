@@ -6,7 +6,7 @@ const Document = () => {
       <Head />
       <body
         className={
-          'font-qualion ease-in-out duration-[0.4s] bg-base text-black dark:text-white dark:bg-black'
+          'bg-white font-qualion text-font-primary-light duration-[0.4s] ease-in-out dark:bg-black dark:text-font-primary-dark '
         }
       >
         <Main />

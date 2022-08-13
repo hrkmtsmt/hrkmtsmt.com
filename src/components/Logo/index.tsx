@@ -2,7 +2,20 @@ import React from 'react';
 
 type Props = {
   size?: string | number;
-  color?: 'primary' | 'secondary' | 'base' | 'white';
+  color?:
+    | 'primary-100'
+    | 'primary-200'
+    | 'primary-300'
+    | 'primary-400'
+    | 'primary-500'
+    | 'primary-600'
+    | 'primary-700'
+    | 'primary-800'
+    | 'primary-900'
+    | 'font-primary-light'
+    | 'font-primary-dark'
+    | 'black'
+    | 'white';
 };
 
 const Component: React.VFC<Props> = (props) => {
@@ -25,8 +38,7 @@ const Component: React.VFC<Props> = (props) => {
 };
 
 Component.defaultProps = {
-  size: '100%',
-  color: 'primary'
+  size: '100%'
 };
 
 export const Logo = React.memo(Component);
