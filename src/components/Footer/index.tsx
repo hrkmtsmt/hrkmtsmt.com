@@ -17,12 +17,12 @@ const Components: React.FC<Props> = (props) => {
   return (
     <footer
       className={
-        'bg-black rounded-t-[16px] pl-4 pr-4 sm:pl-8 sm:pr-8 pt-[64px] pb-[64px] text-white font-qualion flex justify-center'
+        'flex justify-center rounded-t-[16px] bg-black pr-4 pl-4 pt-[64px] pb-[64px] font-qualion text-white sm:pr-6 sm:pl-6 md:pr-8 md:pl-8'
       }
     >
       <nav
         className={
-          'gap-x-4 max-w-screen-xl w-full gap-y-2 flex flex-col justify-start flex-wrap sm:flex-row sm:flex-nowrap sm:justify-between'
+          'flex w-full max-w-screen-xl flex-col flex-wrap justify-start gap-x-4 gap-y-2 sm:flex-row sm:flex-nowrap sm:justify-between'
         }
       >
         <ul className={'flex gap-2'}>
@@ -33,7 +33,7 @@ const Components: React.FC<Props> = (props) => {
                   <a
                     title={item.name}
                     className={
-                      'flex justify-center items-center h-6 w-6 text-white'
+                      'flex h-6 w-6 items-center justify-center text-white'
                     }
                   >
                     {item.children}
