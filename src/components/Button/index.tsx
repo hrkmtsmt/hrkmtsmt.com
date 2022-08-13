@@ -1,29 +1,37 @@
 import React from 'react';
 
-type SelectColor = 'primary' | 'secondary';
-
 type Props = {
-  color: SelectColor;
+  color: 'primary' | 'secondary';
 } & React.ComponentProps<'button'>;
 
-const Component: React.VFC<Props> = (props) => {
-  const selectButtonColor = (selectColor: SelectColor) => {
-    const primaryColor =
-      'bg-primary text-white before:bg-secondary hover:bg-secondary hover:text-primary';
-    if (selectColor === 'primary') return primaryColor;
-    const secondaryColor =
-      'bg-secondary text-primary before:bg-primary hover:bg-secondary hover:text-white';
-    if (selectColor === 'secondary') return secondaryColor;
-  };
-
+const B: React.FC<React.ComponentProps<'button'>> = (props) => {
   return (
     <button
       {...props}
-      className={`${selectButtonColor(
-        props.color
-      )} relative z-10 flex w-fit overflow-hidden rounded-full px-5 text-center font-bold leading-10 duration-200 ease-in-out before:absolute before:-left-0 before:-z-10 before:h-10 before:w-full before:-translate-x-full before:rounded-full before:duration-200 before:ease-in-out before:content-[""] hover:duration-200 hover:ease-in-out hover:before:translate-x-0 active:scale-95`}
+      className={`${props.className} relative z-10 flex w-fit overflow-hidden rounded-full px-5 text-center font-bold leading-10 duration-200 ease-in-out before:absolute before:-left-0 before:-z-10 before:h-10 before:w-full before:-translate-x-full before:rounded-full before:duration-200 before:ease-in-out before:content-[""] hover:duration-200 hover:ease-in-out hover:before:translate-x-0 active:scale-95`}
     />
   );
+};
+
+const Component: React.FC<Props> = (props) => {
+  if (props.color === 'primary') {
+    return (
+      <B
+        className={
+          'text-wite bg-primary-400 before:bg-primary-200 hover:bg-primary-200 hover:text-primary-400'
+        }
+      />
+    );
+  }
+  if (props.color === 'secondary') {
+    return (
+      <B
+        className={
+          'bg-primary-200 text-primary-400 before:bg-primary-400 hover:bg-primary-200 hover:text-white dark:bg-primary-800 dark:hover:text-primary-800'
+        }
+      />
+    );
+  }
 };
 
 export const Button = React.memo(Component);
