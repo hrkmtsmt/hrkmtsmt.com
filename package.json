@@ -11,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",
+    "axios": "^0.27.2",
     "dayjs": "^1.11.4",
     "immer": "^9.0.15",
     "next": "^12.1.4",

@@ -14,7 +14,7 @@ export const useFetchArticleLinksFromRSS = () => {
 
   useEffect(() => {
     (async () => {
-      const CORS_PROXY = 'https://cors-anywhere.herokuapp.com/' as const;
+      const CORS_PROXY = '/api?endpoint=' as const;
       const url = 'https://zenn.dev/hrkmtsmt/feed';
       await parser.parseURL(CORS_PROXY + url, (error, feed) => {
         if (error) throw error;
