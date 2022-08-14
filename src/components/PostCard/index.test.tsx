@@ -3,7 +3,7 @@ import renderer from 'react-test-renderer';
 import { PostCard } from '.';
 
 describe('PostCard', () => {
-  it('Snapshot', () => {
+  test('Snapshot', () => {
     const snapshot = renderer.create(
       <PostCard
         href={'https://example.com'}
@@ -14,7 +14,7 @@ describe('PostCard', () => {
     expect(snapshot).toMatchSnapshot();
   });
 
-  it('Checking role and text', () => {
+  test('Checking role and text', () => {
     render(
       <PostCard
         href={'https://example.com'}
@@ -27,14 +27,14 @@ describe('PostCard', () => {
     expect(screen.findByText(/Zenn/)).toBeDefined();
   });
 
-  it('Checking href attribute', () => {
-    const { container } = render(
+  test('Checking href attribute', () => {
+    const { baseElement } = render(
       <PostCard
         href={'https://example.com'}
         title={'How to use Testing Library?'}
         tag={'Zenn'}
       />
     );
-    expect(container.getAttribute('https://example.com')).toBeDefined();
+    expect(baseElement.getAttribute('https://example.com')).toBeDefined();
   });
 });

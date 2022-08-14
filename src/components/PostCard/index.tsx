@@ -13,16 +13,14 @@ const Component: React.VFC<Props> = (props) => {
     <Link href={props.href} passHref>
       <a
         className={
-          'grid-col-1 grid w-full gap-4 rounded-[16px] bg-base-light p-4 leading-6 duration-200 ease-in-out hover:drop-shadow-light hover:duration-200 hover:ease-in-out dark:bg-base-dark dark:hover:drop-shadow-dark'
+          'grid w-full grid-cols-1 gap-4 rounded-[16px] bg-base-light p-4 leading-6 duration-200 ease-in-out hover:drop-shadow-light hover:duration-200 hover:ease-in-out dark:bg-base-dark dark:hover:drop-shadow-dark'
         }
       >
         <div>
           <div className={'text-[12px] font-bold text-primary-400'}>
             {props.tag}
           </div>
-          <h3 className={'text-4 h-12 overflow-hidden font-bold'}>
-            {props.title}
-          </h3>
+          <h3 className={'h-12 overflow-hidden font-bold'}>{props.title}</h3>
         </div>
         <Button color={'secondary'}>More</Button>
       </a>
