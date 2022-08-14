@@ -3,23 +3,23 @@ import renderer from 'react-test-renderer';
 import { Button } from '.';
 
 describe('Button', () => {
-  it('Snapshot', () => {
+  test('Snapshot', () => {
     const snapshot = renderer.create(<Button color={'primary'}>Button</Button>);
     expect(snapshot).toMatchSnapshot();
   });
 
-  it('Checking role and text', () => {
+  test('Checking role and text', () => {
     render(<Button color={'primary'}>Button</Button>);
     expect(screen.getByRole('button', { name: /Button/ })).toBeDefined();
   });
 
-  it('Checking color primary', () => {
-    const { container } = render(<Button color={'primary'}>Button</Button>);
-    expect(container.querySelectorAll('bg-primary')).toBeDefined();
+  test('Checking color primary', () => {
+    const { baseElement } = render(<Button color={'primary'}>Button</Button>);
+    expect(baseElement.querySelector('button')).toHaveClass('bg-primary-400');
   });
 
-  it('Checking color secondary', () => {
-    const { container } = render(<Button color={'secondary'}>Button</Button>);
-    expect(container.querySelectorAll('bg-secondary')).toBeDefined();
+  test('Checking color secondary', () => {
+    const { baseElement } = render(<Button color={'secondary'}>Button</Button>);
+    expect(baseElement.querySelector('button')).toHaveClass('bg-primary-200');
   });
 });
