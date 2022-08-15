@@ -6,7 +6,20 @@ const darkModeSlice = createSlice({
     isDark: false
   },
   reducers: {
-    toggleDarkMode: (state) => {
+    checkTheme: (state) => {
+      const isUserThemeDark = matchMedia(
+        '(prefers-color-scheme: dark)'
+      ).matches;
+      if (isUserThemeDark) {
+        state.isDark = true;
+        document.documentElement.classList.add('dark');
+      }
+      if (!isUserThemeDark) {
+        state.isDark = false;
+        document.documentElement.classList.remove('dark');
+      }
+    },
+    toggleTheme: (state) => {
       state.isDark = !state.isDark;
       if (state.isDark) document.documentElement.classList.add('dark');
       if (!state.isDark) document.documentElement.classList.remove('dark');
@@ -14,6 +27,6 @@ const darkModeSlice = createSlice({
   }
 });
 
-export const { toggleDarkMode } = darkModeSlice.actions;
+export const { checkTheme, toggleTheme } = darkModeSlice.actions;
 
 export const darkModeReducer = darkModeSlice.reducer;

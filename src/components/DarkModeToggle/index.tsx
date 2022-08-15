@@ -1,12 +1,12 @@
 import React, { useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { Sun, Moon } from 'react-feather';
-import { toggleDarkMode } from '@src/store/darkMode';
+import { toggleTheme } from '@src/store/darkMode';
 
 const Component: React.FC = () => {
   const dispatch = useDispatch();
   const onClick = useCallback(() => {
-    dispatch(toggleDarkMode());
+    dispatch(toggleTheme());
   }, []);
 
   return (
