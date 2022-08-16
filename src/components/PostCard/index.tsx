@@ -13,7 +13,7 @@ const Component: React.VFC<Props> = (props) => {
     <Link href={props.href} passHref>
       <a
         className={
-          'grid w-full grid-cols-1 gap-4 rounded-[16px] bg-base-light p-4 leading-6 duration-200 ease-in-out hover:drop-shadow-light hover:duration-200 hover:ease-in-out dark:bg-base-dark dark:hover:drop-shadow-dark'
+          'grid w-full grid-cols-1 gap-4 rounded-[16px] bg-base-light p-4 font-qualion-bold leading-6 duration-200 ease-in-out hover:drop-shadow-light hover:duration-200 hover:ease-in-out dark:bg-base-dark dark:hover:drop-shadow-dark'
         }
       >
         <div>

@@ -15,7 +15,7 @@ const Component: React.FC<Props> = (props) => {
   return (
     <header
       className={
-        'flex h-[64px] justify-center pr-4 pl-4 sm:pr-6 sm:pl-6 md:pr-8 md:pl-8'
+        'flex h-[64px] justify-center pr-4 pl-4 font-qualion-bold sm:pr-6 sm:pl-6 md:pr-8 md:pl-8'
       }
     >
       <div className={`flex h-[64px] w-full max-w-screen-xl flex-row`}>

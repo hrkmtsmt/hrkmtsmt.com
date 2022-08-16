@@ -49,7 +49,24 @@ module.exports = {
       dark: '0 0 1rem rgba(18, 24, 31, 0.96)'
     },
     fontFamily: {
-      qualion: ['"QualionRound-Regular"', '"Helvetica Neue"', 'Arial', '"Hiragino Kaku Gothic ProN"', '"Hiragino Sans"', 'Meiryo', 'sans-serif']
+      'qualion-regular': [
+        '"QualionRound-Regular"',
+        '"Helvetica Neue"',
+        'Arial',
+        '"Hiragino Kaku Gothic ProN"',
+        '"Hiragino Sans"',
+        'Meiryo',
+        'sans-serif'
+      ],
+      'qualion-bold': [
+        '"QualionRound-Bold"',
+        '"Helvetica Neue"',
+        'Arial',
+        '"Hiragino Kaku Gothic ProN"',
+        '"Hiragino Sans"',
+        'Meiryo',
+        'sans-serif'
+      ]
     }
   },
   plugins: []

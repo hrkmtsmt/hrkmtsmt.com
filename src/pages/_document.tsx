@@ -5,23 +5,21 @@ const Document = () => {
     <Html lang={'ja'}>
       <Head>
         <link
-          rel='preload'
-          href='https://www.hrkmtsmt.com/fonts/qualion-round.woff'
-          as='font'
-          type='font/woff'
-          crossOrigin='anonymous'
+          href={'/fonts/qualion-round.woff'}
+          rel={'preload'}
+          as={'font'}
+          type={'font/woff'}
         />
         <link
-          rel='preload'
-          href='https://www.hrkmtsmt.com/fonts/qualion-round.woff2'
-          as='font'
-          type='font/woff2'
-          crossOrigin='anonymous'
+          href={'/fonts/qualion-round-bold.woff'}
+          rel={'preload'}
+          as={'font'}
+          type={'font/woff'}
         />
       </Head>
       <body
         className={
-          'bg-white font-qualion text-font-primary-light duration-[0.4s] ease-in-out dark:bg-black dark:text-font-primary-dark '
+          'bg-white font-qualion-regular text-font-primary-light duration-[0.4s] ease-in-out dark:bg-black dark:text-font-primary-dark '
         }
       >
         <Main />
