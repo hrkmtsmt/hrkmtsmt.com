@@ -6,14 +6,14 @@ const Document = () => {
       <Head>
         <link
           rel='preload'
-          href='/fonts/qualion-round.woff'
+          href='https://www.hrkmtsmt.com/fonts/qualion-round.woff2'
           as='font'
           type='font/woff'
           crossOrigin='anonymous'
         />
         <link
           rel='preload'
-          href='/fonts/qualion-round.woff2'
+          href='https://www.hrkmtsmt.com/fonts/qualion-round.woff2'
           as='font'
           type='font/woff2'
           crossOrigin='anonymous'
