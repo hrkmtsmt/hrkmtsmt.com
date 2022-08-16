@@ -46,13 +46,11 @@ module.exports = {
     },
     dropShadow: {
       light: '0 0 1rem rgba(47, 118, 230, 0.2)',
-      dark: '0 0 1rem rgba(18, 24, 31, 0.8)'
+      dark: '0 0 1rem rgba(18, 24, 31, 0.96)'
     },
-    extend: {
-      fontFamily: {
-        qualion:
-          '"QualionRound-Regular", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif'
-      }
+    fontFamily: {
+      qualion:
+        '"QualionRound-Regular", "Helvetica Neue", Arial, "Hiragino Kaku Gothic ProN", "Hiragino Sans", Meiryo, sans-serif'
     }
   },
   plugins: []
