@@ -6,7 +6,7 @@ const Document = () => {
       <Head>
         <link
           rel='preload'
-          href='https://www.hrkmtsmt.com/fonts/qualion-round.woff2'
+          href='https://www.hrkmtsmt.com/fonts/qualion-round.woff'
           as='font'
           type='font/woff'
           crossOrigin='anonymous'
