@@ -17,7 +17,7 @@ const Components: React.FC<Props> = (props) => {
   return (
     <footer
       className={
-        'flex justify-center rounded-t-[16px] bg-black pr-4 pl-4 pt-[64px] pb-[64px] font-qualion text-white sm:pr-6 sm:pl-6 md:pr-8 md:pl-8'
+        'font-qualion flex justify-center rounded-t-[16px] bg-black px-4 py-[64px] text-white sm:px-6 md:px-8'
       }
     >
       <nav
