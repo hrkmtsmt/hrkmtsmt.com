@@ -6,13 +6,11 @@ const Document = () => {
       <Head>
         <link
           href={'/fonts/qualion-round.woff'}
-          rel={'preload'}
           as={'font'}
           type={'font/woff'}
         />
         <link
           href={'/fonts/qualion-round-bold.woff'}
-          rel={'preload'}
           as={'font'}
           type={'font/woff'}
         />
