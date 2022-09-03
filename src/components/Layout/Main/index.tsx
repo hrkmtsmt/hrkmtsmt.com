@@ -10,7 +10,7 @@ const Component: React.FC<Props> = (props) => {
   return (
     <main
       className={
-        '-mb-4 flex justify-center rounded-t-[16px] bg-primary-100 pt-[64px] pb-[80px] pr-4 pl-4 dark:bg-main-dark sm:pr-6 sm:pl-6 md:pr-8 md:pl-8'
+        '-mb-4 flex justify-center rounded-t-[16px] bg-primary-100 py-[64px] px-4 dark:bg-main-dark sm:px-6 md:px-8'
       }
     >
       <div className={'grid w-full max-w-screen-xl grid-cols-1 gap-10'}>
