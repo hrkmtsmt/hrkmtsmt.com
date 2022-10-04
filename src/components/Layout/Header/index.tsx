@@ -30,7 +30,7 @@ const Component: React.FC<Props> = (props) => {
           <ul className={'flex flex-row items-center gap-4'}>
             {props.headerMenus.map((menu) => {
               return (
-                <li>
+                <li key={menu.name}>
                   <Link href={menu.link} passHref>
                     <a
                       className={
