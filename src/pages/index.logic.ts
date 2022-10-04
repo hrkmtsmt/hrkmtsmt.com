@@ -12,7 +12,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   const articleLinksGetResponse = await api.get<Array<ArticleLink>>(
     '/article-links'
   );
-  if (articleLinksGetResponse instanceof Error) return;
+  if (articleLinksGetResponse instanceof Error) return null;
 
   const props: Props = {
     articleLinks: articleLinksGetResponse

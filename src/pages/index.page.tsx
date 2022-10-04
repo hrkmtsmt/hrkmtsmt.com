@@ -7,7 +7,9 @@ import { getServerSideProps } from './index.logic';
 import type { NextPage } from 'next';
 import type { PageProps } from './index.logic';
 
+// const Page: NextPage<PageProps> = (props) => {
 const Page: NextPage<PageProps> = (props) => {
+  if (!props.articleLinks) return <React.Fragment />;
   return (
     <TemplateLayout
       mainContent={
@@ -17,7 +19,7 @@ const Page: NextPage<PageProps> = (props) => {
               return (
                 <Grid.Column key={articleLink.url} size={'medium'}>
                   <PostCard
-                    tag={'Zenn'}
+                    tag={articleLink.media}
                     title={articleLink.title}
                     href={articleLink.url}
                   />
