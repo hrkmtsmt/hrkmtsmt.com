@@ -1,5 +1,5 @@
 import axios from 'axios';
-import type { AxiosInstance, AxiosRequestConfig, AxiosResponse } from 'axios';
+import type { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 const axiosRequestConfig: AxiosRequestConfig = {
   baseURL: process.env.API_BASE_URL,
