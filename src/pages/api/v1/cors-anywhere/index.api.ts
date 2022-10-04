@@ -6,7 +6,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   const { endpoint } = request.query;
 
   try {
-    if (!endpoint) {
+    if (!endpoint || typeof endpoint !== 'string') {
       const errorResponse = {
         error: 'Missing endpoint parameter!'
       };
@@ -14,7 +14,6 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
       return;
     }
     const config: AxiosRequestConfig = {
-      //@ts-ignore
       url: endpoint,
       method: 'get',
       headers: {
