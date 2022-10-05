@@ -1,5 +1,11 @@
 import React from 'react';
 import { Html, Head, Main, NextScript } from 'next/document';
+import Script from 'next/script';
+
+const GOOGLE_ANALYTICS_SCRIPT = `window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', '${process.env.MEASUREMENT_ID}');` as const;
 
 const Document: React.FC = () => {
   return (
@@ -23,6 +29,11 @@ const Document: React.FC = () => {
       >
         <Main />
         <NextScript />
+        <Script
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.MEASUREMENT_ID}`}
+          strategy={'afterInteractive'}
+        />
+        <Script strategy={'afterInteractive'}>{GOOGLE_ANALYTICS_SCRIPT}</Script>
       </body>
     </Html>
   );

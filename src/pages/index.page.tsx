@@ -7,9 +7,9 @@ import { getServerSideProps } from './index.logic';
 import type { NextPage } from 'next';
 import type { PageProps } from './index.logic';
 
-// const Page: NextPage<PageProps> = (props) => {
 const Page: NextPage<PageProps> = (props) => {
   if (!props.articleLinks) return <React.Fragment />;
+
   return (
     <TemplateLayout
       mainContent={

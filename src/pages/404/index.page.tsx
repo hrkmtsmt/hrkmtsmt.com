@@ -1,8 +1,8 @@
 import React from 'react';
 import { TemplateLayout } from '@src/components/Layout';
 
-const NotFound: React.FC = () => {
+const Page: React.FC = () => {
   return <TemplateLayout mainContent={404} />;
 };
 
-export default NotFound;
+export default Page;

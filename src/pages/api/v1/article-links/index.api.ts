@@ -9,7 +9,7 @@ export type ArticleLink = {
   publishedAt: string;
 };
 
-type ZennJSObject = {
+type ZennRSS = {
   rss: {
     link: { _text: string };
     generator: { _text: string };
@@ -23,7 +23,7 @@ type ZennJSObject = {
   };
 };
 
-type QiitaJSObject = {
+type QiitaRSS = {
   _declaration: { id: { _text: string } };
   feed: {
     link: { a: { _text: string } };
@@ -52,25 +52,26 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
 
   if (zennXml instanceof Error || qiitaXml instanceof Error) return;
 
-  const zennXmlJSObject = convert.xml2js(zennXml, {
+  const zennRSS = convert.xml2js(zennXml, {
     compact: true
-  }) as ZennJSObject;
+  }) as ZennRSS;
 
-  const zennArticleLinks: Array<ArticleLink> =
-    zennXmlJSObject.rss.channel.item.map((item) => {
+  const zennArticleLinks: Array<ArticleLink> = zennRSS.rss.channel.item.map(
+    (item) => {
       return {
         media: 'Zenn',
         title: item.title._cdata,
         url: item.link._text,
         publishedAt: item.pubDate._text
       };
-    });
+    }
+  );
 
-  const qiitaJSObject = convert.xml2js(qiitaXml, {
+  const qiitaRSS = convert.xml2js(qiitaXml, {
     compact: true
-  }) as QiitaJSObject;
+  }) as QiitaRSS;
 
-  const qiitaArticleLinks: Array<ArticleLink> = qiitaJSObject.feed.entry.map(
+  const qiitaArticleLinks: Array<ArticleLink> = qiitaRSS.feed.entry.map(
     (item) => {
       return {
         media: 'Qiita',
