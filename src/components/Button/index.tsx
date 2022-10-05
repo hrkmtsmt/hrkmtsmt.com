@@ -19,7 +19,7 @@ const Component: React.FC<Props> = (props) => {
       <B
         {...props}
         className={
-          'text-wite bg-primary-400 before:bg-primary-200 hover:bg-primary-200 hover:text-primary-400'
+          'bg-primary-400 text-white before:bg-primary-200 hover:bg-primary-200 hover:text-primary-400'
         }
       />
     );
