@@ -5,9 +5,11 @@
   "repository": "git@github.com:hrkmtsmt/hrkmtsmt.git",
   "author": "hrkmtsmt <hrkmtsmt.mail@gmail.com>",
   "scripts": {
-    "dev": "next dev",
+    "dev": "run-p dev:*",
     "test": "jest",
-    "lint": "next lint"
+    "lint": "next lint",
+    "dev:serve": "next dev",
+    "dev:tsm": "typed-scss-modules src/**/**/*.scss --watch --implementation sass --nameFormat kebab --exportType default --aliasPrefixes.@src src/"
   },
   "license": "MIT",
   "dependencies": {
