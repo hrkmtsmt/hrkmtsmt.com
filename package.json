@@ -5,11 +5,11 @@
   "repository": "git@github.com:hrkmtsmt/hrkmtsmt.git",
   "author": "hrkmtsmt <hrkmtsmt.mail@gmail.com>",
   "scripts": {
-    "dev": "run-p dev:*",
+    "dev": "concurrently \"yarn dev:serve\" \"yarn dev:tsm\"",
     "test": "jest",
     "lint": "next lint",
     "dev:serve": "next dev",
-    "dev:tsm": "typed-scss-modules src/**/**/*.scss --watch --implementation sass --nameFormat kebab --exportType default --aliasPrefixes.@src src/"
+    "dev:tsm": "typed-scss-modules src --watch --implementation sass --nameFormat kebab --exportType default --aliasPrefixes.@src src/"
   },
   "license": "MIT",
   "dependencies": {
@@ -40,6 +40,7 @@
     "@typescript-eslint/eslint-plugin": "^5.18.0",
     "@typescript-eslint/parser": "^5.18.0",
     "autoprefixer": "^10.4.4",
+    "concurrently": "^7.5.0",
     "eslint": "^8.13.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-tailwindcss": "^3.6.1",
