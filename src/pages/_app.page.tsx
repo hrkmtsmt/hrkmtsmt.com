@@ -5,6 +5,7 @@ import { ThemeProvider } from '@src/components/ThemeProvider';
 import { store } from '@src/store';
 import 'tailwindcss/tailwind.css';
 import '@src/styles/globals.css';
+import '@src/styles/styles.global.scss';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (

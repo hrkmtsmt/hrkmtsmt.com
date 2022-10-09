@@ -2,7 +2,6 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
-
 @font-face {
   font-family: "QualionRound-Regular";
   src: url('/fonts/qualion-round.woff') format('woff');

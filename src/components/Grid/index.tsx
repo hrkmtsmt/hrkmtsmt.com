@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './styles.module.scss';
 
 type ColumnProps = {
   children: React.ReactNode;
@@ -11,32 +12,16 @@ type Column = {
 
 const Column: React.FC<ColumnProps> = (props) => {
   if (props.size === 'small') {
-    return (
-      <div className={'col-span-2 sm:col-span-2 md:col-span-3'}>
-        {props.children}
-      </div>
-    );
+    return <div className={styles['column-small']}>{props.children}</div>;
   }
   if (props.size === 'medium') {
-    return (
-      <div className={'col-span-4 sm:col-span-4 md:col-span-4'}>
-        {props.children}
-      </div>
-    );
+    return <div className={styles['column-medium']}>{props.children}</div>;
   }
   if (props.size === 'large') {
-    return (
-      <div className={'col-span-4 sm:col-span-4 md:col-span-6'}>
-        {props.children}
-      </div>
-    );
+    return <div className={styles['column-large']}>{props.children}</div>;
   }
   if (props.size === 'full') {
-    return (
-      <div className={'col-span-4 sm:col-span-8 md:col-span-12'}>
-        {props.children}
-      </div>
-    );
+    return <div className={styles['column-full']}>{props.children}</div>;
   }
 };
 
@@ -45,15 +30,7 @@ type Props = {
 };
 
 export const Grid: React.FC<Props> & Column = (props) => {
-  return (
-    <div
-      className={
-        'grid w-full grid-cols-4 gap-4 sm:grid-cols-8 sm:gap-6 md:grid-cols-12 md:gap-8'
-      }
-    >
-      {props.children}
-    </div>
-  );
+  return <div className={styles.grid}>{props.children}</div>;
 };
 
 Grid.Column = Column;
