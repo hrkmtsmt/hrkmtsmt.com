@@ -14,8 +14,7 @@ const darkModeSlice = createSlice({
       if (isUserThemeDark) {
         state.isDark = true;
         document.documentElement.classList.add('dark');
-      }
-      if (!isUserThemeDark) {
+      } else {
         state.isDark = false;
         document.documentElement.classList.remove('dark');
       }
