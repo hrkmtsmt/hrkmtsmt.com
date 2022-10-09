@@ -10,7 +10,7 @@ import { DynamicHead } from '@src/components/DynamicHead';
 
 const Page: NextPage<PageProps> = (props) => {
   const ogpImage = {
-    url: '/image/ogp-image.png',
+    url: `${process.env.DOMAIN}/image/ogp-image.png`,
     width: 1200,
     height: 628
   };
