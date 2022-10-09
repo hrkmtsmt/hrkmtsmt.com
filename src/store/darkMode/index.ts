@@ -1,4 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit';
+import type { RootState } from '@src/store';
 
 const darkModeSlice = createSlice({
   name: 'darkMode',
@@ -30,3 +31,7 @@ const darkModeSlice = createSlice({
 export const { checkTheme, toggleTheme } = darkModeSlice.actions;
 
 export const darkModeReducer = darkModeSlice.reducer;
+
+export const darkModeSelector = (state: RootState) => {
+  return state.darkModeReducer;
+};
