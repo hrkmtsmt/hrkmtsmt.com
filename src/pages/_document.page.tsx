@@ -12,6 +12,12 @@ const Document: React.FC = () => {
     <Html lang={'ja'}>
       <Head>
         <link
+          rel={'icon'}
+          type={'image/svg+xml'}
+          sizes={'32x32'}
+          href={'/favicon/logo.svg'}
+        />
+        <link
           href={'/fonts/qualion-round.woff'}
           as={'font'}
           type={'font/woff'}
