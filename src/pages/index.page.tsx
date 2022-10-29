@@ -1,22 +1,26 @@
 import React from 'react';
+import useSWR from 'swr';
 import { TemplateLayout } from '@src/components/Layout';
 import { Grid } from '@src/components/Grid';
 import { PostCard } from '@src/components/PostCard';
 import { Section } from '@src/components/Section';
 import { Hero } from '@src/components/Hero';
-import { getServerSideProps } from './index.logic';
+import { DynamicHead } from '@src/components/DynamicHead';
+import { api } from '@src/api';
 import type { NextPage } from 'next';
 import type { PageProps } from './index.logic';
-import { DynamicHead } from '@src/components/DynamicHead';
+import type { ArticleLink } from '@src/pages/api/v1/article-links/types';
 
-const Page: NextPage<PageProps> = (props) => {
+const Page: NextPage<PageProps> = () => {
   const ogpImage = {
     url: `${process.env.DOMAIN}/image/ogp-image.png`,
     width: 1200,
     height: 628
   };
 
-  if (!props.articleLinks) return <React.Fragment />;
+  const { data } = useSWR('/article-links', api.get<Array<ArticleLink>>);
+
+  if (!data || data instanceof Error) return <React.Fragment />;
 
   return (
     <React.Fragment>
@@ -33,7 +37,7 @@ const Page: NextPage<PageProps> = (props) => {
             </Section>
             <Section title={'My Articles'}>
               <Grid>
-                {props.articleLinks.map((articleLink) => {
+                {data.map((articleLink) => {
                   return (
                     <Grid.Column key={articleLink.url} size={'medium'}>
                       <PostCard
@@ -52,7 +56,5 @@ const Page: NextPage<PageProps> = (props) => {
     </React.Fragment>
   );
 };
-
-export { getServerSideProps };
 
 export default Page;

@@ -23,6 +23,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     const endpointRequest = await axios(config);
     const endpointResponse = await endpointRequest.data;
     response.status(200).json(endpointResponse);
+    response.status(200).end();
   } catch (error: unknown) {
     if (error instanceof Error) {
       const errorResponse = {

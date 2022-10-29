@@ -1,6 +1,6 @@
 import { api } from '@src/api';
 import type { GetServerSideProps } from 'next';
-import type { ArticleLink } from '@src/pages/api/v1/article-links/index.api';
+import type { ArticleLink } from '@src/pages/api/v1/article-links/types';
 
 type Props = {
   articleLinks: Array<ArticleLink>;

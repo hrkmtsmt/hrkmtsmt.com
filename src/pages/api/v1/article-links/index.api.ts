@@ -1,94 +1,65 @@
 import { api } from '@src/api';
-import convert from 'xml-js';
+import { XMLParser } from 'fast-xml-parser';
 import type { NextApiRequest, NextApiResponse } from 'next';
-
-export type ArticleLink = {
-  media: string;
-  title: string;
-  url: string;
-  publishedAt: string;
-};
-
-type ZennRSS = {
-  rss: {
-    link: { _text: string };
-    generator: { _text: string };
-    channel: {
-      item: Array<{
-        title: { _cdata: string };
-        link: { _text: string };
-        pubDate: { _text: string };
-      }>;
-    };
-  };
-};
-
-type QiitaRSS = {
-  _declaration: { id: { _text: string } };
-  feed: {
-    link: { a: { _text: string } };
-    entry: [
-      {
-        title: { _text: string };
-        url: { _text: string };
-        published: { _text: string };
-      }
-    ];
-  };
-};
+import type { ArticleLink, ParsedZennXML, ParsedQiitaXML } from './types';
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method.toLocaleLowerCase() !== 'get') {
     return response.status(405).end();
   }
 
-  const zennXml = await api.get<string>(
+  const zennXML = await api.get<string>(
     '/cors-anywhere?endpoint=https://zenn.dev/hrkmtsmt/feed'
   );
 
-  const qiitaXml = await api.get<string>(
+  const qiitaXML = await api.get<string>(
     '/cors-anywhere?endpoint=https://qiita.com/hrkmtsmt/feed'
   );
 
-  if (zennXml instanceof Error || qiitaXml instanceof Error) return;
+  if (zennXML instanceof Error || qiitaXML instanceof Error) return;
 
-  const zennRSS = convert.xml2js(zennXml, {
-    compact: true
-  }) as ZennRSS;
+  const xmlParser = new XMLParser();
 
-  const zennArticleLinks: Array<ArticleLink> = zennRSS.rss.channel.item.map(
-    (item) => {
+  const parsedZennXML = xmlParser.parse(zennXML) as ParsedZennXML;
+  const zennArticles = parsedZennXML.rss.channel.item.map((article) => {
+    return {
+      title: article.title,
+      description: article.description,
+      url: article.link,
+      publishedAt: new Date(article.pubDate).toISOString()
+    };
+  });
+
+  const parsedQiitaXML = xmlParser.parse(qiitaXML) as ParsedQiitaXML;
+  const qiitaArticles = parsedQiitaXML.feed.entry.map((article) => {
+    return {
+      title: article.title,
+      description: article.content,
+      url: article.url,
+      publishedAt: new Date(article.published).toISOString()
+    };
+  });
+
+  const articles: Array<ArticleLink> = zennArticles
+    .concat(qiitaArticles)
+    .map((article) => {
+      const _media = article.url
+        .split('/')
+        .find((string) => string.match(/\./))
+        .split('.')
+        .shift();
+      const media = _media.charAt(0).toUpperCase() + _media.slice(1);
       return {
-        media: 'Zenn',
-        title: item.title._cdata,
-        url: item.link._text,
-        publishedAt: item.pubDate._text
+        media,
+        ...article
       };
-    }
-  );
-
-  const qiitaRSS = convert.xml2js(qiitaXml, {
-    compact: true
-  }) as QiitaRSS;
-
-  const qiitaArticleLinks: Array<ArticleLink> = qiitaRSS.feed.entry.map(
-    (item) => {
-      return {
-        media: 'Qiita',
-        title: item.title._text,
-        url: item.url._text,
-        publishedAt: item.published._text
-      };
-    }
-  );
-
-  const articleLinks = zennArticleLinks
-    .concat(qiitaArticleLinks)
+    })
     .sort((a, b) => {
       return Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt));
     });
 
-  response.status(200).json(articleLinks);
+  response.status(200).json(articles);
+  response.status(200).end();
 };
 
 export default handler;
