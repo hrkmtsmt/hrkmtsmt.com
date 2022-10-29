@@ -26,7 +26,7 @@ const Component: React.FC<Props> = (props) => {
     <div className={'grid min-h-[100vh] grid-cols-1 grid-rows-1'}>
       <Header headerMenus={props.headerMenus} />
       <DarkModeToggle />
-      <Hero />
+      {pathname === '/' && <Hero />}
       <Main>{props.mainContent}</Main>
       <Footer socialLinks={props.socialLinks} copyright={props.copyright} />
     </div>
