@@ -1,4 +1,5 @@
 import React from 'react';
+import { useRouter } from 'next/router';
 import { GitHub, Instagram, Twitter } from 'react-feather';
 import { Main } from '@src/components/Layout/Main';
 import { Header } from '@src/components/Layout/Header';
@@ -9,6 +10,7 @@ import { PATHS } from '@src/constants/paths';
 import type { MainProps } from '@src/components/Layout/Main';
 import type { HeaderProps } from '@src/components/Layout/Header';
 import type { FooterProps } from '@src/components/Layout/Footer';
+import { Hero } from '@src/components/Hero';
 
 type Props = {
   mainContent: MainProps['children'];
@@ -18,10 +20,13 @@ type Props = {
 };
 
 const Component: React.FC<Props> = (props) => {
+  const { pathname } = useRouter();
+
   return (
     <div className={'grid min-h-[100vh] grid-cols-1 grid-rows-1'}>
       <Header headerMenus={props.headerMenus} />
       <DarkModeToggle />
+      <Hero />
       <Main>{props.mainContent}</Main>
       <Footer socialLinks={props.socialLinks} copyright={props.copyright} />
     </div>
