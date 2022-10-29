@@ -42,6 +42,7 @@
     "autoprefixer": "^10.4.4",
     "concurrently": "^7.5.0",
     "eslint": "^8.13.0",
+    "eslint-plugin-css-modules": "^2.11.0",
     "eslint-plugin-react": "^7.29.4",
     "eslint-plugin-tailwindcss": "^3.6.1",
     "jest": "^28.1.3",
