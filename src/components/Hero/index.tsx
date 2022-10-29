@@ -6,9 +6,7 @@ const Component: React.FC = () => {
   const ref = useRef();
 
   useEffect(() => {
-    (async () => {
-      threeRenderer(ref);
-    })();
+    threeRenderer(ref);
   }, []);
 
   return (
