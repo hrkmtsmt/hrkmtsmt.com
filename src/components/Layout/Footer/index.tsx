@@ -29,15 +29,15 @@ const Components: React.FC<Props> = (props) => {
           {props.socialLinks.map((item) => {
             return (
               <li key={item.name}>
-                <Link href={item.link} passHref>
-                  <a
-                    title={item.name}
-                    className={
-                      'flex h-6 w-6 items-center justify-center text-white'
-                    }
-                  >
-                    {item.children}
-                  </a>
+                <Link
+                  href={item.link}
+                  passHref
+                  title={item.name}
+                  className={
+                    'flex h-6 w-6 items-center justify-center text-white'
+                  }
+                >
+                  {item.children}
                 </Link>
               </li>
             );
