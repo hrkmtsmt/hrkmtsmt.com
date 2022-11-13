@@ -40,21 +40,29 @@ export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
     }
   ];
 
+  const iconSize: {
+    size: number;
+    strokeWidth: number;
+  } = {
+    size: 16,
+    strokeWidth: 2.4
+  };
+
   const socialLinks: FooterProps['socialLinks'] = [
     {
       name: 'github',
       link: 'https://github.com/hrkmtsmt',
-      children: <GitHub size={16} strokeWidth={2.4} />
+      children: <GitHub {...iconSize} />
     },
     {
       name: 'twitter',
       link: 'https://twitter.com/hrkmtsmt',
-      children: <Twitter size={16} strokeWidth={2.4} />
+      children: <Twitter {...iconSize} />
     },
     {
       name: 'instagram',
       link: 'https://instagram.com/hrkmtsmt',
-      children: <Instagram size={16} strokeWidth={2.4} />
+      children: <Instagram {...iconSize} />
     }
   ];
 
