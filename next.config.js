@@ -2,7 +2,6 @@
 const nextConfig = {
   env: {
     MY_ID: process.env.MY_ID,
-    DOMAIN: process.env.DOMAIN,
     API_BASE_URL: process.env.API_BASE_URL,
     MEASUREMENT_ID: process.env.MEASUREMENT_ID
   },

@@ -4,6 +4,8 @@ import { Main } from '@src/components/Layout/Main';
 import { Header } from '@src/components/Layout/Header';
 import { Footer } from '@src/components/Layout/Footer';
 import { DarkModeToggle } from '@src/components/DarkModeToggle';
+import { COMMON } from '@src/constants/common';
+import { PAGES } from '@src/constants/pages';
 import type { MainProps } from '@src/components/Layout/Main';
 import type { HeaderProps } from '@src/components/Layout/Header';
 import type { FooterProps } from '@src/components/Layout/Footer';
@@ -35,8 +37,8 @@ type TemplateLayoutProps = {
 export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
   const headerMenus: HeaderProps['headerMenus'] = [
     {
-      name: 'About',
-      link: '/about'
+      name: PAGES.ABOUT.NAME,
+      link: PAGES.ABOUT.URL
     }
   ];
 
@@ -50,18 +52,18 @@ export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
 
   const socialLinks: FooterProps['socialLinks'] = [
     {
-      name: 'github',
-      link: 'https://github.com/hrkmtsmt',
+      name: COMMON.EXTERNAL_SERVICE.GITHUB.NAME,
+      link: COMMON.EXTERNAL_SERVICE.GITHUB.URL,
       children: <GitHub {...iconSize} />
     },
     {
-      name: 'twitter',
-      link: 'https://twitter.com/hrkmtsmt',
+      name: COMMON.EXTERNAL_SERVICE.TWITTER.NAME,
+      link: COMMON.EXTERNAL_SERVICE.TWITTER.URL,
       children: <Twitter {...iconSize} />
     },
     {
-      name: 'instagram',
-      link: 'https://instagram.com/hrkmtsmt',
+      name: COMMON.EXTERNAL_SERVICE.INSTAGRAM.NAME,
+      link: COMMON.EXTERNAL_SERVICE.INSTAGRAM.URL,
       children: <Instagram {...iconSize} />
     }
   ];
@@ -71,7 +73,7 @@ export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
       headerMenus={headerMenus}
       mainContent={props.mainContent}
       socialLinks={socialLinks}
-      copyright={'hrkmtsmt'}
+      copyright={COMMON.NAME}
     />
   );
 };

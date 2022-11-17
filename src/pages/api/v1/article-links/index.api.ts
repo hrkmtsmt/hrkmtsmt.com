@@ -1,5 +1,7 @@
 import { api } from '@src/api';
 import { XMLParser } from 'fast-xml-parser';
+import { APIS } from '@src/constants/apis';
+import { COMMON } from '@src/constants/common';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { ArticleLink, ParsedZennXML, ParsedQiitaXML } from './types';
 
@@ -9,11 +11,11 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   }
 
   const zennXML = await api.get<string>(
-    '/cors-anywhere?endpoint=https://zenn.dev/hrkmtsmt/feed'
+    APIS.CORS_ANYWHERE + COMMON.EXTERNAL_SERVICE.ZENN.FEED
   );
 
   const qiitaXML = await api.get<string>(
-    '/cors-anywhere?endpoint=https://qiita.com/hrkmtsmt/feed'
+    APIS.CORS_ANYWHERE + COMMON.EXTERNAL_SERVICE.QIITA.FEED
   );
 
   if (zennXML instanceof Error || qiitaXML instanceof Error) return;
