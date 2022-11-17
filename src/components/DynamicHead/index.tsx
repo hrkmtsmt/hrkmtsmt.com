@@ -1,5 +1,6 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
+import { COMMON } from '@src/constants/common';
 
 type Props = {
   title: string;
@@ -13,11 +14,10 @@ type Props = {
 };
 
 const Component: React.FC<Props> = (props) => {
-  const siteName = process.env.MY_ID;
-  const pageTitle = `${props.title} | ${siteName}`;
+  const pageTitle = `${props.title} | ${COMMON.NAME}`;
   const pageUrl = props.pagePath
-    ? process.env.DOMAIN + props.pagePath
-    : process.env.DOMAIN;
+    ? COMMON.SITE_DOMAIN + props.pagePath
+    : COMMON.SITE_DOMAIN;
 
   return (
     <NextSeo
@@ -29,11 +29,11 @@ const Component: React.FC<Props> = (props) => {
         title: pageTitle,
         description: props.description,
         images: [props.ogpImage],
-        site_name: siteName
+        site_name: COMMON.NAME
       }}
       twitter={{
-        site: `https://twitter.com/${process.env.MY_ID}`,
-        handle: `@${process.env.MY_ID}`,
+        site: COMMON.EXTERNAL_SERVICE.TWITTER.URL,
+        handle: `@${COMMON.HANDLE_NAME}`,
         cardType: 'summary_large_image'
       }}
     />

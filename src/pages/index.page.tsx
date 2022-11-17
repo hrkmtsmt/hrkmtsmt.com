@@ -7,18 +7,20 @@ import { Section } from '@src/components/Section';
 import { Hero } from '@src/components/Hero';
 import { DynamicHead } from '@src/components/DynamicHead';
 import { api } from '@src/api';
+import { COMMON } from '@src/constants/common';
+import { APIS } from '@src/constants/apis';
 import type { NextPage } from 'next';
 import type { PageProps } from './index.logic';
 import type { ArticleLink } from '@src/pages/api/v1/article-links/types';
 
 const Page: NextPage<PageProps> = () => {
   const ogpImage = {
-    url: `${process.env.DOMAIN}/image/ogp-image.png`,
+    url: `${COMMON.SITE_DOMAIN}/image/ogp-image.png`,
     width: 1200,
     height: 628
   };
 
-  const { data } = useSWR('/article-links', api.get);
+  const { data } = useSWR(APIS.ARTICLE_LINKS, api.get);
 
   const articleLinks = data as Array<ArticleLink>;
 
@@ -28,7 +30,7 @@ const Page: NextPage<PageProps> = () => {
     <React.Fragment>
       <DynamicHead
         title={'Frontend Engineer'}
-        description={"I'm hrkmtsmt!"}
+        description={`I'm ${COMMON.NAME}!`}
         ogpImage={ogpImage}
       />
       <TemplateLayout
