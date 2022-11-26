@@ -29,37 +29,31 @@ const Page: NextPage<PageProps> = () => {
   if (!data || data instanceof Error) return <React.Fragment />;
 
   return (
-    <React.Fragment>
+    <>
       <DynamicHead
         title={'Frontend Engineer'}
         description={`I'm ${COMMON.NAME}!`}
         ogpImage={ogpImage}
       />
-      <TemplateLayout
-        mainContent={
-          <React.Fragment>
-            <Section>
-              <Hero />
-            </Section>
-            <Section title={'My Articles'}>
-              <Grid>
-                {articleLinks.map((articleLink) => {
-                  return (
-                    <Grid.Column key={articleLink.url} size={'medium'}>
-                      <PostCard
-                        tag={articleLink.media}
-                        title={articleLink.title}
-                        href={articleLink.url}
-                      />
-                    </Grid.Column>
-                  );
-                })}
-              </Grid>
-            </Section>
-          </React.Fragment>
-        }
-      />
-    </React.Fragment>
+      <Section>
+        <Hero />
+      </Section>
+      <Section title={'My Articles'}>
+        <Grid>
+          {articleLinks.map((articleLink) => {
+            return (
+              <Grid.Column key={articleLink.url} size={'medium'}>
+                <PostCard
+                  tag={articleLink.media}
+                  title={articleLink.title}
+                  href={articleLink.url}
+                />
+              </Grid.Column>
+            );
+          })}
+        </Grid>
+      </Section>
+    </>
   );
 };
 

@@ -31,7 +31,7 @@ const Component: React.FC<Props> = (props) => {
 export const Layout = React.memo(Component);
 
 type TemplateLayoutProps = {
-  mainContent: Props['mainContent'];
+  children: Props['mainContent'];
 };
 
 export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
@@ -71,7 +71,7 @@ export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
   return (
     <Layout
       headerMenus={headerMenus}
-      mainContent={props.mainContent}
+      mainContent={props.children}
       socialLinks={socialLinks}
       copyright={COMMON.HANDLE_NAME}
     />
