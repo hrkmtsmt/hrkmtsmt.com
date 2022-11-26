@@ -6,7 +6,7 @@ import { PATHS } from '@src/constants/paths';
 type Props = {
   headerMenus: Array<{
     name: string;
-    link: string;
+    href: string;
   }>;
 };
 
@@ -31,7 +31,7 @@ const Component: React.FC<Props> = (props) => {
               return (
                 <li key={menu.name}>
                   <Link
-                    href={menu.link}
+                    href={menu.href}
                     passHref
                     className={
                       'relative block text-[24px] font-bold leading-10 text-primary-400 duration-200 ease-in-out after:absolute after:left-[50%] after:-bottom-4 after:block after:h-2 after:w-2 after:translate-x-[-50%] after:rounded-[8px] after:bg-primary-400 after:opacity-0 after:duration-200 after:ease-in-out hover:duration-200 hover:ease-in-out after:hover:-bottom-2 hover:after:opacity-100 after:hover:duration-200 after:hover:ease-in-out hover:after:content-[""]'
