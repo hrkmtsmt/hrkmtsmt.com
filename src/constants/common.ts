@@ -1,9 +1,12 @@
-const HANDLE_NAME = 'hrkmtsmt';
+const HANDLE_NAME = 'hrkmtsmt' as const;
 
 export const COMMON = {
   NAME: 'Hiroki Matsumoto',
   HANDLE_NAME,
-  SITE_DOMAIN: 'https://hrkmtsmt.com',
+  SITE_URL: {
+    PRODUCTION: 'https://hrkmtsmt.com',
+    DEVELOPMENT: 'http://localhost:8080'
+  },
   EXTERNAL_SERVICE: {
     ZENN: {
       NAME: 'Zenn',
