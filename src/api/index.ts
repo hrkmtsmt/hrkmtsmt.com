@@ -1,8 +1,9 @@
 import axios from 'axios';
+import { baseURL } from '@src/utilities/baseURL';
 import type { AxiosInstance, AxiosRequestConfig } from 'axios';
 
 const axiosRequestConfig: AxiosRequestConfig = {
-  baseURL: process.env.API_BASE_URL,
+  baseURL: baseURL(),
   responseType: 'json',
   headers: {
     'Content-Type': 'application/json'

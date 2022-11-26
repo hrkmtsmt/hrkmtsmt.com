@@ -1,5 +1,5 @@
 import { api } from '@src/api';
-import { APIS } from '@src/constants/apis';
+import { PATHS } from '@src/constants/paths';
 import type { GetServerSideProps } from 'next';
 import type { ArticleLink } from '@src/pages/api/v1/article-links/types';
 
@@ -11,7 +11,7 @@ export type PageProps = Props;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const articleLinksGetResponse = await api.get<Array<ArticleLink>>(
-    APIS.ARTICLE_LINKS
+    PATHS.APIS.ARTICLE_LINKS.URL
   );
   if (articleLinksGetResponse instanceof Error) return null;
 

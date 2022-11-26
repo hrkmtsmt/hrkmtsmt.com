@@ -8,19 +8,19 @@ import { Hero } from '@src/components/Hero';
 import { DynamicHead } from '@src/components/DynamicHead';
 import { api } from '@src/api';
 import { COMMON } from '@src/constants/common';
-import { APIS } from '@src/constants/apis';
+import { PATHS } from '@src/constants/paths';
 import type { NextPage } from 'next';
 import type { PageProps } from './index.logic';
 import type { ArticleLink } from '@src/pages/api/v1/article-links/types';
 
 const Page: NextPage<PageProps> = () => {
   const ogpImage = {
-    url: `${COMMON.SITE_DOMAIN}/image/ogp-image.png`,
+    url: `${COMMON.SITE_URL.PRODUCTION}/image/ogp-image.png`,
     width: 1200,
     height: 628
   };
 
-  const { data } = useSWR(APIS.ARTICLE_LINKS, api.get);
+  const { data } = useSWR(PATHS.APIS.ARTICLE_LINKS.URL, api.get);
 
   const articleLinks = data as Array<ArticleLink>;
 

@@ -1,5 +1,6 @@
 import React from 'react';
 import { NextSeo } from 'next-seo';
+import { baseURL } from '@src/utilities/baseURL';
 import { COMMON } from '@src/constants/common';
 
 type Props = {
@@ -15,9 +16,7 @@ type Props = {
 
 const Component: React.FC<Props> = (props) => {
   const pageTitle = `${props.title} | ${COMMON.NAME}`;
-  const pageUrl = props.pagePath
-    ? COMMON.SITE_DOMAIN + props.pagePath
-    : COMMON.SITE_DOMAIN;
+  const pageUrl = props.pagePath ? baseURL() + props.pagePath : baseURL();
 
   return (
     <NextSeo

@@ -5,7 +5,7 @@ import { Header } from '@src/components/Layout/Header';
 import { Footer } from '@src/components/Layout/Footer';
 import { DarkModeToggle } from '@src/components/DarkModeToggle';
 import { COMMON } from '@src/constants/common';
-import { PAGES } from '@src/constants/pages';
+import { PATHS } from '@src/constants/paths';
 import type { MainProps } from '@src/components/Layout/Main';
 import type { HeaderProps } from '@src/components/Layout/Header';
 import type { FooterProps } from '@src/components/Layout/Footer';
@@ -37,8 +37,8 @@ type TemplateLayoutProps = {
 export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
   const headerMenus: HeaderProps['headerMenus'] = [
     {
-      name: PAGES.ABOUT.NAME,
-      link: PAGES.ABOUT.URL
+      name: PATHS.PAGES.ABOUT.NAME,
+      link: PATHS.PAGES.ABOUT.URL
     }
   ];
 
