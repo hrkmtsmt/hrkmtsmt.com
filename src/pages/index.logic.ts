@@ -11,7 +11,7 @@ export type PageProps = Props;
 
 export const getServerSideProps: GetServerSideProps = async () => {
   const articleLinksGetResponse = await api.get<Array<ArticleLink>>(
-    PATHS.APIS.ARTICLE_LINKS.URL
+    PATHS.APIS.ARTICLE_LINKS.PATH
   );
   if (articleLinksGetResponse instanceof Error) return null;
 

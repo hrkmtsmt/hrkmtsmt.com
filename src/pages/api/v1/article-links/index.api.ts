@@ -13,11 +13,11 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   }
 
   const zennXML = await api.get<XMLString>(
-    PATHS.APIS.CORS_ANYWHERE.URL + COMMON.EXTERNAL_SERVICE.ZENN.FEED
+    PATHS.APIS.CORS_ANYWHERE.PATH + COMMON.EXTERNAL_SERVICE.ZENN.FEED
   );
 
   const qiitaXML = await api.get<XMLString>(
-    PATHS.APIS.CORS_ANYWHERE.URL + COMMON.EXTERNAL_SERVICE.QIITA.FEED
+    PATHS.APIS.CORS_ANYWHERE.PATH + COMMON.EXTERNAL_SERVICE.QIITA.FEED
   );
 
   if (zennXML instanceof Error || qiitaXML instanceof Error) return;

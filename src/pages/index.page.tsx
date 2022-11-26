@@ -16,13 +16,13 @@ import type { ArticleLink } from '@src/pages/api/v1/article-links/types';
 const Page: NextPage<PageProps> = () => {
   const ogpImage = {
     url: `${
-      COMMON.SITE_URL.PRODUCTION + PATHS.ASSETS.IMAGES.URL
+      COMMON.SITE_URL.PRODUCTION + PATHS.ASSETS.IMAGES.PATH
     }/ogp-image.png`,
     width: 1200,
     height: 628
   };
 
-  const { data } = useSWR(PATHS.APIS.ARTICLE_LINKS.URL, api.get);
+  const { data } = useSWR(PATHS.APIS.ARTICLE_LINKS.PATH, api.get);
 
   const articleLinks = data as Array<ArticleLink>;
 
