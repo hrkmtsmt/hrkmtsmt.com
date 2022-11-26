@@ -5,7 +5,7 @@ import Script from 'next/script';
 const GOOGLE_ANALYTICS_SCRIPT = `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
 gtag('js', new Date());
-gtag('config', '${process.env.MEASUREMENT_ID}');` as const;
+gtag('config', '${process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID}');` as const;
 
 const Document: React.FC = () => {
   return (

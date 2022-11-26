@@ -1,8 +1,11 @@
 import { COMMON } from '@src/constants/common';
 
 export const baseURL = () => {
-  if (process.env.NODE_ENV === 'production') {
+  if (process.env.APP_ENV === 'production') {
     return COMMON.SITE_URL.PRODUCTION;
   }
-  return COMMON.SITE_URL.DEVELOPMENT;
+  if (process.env.APP_ENV === 'development') {
+    return process.env.DEVELOPMENT_URL;
+  }
+  return COMMON.SITE_URL.LOCAL;
 };

@@ -2,6 +2,8 @@
 
 const nextConfig = {
   env: {
+    APP_ENV: process.env.APP_ENV,
+    DEVELOPMENT_URL: process.env.DEVELOPMENT_URL,
     GOOGLE_ANALYTICS_MEASUREMENT_ID:
       process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID,
     BASIC_AUTH_USER: process.env.BASIC_AUTH_USER,

@@ -7,7 +7,7 @@ export const config = {
 };
 
 const middleware: NextMiddleware = (request: NextRequest) => {
-  if (process.env.NODE_ENV === 'production') return;
+  if (process.env.APP_ENV === 'production') return;
 
   const authHeader = request.headers.get('authorization');
   const url = request.nextUrl;
