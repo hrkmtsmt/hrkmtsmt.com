@@ -38,7 +38,7 @@ export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
   const headerMenus: HeaderProps['headerMenus'] = [
     {
       name: PATHS.PAGES.ABOUT.NAME,
-      link: PATHS.PAGES.ABOUT.URL
+      href: PATHS.PAGES.ABOUT.URL
     }
   ];
 
@@ -53,17 +53,17 @@ export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
   const socialLinks: FooterProps['socialLinks'] = [
     {
       name: COMMON.EXTERNAL_SERVICE.GITHUB.NAME,
-      link: COMMON.EXTERNAL_SERVICE.GITHUB.URL,
+      href: COMMON.EXTERNAL_SERVICE.GITHUB.URL,
       children: <GitHub {...iconSize} />
     },
     {
       name: COMMON.EXTERNAL_SERVICE.TWITTER.NAME,
-      link: COMMON.EXTERNAL_SERVICE.TWITTER.URL,
+      href: COMMON.EXTERNAL_SERVICE.TWITTER.URL,
       children: <Twitter {...iconSize} />
     },
     {
       name: COMMON.EXTERNAL_SERVICE.INSTAGRAM.NAME,
-      link: COMMON.EXTERNAL_SERVICE.INSTAGRAM.URL,
+      href: COMMON.EXTERNAL_SERVICE.INSTAGRAM.URL,
       children: <Instagram {...iconSize} />
     }
   ];

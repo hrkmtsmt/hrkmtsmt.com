@@ -5,7 +5,7 @@ import Link from 'next/link';
 type Props = {
   socialLinks: Array<{
     name: string;
-    link: string;
+    href: string;
     children: React.ReactNode;
   }>;
   copyright: string;
@@ -30,7 +30,7 @@ const Components: React.FC<Props> = (props) => {
             return (
               <li key={item.name}>
                 <Link
-                  href={item.link}
+                  href={item.href}
                   passHref
                   title={item.name}
                   className={
