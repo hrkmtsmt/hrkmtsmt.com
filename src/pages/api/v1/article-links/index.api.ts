@@ -1,21 +1,23 @@
 import { api } from '@src/api';
 import { XMLParser } from 'fast-xml-parser';
-import { APIS } from '@src/constants/apis';
+import { PATHS } from '@src/constants/paths';
 import { COMMON } from '@src/constants/common';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import type { ArticleLink, ParsedZennXML, ParsedQiitaXML } from './types';
+
+type XMLString = string;
 
 const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   if (request.method.toLocaleLowerCase() !== 'get') {
     return response.status(405).end();
   }
 
-  const zennXML = await api.get<string>(
-    APIS.CORS_ANYWHERE + COMMON.EXTERNAL_SERVICE.ZENN.FEED
+  const zennXML = await api.get<XMLString>(
+    PATHS.APIS.CORS_ANYWHERE.URL + COMMON.EXTERNAL_SERVICE.ZENN.FEED
   );
 
-  const qiitaXML = await api.get<string>(
-    APIS.CORS_ANYWHERE + COMMON.EXTERNAL_SERVICE.QIITA.FEED
+  const qiitaXML = await api.get<XMLString>(
+    PATHS.APIS.CORS_ANYWHERE.URL + COMMON.EXTERNAL_SERVICE.QIITA.FEED
   );
 
   if (zennXML instanceof Error || qiitaXML instanceof Error) return;
