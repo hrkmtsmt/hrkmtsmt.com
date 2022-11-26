@@ -3,7 +3,7 @@ import { PATHS } from './constants/paths';
 import type { NextMiddleware, NextRequest } from 'next/server';
 
 export const config = {
-  matcher: ['/((?!api|_next/static|favicon.ico).*)']
+  matcher: ['/((?!api|_next/static).*)']
 };
 
 const middleware: NextMiddleware = (request: NextRequest) => {

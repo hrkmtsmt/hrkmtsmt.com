@@ -15,7 +15,9 @@ import type { ArticleLink } from '@src/pages/api/v1/article-links/types';
 
 const Page: NextPage<PageProps> = () => {
   const ogpImage = {
-    url: `${COMMON.SITE_URL.PRODUCTION}/image/ogp-image.png`,
+    url: `${
+      COMMON.SITE_URL.PRODUCTION + PATHS.ASSETS.IMAGES.URL
+    }/ogp-image.png`,
     width: 1200,
     height: 628
   };
