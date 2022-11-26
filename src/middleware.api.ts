@@ -24,7 +24,7 @@ const middleware: NextMiddleware = (request: NextRequest) => {
     }
   }
 
-  url.pathname = PATHS.APIS.AUTH.URL;
+  url.pathname = PATHS.APIS.AUTH.PATH;
 
   return NextResponse.rewrite(url);
 };

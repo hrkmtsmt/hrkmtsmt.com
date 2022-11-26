@@ -38,7 +38,7 @@ export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
   const headerMenus: HeaderProps['headerMenus'] = [
     {
       name: PATHS.PAGES.ABOUT.NAME,
-      href: PATHS.PAGES.ABOUT.URL
+      href: PATHS.PAGES.ABOUT.PATH
     }
   ];
 
@@ -73,7 +73,7 @@ export const TemplateLayout: React.FC<TemplateLayoutProps> = (props) => {
       headerMenus={headerMenus}
       mainContent={props.mainContent}
       socialLinks={socialLinks}
-      copyright={COMMON.NAME}
+      copyright={COMMON.HANDLE_NAME}
     />
   );
 };

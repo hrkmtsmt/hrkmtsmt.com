@@ -1,6 +1,7 @@
 import React from 'react';
 import { Html, Head, Main, NextScript } from 'next/document';
 import Script from 'next/script';
+import { PATHS } from '@src/constants/paths';
 
 const GOOGLE_ANALYTICS_SCRIPT = `window.dataLayer = window.dataLayer || [];
 function gtag(){dataLayer.push(arguments);}
@@ -15,15 +16,15 @@ const Document: React.FC = () => {
           rel={'icon'}
           type={'image/svg+xml'}
           sizes={'32x32'}
-          href={'/favicon/logo.svg'}
+          href={`${PATHS.ASSETS.FAVICON.PATH}/logo.svg`}
         />
         <link
-          href={'/fonts/qualion-round.woff'}
+          href={`${PATHS.ASSETS.FONTS.PATH}/qualion-round.woff`}
           as={'font'}
           type={'font/woff'}
         />
         <link
-          href={'/fonts/qualion-round-bold.woff'}
+          href={`${PATHS.ASSETS.FONTS.PATH}/qualion-round-bold.woff`}
           as={'font'}
           type={'font/woff'}
         />
@@ -36,7 +37,7 @@ const Document: React.FC = () => {
         <Main />
         <NextScript />
         <Script
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.MEASUREMENT_ID}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID}`}
           strategy={'afterInteractive'}
         />
         <Script strategy={'afterInteractive'}>{GOOGLE_ANALYTICS_SCRIPT}</Script>

@@ -22,7 +22,7 @@ const Component: React.FC<Props> = (props) => {
       <div className={`flex h-[64px] w-full max-w-screen-xl flex-row`}>
         <nav className={'flex flex-row items-center gap-4'}>
           <h1>
-            <Link href={PATHS.PAGES.HOME.URL} passHref className={'h-10'}>
+            <Link href={PATHS.PAGES.HOME.PATH} passHref className={'h-10'}>
               <Logo size={'40px'} color={'primary-400'} />
             </Link>
           </h1>
