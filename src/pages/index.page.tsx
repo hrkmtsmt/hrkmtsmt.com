@@ -37,26 +37,21 @@ const Page: NextPage<PageProps> = () => {
       />
       <TemplateLayout
         mainContent={
-          <React.Fragment>
-            <Section>
-              <Hero />
-            </Section>
-            <Section title={'My Articles'}>
-              <Grid>
-                {articleLinks.map((articleLink) => {
-                  return (
-                    <Grid.Column key={articleLink.url} size={'medium'}>
-                      <PostCard
-                        tag={articleLink.media}
-                        title={articleLink.title}
-                        href={articleLink.url}
-                      />
-                    </Grid.Column>
-                  );
-                })}
-              </Grid>
-            </Section>
-          </React.Fragment>
+          <Section title={'My Articles'}>
+            <Grid>
+              {articleLinks.map((articleLink) => {
+                return (
+                  <Grid.Column key={articleLink.url} size={'medium'}>
+                    <PostCard
+                      tag={articleLink.media}
+                      title={articleLink.title}
+                      href={articleLink.url}
+                    />
+                  </Grid.Column>
+                );
+              })}
+            </Grid>
+          </Section>
         }
       />
     </React.Fragment>
