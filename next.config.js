@@ -1,9 +1,11 @@
 /** @type {import('next').NextConfig} */
+
 const nextConfig = {
   env: {
-    MY_ID: process.env.MY_ID,
-    API_BASE_URL: process.env.API_BASE_URL,
-    MEASUREMENT_ID: process.env.MEASUREMENT_ID
+    GOOGLE_ANALYTICS_MEASUREMENT_ID:
+      process.env.GOOGLE_ANALYTICS_MEASUREMENT_ID,
+    BASIC_AUTH_USER: process.env.BASIC_AUTH_USER,
+    BASIC_AUTH_PASSWORD: process.env.BASIC_AUTH_PASSWORD
   },
   pageExtensions: [
     'page.tsx',
