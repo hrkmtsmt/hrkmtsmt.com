@@ -6,12 +6,15 @@ import { store } from '@src/store';
 import 'tailwindcss/tailwind.css';
 import '@src/styles/global.css';
 import '@src/styles/styles.global.scss';
+import { TemplateLayout } from '@src/components/Layout';
 
 const App = ({ Component, pageProps }: AppProps) => {
   return (
     <Provider store={store}>
       <ThemeProvider>
-        <Component {...pageProps} />
+        <TemplateLayout>
+          <Component {...pageProps} />
+        </TemplateLayout>
       </ThemeProvider>
     </Provider>
   );
