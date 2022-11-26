@@ -20,4 +20,12 @@ const PAGES = {
   ABOUT: { NAME: 'About', URL: '/about' }
 } as const;
 
-export const PATHS = { PAGES, APIS } as const;
+const ASSETS_BASE_PATH = '/assets' as const;
+
+const ASSETS = {
+  IMAGES: { NAME: 'Images', URL: `${ASSETS_BASE_PATH}/images` },
+  FONTS: { NAME: 'Fonts', URL: `${ASSETS_BASE_PATH}/fonts` },
+  FAVICON: { NAME: 'Favicon', URL: `${ASSETS_BASE_PATH}/favicon` }
+} as const;
+
+export const PATHS = { PAGES, APIS, ASSETS } as const;
