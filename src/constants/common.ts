@@ -5,7 +5,7 @@ export const COMMON = {
   HANDLE_NAME,
   SITE_URL: {
     PRODUCTION: 'https://hrkmtsmt.com',
-    LOCAL: 'http://localhost:8080'
+    LOCAL: 'http://localhost:3000'
   },
   EXTERNAL_SERVICE: {
     ZENN: {

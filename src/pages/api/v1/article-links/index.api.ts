@@ -19,12 +19,14 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
   const qiitaXML = await api.get<XMLString>(
     PATHS.APIS.CORS_ANYWHERE.PATH + COMMON.EXTERNAL_SERVICE.QIITA.FEED
   );
-
-  if (zennXML instanceof Error || qiitaXML instanceof Error) return;
+  
+  if (zennXML.isFailure() || qiitaXML.isFailure()) {
+    return;
+  }
 
   const xmlParser = new XMLParser();
 
-  const parsedZennXML = xmlParser.parse(zennXML) as ParsedZennXML;
+  const parsedZennXML = xmlParser.parse(zennXML.value) as ParsedZennXML;
   const zennArticles = parsedZennXML.rss.channel.item.map((article) => {
     return {
       title: article.title,
@@ -34,7 +36,7 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     };
   });
 
-  const parsedQiitaXML = xmlParser.parse(qiitaXML) as ParsedQiitaXML;
+  const parsedQiitaXML = xmlParser.parse(qiitaXML.value) as ParsedQiitaXML;
   const qiitaArticles = parsedQiitaXML.feed.entry.map((article) => {
     return {
       title: article.title,
@@ -61,6 +63,8 @@ const handler = async (request: NextApiRequest, response: NextApiResponse) => {
     .sort((a, b) => {
       return Number(new Date(b.publishedAt)) - Number(new Date(a.publishedAt));
     });
+
+  console.log(articles)
 
   response.status(200).json(articles);
   response.status(200).end();

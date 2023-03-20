@@ -16,7 +16,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
   if (articleLinksGetResponse instanceof Error) return null;
 
   const props: Props = {
-    articleLinks: articleLinksGetResponse
+    articleLinks: articleLinksGetResponse.value
   };
 
   return { props };

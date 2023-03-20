@@ -8,7 +8,7 @@
     "dev": "concurrently \"yarn dev:serve\" \"yarn dev:tsm\"",
     "test": "jest",
     "lint": "next lint",
-    "dev:serve": "next dev --port 8080",
+    "dev:serve": "next dev --port 3000",
     "dev:tsm": "typed-scss-modules src --watch --implementation sass --nameFormat kebab --exportType default --aliasPrefixes.@src src/"
   },
   "license": "MIT",

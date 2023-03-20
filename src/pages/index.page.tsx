@@ -22,9 +22,7 @@ const Page: NextPage<PageProps> = () => {
     height: 628
   };
 
-  const { data } = useSWR(PATHS.APIS.ARTICLE_LINKS.PATH, api.get);
-
-  const articleLinks = data as Array<ArticleLink>;
+  const { data } = useSWR(PATHS.APIS.ARTICLE_LINKS.PATH, api.get<Array<ArticleLink>>);
 
   if (!data || data instanceof Error) return <React.Fragment />;
 
@@ -40,7 +38,7 @@ const Page: NextPage<PageProps> = () => {
       </Section>
       <Section title={'My Articles'}>
         <Grid>
-          {articleLinks.map((articleLink) => {
+          {data.value.map((articleLink) => {
             return (
               <Grid.Column key={articleLink.url} size={'medium'}>
                 <PostCard
