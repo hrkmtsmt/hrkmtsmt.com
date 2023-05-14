@@ -5,11 +5,10 @@
   "repository": "git@github.com:hrkmtsmt/hrkmtsmt.git",
   "author": "Hiroki Matsumoto",
   "scripts": {
-    "dev": "concurrently \"yarn dev:serve\" \"yarn dev:tsm\"",
+    "dev": "concurrently \"yarn dev:serve\"",
     "test": "jest",
     "lint": "next lint",
-    "dev:serve": "next dev --port 8080",
-    "dev:tsm": "typed-scss-modules src --watch --implementation sass --nameFormat kebab --exportType default --aliasPrefixes.@src src/"
+    "dev:serve": "next dev --port 8080"
   },
   "license": "MIT",
   "dependencies": {
@@ -57,7 +56,6 @@
     "sass": "^1.55.0",
     "tailwindcss": "^3.1.8",
     "ts-jest": "^28.0.7",
-    "typed-scss-modules": "^7.0.1",
     "typescript": "^4.6.3"
   }
 }
